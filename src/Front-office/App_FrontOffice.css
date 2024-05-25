@@ -1,6 +1,6 @@
 @import url('./components/Menu.css');
 @import url('./components/Footer.css');
-@import url('./components/Form.css');
+@import url('./components/LoginRegisterForm.css');
 @import url('./pages/Home/Home.css');
 @import url('./pages/Cardapio/Cardapio.css');
 @import url('./pages/Sobre/Sobre.css');

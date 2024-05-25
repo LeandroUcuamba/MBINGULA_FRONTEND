@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Form = () => {
+const LoginAndRegister = () => {
     return (
         <>
             <div className="div-main">
@@ -49,4 +49,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default LoginAndRegister
