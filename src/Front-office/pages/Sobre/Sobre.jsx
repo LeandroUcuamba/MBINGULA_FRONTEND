@@ -1,0 +1,35 @@
+import React from 'react'
+import about from '../../assets/about-img.png'
+
+const Sobre = () => {
+    return (
+        <div>
+            <div className="container-about  ">
+                <div className="row-about">
+
+                    <div className="img-box-about">
+                        <img src={about} alt="home" />
+                    </div>
+
+                    <div className="detail-box-about">
+                        <div className="heading_about">
+                            <h2>
+                               Sobre Nós
+                            </h2>
+                        </div>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus nobis aliquam necessitatibus, nemo quae dicta doloribus obcaecati aspernatur consequatur, quaerat reprehenderit ducimus perspiciatis a iure enim at veniam eveniet!
+                        </p>
+                        <div className='btn-about'>
+                            <a href="" className="btn-content-about">
+                                Leia mais!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Sobre

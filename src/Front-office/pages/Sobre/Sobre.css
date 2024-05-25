@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
+
+:root {
+    --bg-color2: #FFFFFF;
+    --second-bg-color2: #323A3C;
+    --text-color2: #000000;
+    --main-color2: rgb(255, 123, 0);
+}
+
+.container-about {
+    background: #222831;
+    color: #ffffff;
+    padding: 90px 0;
+    margin-top: 10px;
+}
+
+.row-about {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.img-box-about {
+    width: 50%;
+    background: transparent;
+    padding: 0px 2%;
+}
+
+.img-box-about img {
+    padding: 100px;
+    width: 100%;
+    background: transparent;
+}
+
+.detail-box-about {
+    padding: 20% 2%;
+    text-align: left;
+    line-height: 20px;
+    justify-content: center;
+    width: 50%;
+}
+
+.heading_about h2 {
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 20px;
+    color: var(--main-color2);
+    font-size: 40px;
+}
+
+.btn-about {
+    margin-top: 20px;
+}
+
+.btn-content-about {
+    margin-top: 40px;
+    padding: 10px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.89);
+    border: none;
+    background-color: rgb(255, 145, 0);
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+.btn-content-about:hover {
+    color: rgb(255, 145, 0);
+    background-color: white;
+    transition: 0.5s;
+    border: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    .row-about {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        padding: 0rem 1rem;
+    }
+
+    .img-box-about {
+        width: 100%;
+    }
+
+    .detail-box-about {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 720px) {
+    .container-about {
+        color: #ffffff;
+        margin-top: 10px;
+        padding-top: 20px;
+    }
+
+    .detail-box-about {
+        padding: 10% 2%;
+        text-align: left;
+        line-height: 20px;
+        justify-content: center;
+    }
+
+    .row-about {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        padding: 0rem 1rem;
+    }
+
+    .img-box-about {
+        width: 100%;
+    }
+
+    .img-box-about img {
+        padding: 50px;
+    }
+
+    .detail-box-about {
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .container-about {
+        color: #ffffff;
+        margin-top: 10px;
+        padding-top: 20px;
+    }
+
+    .detail-box-about {
+        padding: 10% 2%;
+        text-align: left;
+        line-height: 20px;
+        justify-content: center;
+    }
+
+    .row-about {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        padding: 0rem 1rem;
+    }
+
+    .img-box-about {
+        width: 100%;
+    }
+
+    .detail-box-about {
+        width: 100%;
+    }
+}

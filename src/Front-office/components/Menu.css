@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: "Titillium Web", sans-serif; */
+}
+
+:root {
+    --bg-color: #FFFFFF;
+    --second-bg-color: #ebebeb;
+    --text-color: #000000;
+    --main-color: rgb(255, 123, 0);
+}
+
+/* Menu */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0D0E10;
+    z-index: 100;
+    transition: 1s;
+    /* border: 1px solid red; */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20%;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    text-decoration: none;
+    color: var(--main-color);
+    position: relative;
+    margin-left: 3px;
+}
+
+.fa-cutlery {
+    margin-left: 40px;
+    font-size: 30px;
+    color: var(--main-color);
+    letter-spacing: 2px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+.navbar ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+header .nav-btn {
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: black;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1.8rem;
+}
+
+.navbar ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: var(--main-color);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+.navbar ul li a:active::after {
+    width: 100%;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+
+/* PONTOS DE INTERRUPÇÃO */
+
+@media only screen and (max-width: 1200px) {
+    .logo {
+        margin-left: 2px;
+    }
+
+    .fa-cutlery {
+        margin-left: 20px;
+    }
+
+    header .nav-btn {
+        visibility: visible;
+        opacity: 10;
+        font-size: 30px;
+        color: var(--main-color);
+    }
+
+    nav .nav-close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: var(--main-color);
+    }
+
+    header {
+        background-color: #0D0E10;
+    }
+
+    header nav {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        height: 35%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid transparent;
+        box-shadow: 0px 10px 60px 10px #4e4e4e;
+        border-radius: 0px 0px 40px 40px;
+        background: whitesmoke;
+        transition: 0.5s;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+    }
+
+    .navbar ul li a {
+        color: var(--main-color);
+        text-decoration: none;
+        font-size: 2rem;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    header .responsive_nav {
+        transform: translateY(100vh);
+    }
+
+    nav a {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .navbar ul li a {
+        color: var(--main-color);
+        text-decoration: none;
+        font-size: 1.7rem;
+        font-family: 'Dancing Script', cursive;
+        /* filter: drop-shadow(0px 0px 0px red); */
+    }
+
+    .logo {
+        margin-left: 2px;
+        font-size: 20px;
+    }
+
+    .fa-cutlery {
+        margin-left: 0px;
+        font-size: 25px;
+    }
+
+    header {
+        background-color: #0D0E10;
+    }
+
+    header nav {
+        height: 45%;
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar ul li a {
+        font-family: 'Dancing Script', cursive;
+        color: var(--main-color);
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        margin-left: 0px;
+        font-size: 20px;
+    }
+
+    header nav {
+        height: 50%;
+    }
+}
+
+/* Fim Menu */
