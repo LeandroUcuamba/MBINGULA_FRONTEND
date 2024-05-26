@@ -60,9 +60,9 @@
 
 .login h1 {
     font-family: 'Dancing Script', cursive;
-    margin-top: 20%;
-    text-align: center;
+    margin-top: 30%;
     color: var(--second-bg-color);
+    text-align: center;
     font-size: 2rem;
 }
 
@@ -70,12 +70,11 @@
     overflow: auto;
     justify-content: center;
     display: flex;
-    margin-top: 15px;
 }
 
 .N-conta {
     float: left;
-    size: 1rem;
+    font-size: 14px;
     margin-right: 5px;
     color: var(--second-bg-color);
     font-weight: normal;
@@ -98,13 +97,13 @@
 .input {
     height: 35px;
     background: transparent;
-    margin-bottom: 25px;
     padding-left: 20px;
     font-weight: bold;
+    margin-bottom: 5px;
     font-size: 13px;
     border: none;
     color: rgba(0, 0, 0, 0.671);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.64);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.445);
     outline: none;
     border-radius: 30px 0px 0px 30px;
 }
@@ -308,18 +307,19 @@ input::-webkit-input-placeholder {
     }
 
     .div-Nconta {
-        margin-top: 15px;
+        margin-top: 5px;
     }
 
     .N-conta {
-        font-size: 1.2rem;
+        font-size: 16px;
     }
 
     .abrir-logout {
-        font-size: 1.2rem;
+        font-size: 16px;
     }
 
     .input {
+        margin-bottom: 15px;
         height: 40px;
     }
 
