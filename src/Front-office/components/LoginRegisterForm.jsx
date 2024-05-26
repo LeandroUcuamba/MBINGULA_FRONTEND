@@ -1,6 +1,10 @@
 import React from 'react'
+import axios from 'axios'
 
 const LoginRegisterForm = () => {
+
+
+
     return (
         <>
             <div className="div-main">
@@ -12,8 +16,8 @@ const LoginRegisterForm = () => {
 
                             <h1>Login</h1>
 
-                            <input className="input" type="email" name="email" placeholder="Email" required="" />
-                            <input className="input" type="password" name="pswd" placeholder="Password" required="" />
+                            <input className="input" id="telSign" type="tel" name="tel" placeholder="Telefone" required="" />
+                            <input className="input" id="passwordSign" type="password" name="password" placeholder="Password" required="" />
                             
                             <button>Entrar</button>
                             
