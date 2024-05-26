@@ -16,7 +16,7 @@ function Sidebar(){
           <ul className="nav nav-pills flex-column mt-3">
             <li className={active === 1 ? 'active nav-item p-2' : "nav-item p-2"} 
               onClick={e => setActive(1)}>
-              <Link to="/" className="p-1 text-decoration-none text-white">
+              <Link to="/Back-office/App_BackOffice" className="p-1 text-decoration-none text-white">
                 <i className="bi bi-speedometer2 me-3 fs-4"></i>
                 <span className="fs-4">Dashboard</span>
               </Link>
@@ -30,7 +30,7 @@ function Sidebar(){
             </li>
             <li className={active === 3 ? 'active nav-item p-2' : "nav-item p-2"} 
               onClick={e => setActive(3)}>
-              <Link to="/Orders" className="p-1 text-decoration-none text-white">
+              <Link to="/Back-office/pages/Order" className="p-1 text-decoration-none text-white">
                 <i className="bi bi-table me-3 fs-4"></i>
                 <span className="fs-4">Orders</span>
               </Link>

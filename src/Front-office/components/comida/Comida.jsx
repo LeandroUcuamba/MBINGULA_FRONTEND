@@ -1,5 +1,6 @@
 import React from 'react'
 import Dish from '../../assets/dish.png';
+import Menu from '../Menu'
 
 import MenuServicos from '../MenuServicos';
 
@@ -7,7 +8,7 @@ const Comida = () => {
   return (
     <div>
      
-     
+     <Menu />
       <section id="servico-comida">
         <MenuServicos />
         <h3 className="comida-subtitle">Nossos pratos especiais</h3>

@@ -3,18 +3,18 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from './Front-office/pages/Home/Home.jsx';
 import Sobre from './Front-office/pages/Sobre/Sobre.jsx';
-import Menu from './Front-office/components/Menu.jsx';
 import Comida from './Front-office/components/comida/Comida.jsx';
 import Bebida from './Front-office/components/bebida/Bebidas.jsx'
 import Reserva from './Front-office/components/reserva/Reserva.jsx';
 import LoginRegisterForm from './Front-office/components/LoginRegisterForm.jsx';
+import App_BackOffice from './Back-office/App_BackOffice.jsx'
+import Order from './Back-office/pages/Order.jsx'
 
 
 function App() {
   return (
 
     <div>
-      <Menu />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/pages/Sobre/Sobre" element={<Sobre />}></Route>
@@ -22,6 +22,8 @@ function App() {
         <Route path="/components/bebida/Bebida" element={<Bebida />}></Route>
         <Route path="/components/reserva/Reserva" element={<Reserva />}></Route>
         <Route path="/Front-office/components/LoginRegisterForm" element={<LoginRegisterForm />}></Route>
+        <Route path="/Back-office/App_BackOffice" element={<App_BackOffice />}></Route>
+        <Route path="/Back-office/pages/Order" element={<Order />}></Route>
       </Routes>
 
     </div>

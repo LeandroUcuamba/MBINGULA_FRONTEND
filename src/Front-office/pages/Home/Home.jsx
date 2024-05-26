@@ -5,11 +5,13 @@ import home3 from '../../assets/hero-bg3.jpg';
 import Cardapio from '../Cardapio/Cardapio.jsx';
 import Sobre from '../Sobre/Sobre.jsx';
 import Footer from '../../components/Footer.jsx';
+import Menu from '../../components/Menu.jsx'
 
 const Home = () => {
 
     return (
         <>
+            <Menu />
             <div className='home'>
 
                 <img src={home3} alt="home" />

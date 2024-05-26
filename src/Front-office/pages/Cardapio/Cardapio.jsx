@@ -1,8 +1,11 @@
 import React from 'react'
 import Dish from '../../assets/dish.png';
+import Menu from '../../components/Menu'
+
 const Cardapio = () => {
     return (
         <div>
+            <Menu />
             <section id="menu">
                 <h2 className="section-title">Cardápio</h2>
                 <h3 className="section-subtitle">Nossos pratos especiais</h3>

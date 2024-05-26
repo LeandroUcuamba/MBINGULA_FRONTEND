@@ -1,7 +1,7 @@
-import './App_BackOffice.css';
-import Sidebar from './components/Sidebar';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
+import '../App_BackOffice.css';
+import Sidebar from '../components/Sidebar';
+import Navbar from '../components/Navbar';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { useEffect, useState } from 'react';
@@ -37,7 +37,9 @@ function App_BackOffice() {
           </div>
           <div className='col overflow-auto'>
             <Navbar Toggle={Toggle}/>
-               <Home />
+               <h1>ola</h1>
+               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae doloremque veniam provident ut exercitationem
+                 nam voluptatem! Minus enim unde eum non, ut saepe, nemo incidunt voluptatibus, aspernatur dolorem dolorum nesciunt!</p>
           </div>
         </div>
   );

@@ -1,9 +1,11 @@
 import React from 'react'
 import about from '../../assets/about-img.png'
+import Menu from '../../components/Menu'
 
 const Sobre = () => {
     return (
         <div>
+            <Menu />
             <div className="container-about  ">
                 <div className="row-about">
 
