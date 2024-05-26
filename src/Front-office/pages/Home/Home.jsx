@@ -1,4 +1,52 @@
-import React from 'react';
+import React from 'react'
+
+import home3 from '../../assets/hero-bg3.jpg';
+
+import Cardapio from '../Cardapio/Cardapio.jsx';
+import Sobre from '../Sobre/Sobre.jsx';
+import Footer from '../../components/Footer.jsx';
+
+const Home = () => {
+
+    return (
+        <>
+            <div className='home'>
+
+                <img src={home3} alt="home" />
+
+                <div className='home-content'>
+                    <h1>O sabor que vai até você</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit vel quia, sit voluptas aliquam !</p>
+                    <div className='peca-aqui'>
+                        <a href="" className="btn-content">
+                            Peça aqui!
+                        </a>
+                    </div>
+                    <div className="social-media-btn">
+                        <a href="">
+                            <i className="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="">
+                            <i className="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="">
+                            <i className="fa-brands fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <Cardapio />
+            <Sobre />
+            <Footer />
+        </>
+    )
+}
+
+export default Home
+
+
+
+/*import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -58,4 +106,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Home;*/

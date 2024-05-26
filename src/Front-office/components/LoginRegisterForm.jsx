@@ -39,7 +39,7 @@ const LoginAndRegister = () => {
                             <input className="input" type="number" name="pswd" placeholder="Telefone" required="" />
                             <input className="input" type="password" name="pswd" placeholder="Senha" required="" />
 
-                            <button>SignUp</button>
+                            <button>Registrar</button>
 
                         </form>
                     </div>

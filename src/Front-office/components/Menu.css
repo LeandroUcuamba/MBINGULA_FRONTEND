@@ -15,8 +15,8 @@
 }
 
 /* Menu */
-header {
-    position: fixed;
+.header {
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -27,12 +27,6 @@ header {
     background-color: #0D0E10;
     z-index: 100;
     transition: 1s;
-    /* border: 1px solid red; */
-}
-
-h1 {
-    text-align: center;
-    margin-top: 20%;
 }
 
 .logo {
@@ -45,7 +39,7 @@ h1 {
 }
 
 .fa-cutlery {
-    margin-left: 40px;
+    margin-left: 70px;
     font-size: 30px;
     color: var(--main-color);
     letter-spacing: 2px;
@@ -65,6 +59,7 @@ h1 {
 }
 
 .navbar ul li a {
+    background-color: transparent;
     color: whitesmoke;
     text-decoration: none;
     font-size: 1.2rem;
@@ -98,9 +93,9 @@ header .nav-btn {
     width: 100%;
 }
 
-.navbar ul li a:active::after {
+/* .navbar ul li a:active::after {
     width: 100%;
-}
+} */
 
 .navbar a:hover,
 .navbar a.active {

@@ -1,0 +1,163 @@
+:root {
+    --bg-color1: #FFFFFF;
+    --second-bg-color1: #F1F2F3;
+    --text-color1: #000000;
+    --main-color1: rgb(255, 123, 0);
+}
+
+#servico-comida {
+    padding: 0px 0px 30px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.comida-subtitle {
+    font-size: 2.5rem;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.img-box {
+    /* border: 1px solid red; */
+    width: 100%;
+    padding: 10px;
+    background: var(--second-bg-color1);
+    border-radius: 0px 0px 0px 50px;
+}
+
+.img-box img {
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#dishes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 0px;
+    /* background: purple; */
+    /* border: 1px solid red; */
+}
+
+.dish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    gap: 19px;
+    width: 20%;
+    padding-bottom: 10px;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    background: #323A3C;
+    /* border: 1px solid blue; */
+
+}
+
+.dish-title {
+    color: white;
+}
+
+.dish-heart {
+    position: absolute;
+    background-color: #323A3C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.563rem;
+    color: var(--main-color1);
+    width: 70px;
+    height: 70px;
+    right: -10px;
+    top: -10px;
+    border-radius: 0px 37.5px 0px 42.5px;
+}
+
+.dish-description {
+    color: white;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.dish-rate i {
+    color: var(--color-primary-6);
+    color: white;
+    padding: 5px;
+    /* border: 1px solid red; */
+}
+
+.dish-price {
+    display: flex;
+    color: white;
+    align-items: center;
+    gap: 2px;
+    /* border: 1px solid red; */
+}
+
+.btn-default1 {
+    margin-left: 10px;
+    padding: 5px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.89);
+    background-color: rgb(255, 145, 0);
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-default1:hover {
+    color: rgb(255, 145, 0);
+    background-color: white;
+    transition: 0.5s;
+    border: none;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    #servico-comida {
+        padding-top: 10px;
+    }
+
+    .comida-subtitle {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #dishes {
+        width: 100%;
+        padding: 0px 2%;
+    }
+
+    .dish {
+        gap: 19px;
+        width: calc(50% - 12px);
+        padding-bottom: 3%;
+    }
+
+}
+
+@media (max-width: 720px) {
+
+
+    #dishes {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 0px 3%;
+    }
+
+    .dish {
+        gap: 19px;
+        width: 100%;
+        padding-bottom: 4%;
+    }
+}

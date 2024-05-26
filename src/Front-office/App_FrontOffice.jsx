@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+/*import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App_FrontOffice.css'
 import Main from './pages/Main'
 import LoginRegisterForm from '../Front-office/components/LoginRegisterForm'
@@ -18,3 +18,4 @@ function App_FrontOffice() {
 }
 
 export default App_FrontOffice
+*/

@@ -1,0 +1,17 @@
+@import url('./Front-office/components/Menu.css');
+@import url('./Front-office/components/Footer.css');
+@import url('./Front-office/components/LoginRegisterForm.css');
+@import url('./Front-office/components/MenuServicos.css');
+@import url('./Front-office/components/bebida/Bebidas.css');
+@import url('./Front-office/components/comida/Comida.css');
+@import url('./Front-office/components/reserva/Reserva.css');
+
+@import url('./Front-office/pages/Home/Home.css');
+@import url('./Front-office/pages/Cardapio/Cardapio.css');
+@import url('./Front-office/pages/Sobre/Sobre.css');
+
+
+* {
+  padding: 0;
+  margin: 0;
+}

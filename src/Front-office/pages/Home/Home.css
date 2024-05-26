@@ -9,10 +9,11 @@
 .home-content {
     position: absolute;
     width: 50%;
-    top: 10%;
+    top: 20%;
     left: 5%;
     color: white;
     z-index: 2;
+    /* border: 1px solid green; */
 }
 
 .home-content h1 {
@@ -22,15 +23,18 @@
     font-size: 50px;
     padding: 10px;
     color: var(--main-color);
+    /* border: 1px solid red; */
 }
 
 .home-content p {
     margin-bottom: 10px;
     padding: 10px;
     text-align: left;
+    /* border: 1px solid red; */
 }
 
 .peca-aqui {
+    /* border: 1px solid blue; */
     width: 100%;
     display: flex;
     position: relative;
@@ -60,6 +64,7 @@
     width: 100%;
     justify-content: left;
     gap: 18px;
+    /* border: 1px solid red; */
 }
 
 .social-media-btn a {
@@ -81,7 +86,7 @@
     color: var(--main-color);
 }
 
-/* PONTOS DE INTERRUPÇÃO */
+/* PONTOS DE INTERRUPÃ‡ÃƒO */
 
 @media only screen and (max-width: 1200px) {
 
@@ -101,7 +106,6 @@
         left: 5%;
         color: white;
         z-index: 2;
-        margin-top: 800px;
     }
 
     .home-content h1 {
@@ -122,6 +126,7 @@
     }
 
     .peca-aqui {
+        /* border: 1px solid blue; */
         width: 100%;
         display: flex;
         position: relative;
@@ -154,9 +159,9 @@
 
     .home-content {
         position: absolute;
-        width: 100%;
+        width: 95%;
         top: 15%;
-        left: 0%;
+        left: 2%;
         color: white;
         z-index: 2;
     }
