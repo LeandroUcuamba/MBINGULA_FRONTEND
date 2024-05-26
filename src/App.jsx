@@ -7,6 +7,7 @@ import Menu from './Front-office/components/Menu.jsx';
 import Comida from './Front-office/components/comida/Comida.jsx';
 import Bebida from './Front-office/components/bebida/Bebidas.jsx'
 import Reserva from './Front-office/components/reserva/Reserva.jsx';
+import LoginRegisterForm from './Front-office/components/LoginRegisterForm.jsx';
 
 
 function App() {
@@ -20,8 +21,9 @@ function App() {
         <Route path="/components/comida/Comida" element={<Comida />}></Route>
         <Route path="/components/bebida/Bebida" element={<Bebida />}></Route>
         <Route path="/components/reserva/Reserva" element={<Reserva />}></Route>
+        <Route path="/Front-office/components/LoginRegisterForm" element={<LoginRegisterForm />}></Route>
       </Routes>
-      
+
     </div>
   )
 }

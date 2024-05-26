@@ -23,6 +23,7 @@ function Navbar() {
                         <li><NavLink to="/" >Home</NavLink></li>
                         <li><NavLink to="/components/comida/Comida">Servicos</NavLink></li>
                         <li><NavLink to="/pages/Sobre/Sobre">Sobre</NavLink></li>
+                        <li><NavLink to="/Front-office/components/LoginRegisterForm">Login</NavLink></li>
 
                         <button
                             className="nav-btn nav-close-btn"
