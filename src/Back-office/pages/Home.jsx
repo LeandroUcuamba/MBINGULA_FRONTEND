@@ -10,7 +10,7 @@ function Home() {
                         <div className='d-flex justify-content-between p-4 align-items-center bg-white border border-secondary shadow-sm'>
                             <i className='bi bi-currency-dollar fs-1 text-success'></i>
                             <div>
-                                <span>Saless</span>
+                                <span>Sales</span>
                                 <h2>234</h2>
                             </div>
                         </div>
