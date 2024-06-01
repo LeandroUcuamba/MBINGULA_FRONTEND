@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
+
+#nome-mbingula {
+    color: #FF7B00;
+    font-family: 'Dancing Script', cursive;
+}
+
+.navLink {
+    text-decoration: none;
+    color: white;
+    padding: 7px;
+}
+
+.navLink.active {
+    background-color: white;
+    border-radius: 30px 0px 0px 30px;
+    color: #FF7B00;
+}
+
+.navLink.active i {
+    color: #FF7B00;
+}
+
+#btn-logout {
+    border-radius: 10px;
+}
+
+#btn-logout:hover {
+    background-color: #191c1f;
+    color: red;
+}
+
+#btn-conta {
+    background-color: #191c1f;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+#btn-conta:hover {
+    background-color: #191c1f;
+    border: 1px solid #FF7B00;
+    color: #FF7B00;
+}

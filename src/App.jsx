@@ -9,6 +9,7 @@ import Reserva from './Front-office/components/reserva/Reserva.jsx';
 import LoginRegisterForm from './Front-office/components/LoginRegisterForm.jsx';
 import App_BackOffice from './Back-office/App_BackOffice.jsx'
 import Order from './Back-office/pages/Order.jsx'
+import User from './Back-office/pages/User.jsx'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Front-office/components/LoginRegisterForm" element={<LoginRegisterForm />}></Route>
         <Route path="/Back-office/App_BackOffice" element={<App_BackOffice />}></Route>
         <Route path="/Back-office/pages/Order" element={<Order />}></Route>
+        <Route path="/Back-office/pages/User" element={<User />}></Route>
       </Routes>
 
     </div>
