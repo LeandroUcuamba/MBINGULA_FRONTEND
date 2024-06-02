@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 function Sidebar() {
 
   return (
-    <div className="sidebar d-flex justify-content-between flex-column bg-dark text-white py-3 ps-3 vh-100">
+    <div className="sidebar d-flex justify-content-between flex-column bg-black text-white py-3 ps-3 vh-100">
       <div>
 
         <a href="" className='p-3 text-decoration-none text-white'>
@@ -55,7 +55,7 @@ function Sidebar() {
             </NavLink>
 
             <NavLink to="/" className="navLink" >
-              <button id='btn-logout' class=" p-1 d-flex btn btn-danger ">Logout</button>
+              <button id='btn-logout' class=" p-1 d-flex btn btn-danger "><i class="bi bi-box-arrow-right me-1"></i>Logout</button>
             </NavLink>
 
           </div>
