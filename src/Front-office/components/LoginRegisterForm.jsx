@@ -1,19 +1,25 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import api from '../../service/api'
 
 const LoginRegisterForm = () => {
-    const [values, setValues] = useState({
-        phone: '',
-        password: ''
-    });
+   const [name, setName] = useState("");
+   const [email, setEmail] = useState("");
+   const [phone, setPhone] = useState("");
+   const [password, setPassword] = useState("");
+   const accessName = "normal";
 
-    axios.defaults.withCredentials = true;
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post('http://localhost:3000/sign-in', values)
-          .then(res => console.log(res))
-          .then(err => console.log(err));
-    }
+   const [phoneLogin, setPhoneLogin] = useState("");
+   const [passwordLogin, setPasswordLogin] = useState("");
+
+   const handleSaveUser = async (e) => {
+      e.preventDefault();
+      const data = {
+        name, email, phone, password, accessName
+      }
+      const response = await api.post("/user", data);
+   }
+    
 
     return (
         <>
@@ -22,14 +28,14 @@ const LoginRegisterForm = () => {
                     <input type="checkbox" id="chk" aria-hidden="true" />
 
                     <div className="login">
-                        <form className="form" onSubmit={handleSubmit}>
+                        <form className="form" >
 
                             <h1>Login</h1>
 
                             <input className="input" id="telSign" type="tel" name="tel" placeholder="Telefone" required="" 
-                              onChange={e => setValues({...values, phone: e.target.values})} />
+                              />
                             <input className="input" id="passwordSign" type="password" name="password" placeholder="Password" required="" 
-                              onChange={e => setValues({...values, password: e.target.value})} />
+                              />
                             
                             <button>Entrar</button>
                             
@@ -42,7 +48,7 @@ const LoginRegisterForm = () => {
                     </div>
 
                     <div className="register">
-                        <form className="form1">
+                        <form className="form1" onSubmit={handleSaveUser}>
 
                             <div className='fechar-registrar'>
                                 <label className='fechar-registrar1' htmlFor="chk" aria-hidden="true"><i className='bx bx-x bx-tada'></i></label>
@@ -50,12 +56,16 @@ const LoginRegisterForm = () => {
 
                             <h1>SignUp</h1>
 
-                            <input className="input" type="text" name="txt" placeholder="Nome" required />
-                            <input className="input" type="email" name="email" placeholder="Email" required />
-                            <input className="input" type="number" name="pswd" placeholder="Telefone" required />
-                            <input className="input" type="password" name="pswd" placeholder="Senha" required />
+                            <input className="input" type="text" name="txt" placeholder="Nome" required 
+                              onChange={(e) => setName(e.target.value)} />
+                            <input className="input" type="email" name="email" placeholder="Email" required 
+                              onChange={(e) => setEmail(e.target.value)} />
+                            <input className="input" type="number" name="pswd" placeholder="Telefone" required 
+                              onChange={(e) => setPhone(e.target.value)} />
+                            <input className="input" type="password" name="pswd" placeholder="Senha" required 
+                              onChange={(e) => setPassword(e.target.value)} />
 
-                            <button>Registrar</button>
+                            <button type='submit'>Registrar</button>
 
                         </form>
                     </div>
