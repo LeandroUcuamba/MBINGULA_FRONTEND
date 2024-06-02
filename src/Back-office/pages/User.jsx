@@ -1,17 +1,48 @@
-import react from 'react'
+import '../App_BackOffice.css';
+import Sidebar from '../components/Sidebar';
+import Navbar from '../components/Navbar';
 
-function User(){
-    return(
-       <>
-          <div className='p-5'>
-             <div className='p-1'>
-               <table className='table caption-top bg-white rounded mt-2'>
-                  <p>user</p>
-               </table>
-             </div>
-          </div>
-       </>  
-    )
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { useEffect, useState } from 'react';
+
+function App_BackOffice() {
+   const [toggle, setToggle] = useState(false);
+   function Toggle() {
+      setToggle(!toggle);
+   }
+
+   useEffect(() => {
+      const handleSize = () => {
+         if (window.innerWidth > 768) {
+            setToggle(false);
+         }
+
+         window.addEventListener('resize', handleSize);
+
+         return () => {
+            window.addEventListener('resize', handleSize);
+         }
+      }
+   }, [])
+
+   return (
+
+      <div className="d-flex">
+         <div className={toggle ? "d-none" : "w-auto position-fixed"}>
+            <Sidebar />
+         </div>
+         <div className={toggle ? "d-none" : "invisible"}>
+            <Sidebar />
+         </div>
+         <div className='col overflow-auto'>
+            <Navbar Toggle={Toggle} />
+            <h1>User</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae doloremque veniam provident ut exercitationem
+               nam voluptatem! Minus enim unde eum non, ut saepe, nemo incidunt voluptatibus, aspernatur dolorem dolorum nesciunt!</p>
+         </div>
+      </div>
+   );
 }
 
-export default User
+export default App_BackOffice
