@@ -1,5 +1,6 @@
 import './App.css'
 import { Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext.jsx";
 
 import Home from './Front-office/pages/Home/Home.jsx';
 import Sobre from './Front-office/pages/Sobre/Sobre.jsx';
@@ -16,18 +17,19 @@ function App() {
   return (
 
     <div>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/pages/Sobre/Sobre" element={<Sobre />}></Route>
-        <Route path="/components/comida/Comida" element={<Comida />}></Route>
-        <Route path="/components/bebida/Bebida" element={<Bebida />}></Route>
-        <Route path="/components/reserva/Reserva" element={<Reserva />}></Route>
-        <Route path="/Front-office/components/LoginRegisterForm" element={<LoginRegisterForm />}></Route>
-        <Route path="/Back-office/App_BackOffice" element={<App_BackOffice />}></Route>
-        <Route path="/Back-office/pages/Order" element={<Order />}></Route>
-        <Route path="/Back-office/pages/User" element={<User />}></Route>
-      </Routes>
-
+      <AuthProvider>
+        <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/pages/Sobre/Sobre" element={<Sobre />}></Route>
+            <Route path="/components/comida/Comida" element={<Comida />}></Route>
+            <Route path="/components/bebida/Bebida" element={<Bebida />}></Route>
+            <Route path="/components/reserva/Reserva" element={<Reserva />}></Route>
+            <Route path="/Front-office/components/LoginRegisterForm" element={<LoginRegisterForm />}></Route>
+            <Route path="/Back-office/App_BackOffice" element={<App_BackOffice />}></Route>
+            <Route path="/Back-office/pages/Order" element={<Order />}></Route>
+            <Route path="/Back-office/pages/User" element={<User />}></Route>
+        </Routes>
+      </AuthProvider>
     </div>
   )
 }
