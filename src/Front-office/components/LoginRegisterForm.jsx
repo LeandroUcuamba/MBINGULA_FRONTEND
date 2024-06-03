@@ -10,8 +10,6 @@ const LoginRegisterForm = () => {
    const [password, setPassword] = useState("");
    const accessName = "normal";
 
-   //const [phone, setPhoneLogin] = useState("");
-   //const [password, setPasswordLogin] = useState("");
    const { signIn, signed } = useContext(AuthContext);
 
    const handleSaveUser = async (e) => {

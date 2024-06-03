@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const singOut = () => {
+  const signOut = () => {
     localStorage.clear();
     setUser(null);
     return <Navigate to="/" />;
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
       value={{
         user,
         signIn,
-        singOut,
+        signOut,
         signed: !!user,
       }}
     >
