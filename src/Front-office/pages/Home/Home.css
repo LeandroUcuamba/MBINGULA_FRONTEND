@@ -102,7 +102,6 @@
     .home-content {
         position: absolute;
         width: 50%;
-        top: 15%;
         left: 5%;
         color: white;
         z-index: 2;
