@@ -43,7 +43,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
-    margin-top: 32px;
+    margin: 32px 0px 32px 0px;
 }
 
 .dish {
