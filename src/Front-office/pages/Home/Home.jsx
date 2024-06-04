@@ -19,11 +19,9 @@ const Home = () => {
                 <div className='home-content'>
                     <h1>O sabor que vai até você</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit vel quia, sit voluptas aliquam !</p>
-                    <div className='peca-aqui'>
-                        <a href="" className="btn-content">
-                            Peça aqui!
-                        </a>
-                    </div>
+                    
+                    <a class="peca-aqui"><span>Peça aqui!</span></a>
+
                     <div className="social-media-btn">
                         <a href="">
                             <i className="fa-brands fa-whatsapp"></i>
