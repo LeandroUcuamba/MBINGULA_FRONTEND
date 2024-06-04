@@ -6,6 +6,7 @@ import Cardapio from '../Cardapio/Cardapio.jsx';
 import Sobre from '../Sobre/Sobre.jsx';
 import Footer from '../../components/Footer.jsx';
 import Menu from '../../components/Menu.jsx'
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
 
@@ -19,11 +20,11 @@ const Home = () => {
                 <div className='home-content'>
                     <h1>O sabor que vai até você</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit vel quia, sit voluptas aliquam !</p>
-                    <div className='peca-aqui'>
-                        <a href="" className="btn-content">
-                            Peça aqui!
-                        </a>
-                    </div>
+
+
+                    <NavLink to="/components/comida/Comida" className="peca-aqui"><span>Peça aqui!</span>
+                    </NavLink>
+
                     <div className="social-media-btn">
                         <a href="">
                             <i className="fa-brands fa-whatsapp"></i>
