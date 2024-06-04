@@ -25,7 +25,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #0D0E10;
+    /* background-color: #0D0E10; */
+    background-color: #0d0e10;
     z-index: 100;
     transition: 1s;
 }
@@ -80,7 +81,7 @@ header .nav-btn {
     font-size: 1.8rem;
 }
 
-.navbar ul li a::after {
+/* .navbar ul li a::after {
     content: '';
     width: 0;
     height: 3px;
@@ -89,21 +90,48 @@ header .nav-btn {
     left: 0;
     bottom: -6px;
     transition: 0.5s;
-}
+} */
 
-.navbar ul li a:hover::after {
-    width: 100%;
-}
-
-/* .navbar ul li a:active::after {
+/* .navbar ul li a:hover::after {
     width: 100%;
 } */
+
+/* .navbar ul li a.active::after {
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 1px 2px 5px 0px rgb(230, 103, 0);
+} */
+
+.navbar ul li a.active::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: rgb(255, 207, 168);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+    border-radius: 30px;
+    box-shadow: 1px 2px 5px 1px rgb(230, 103, 0);
+    animation: moving 5s ease-in-out infinite;
+}
+
+@keyframes moving {
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+        right: 0;
+        left: unset;
+    }
+}
 
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
 }
-
 
 /* PONTOS DE INTERRUPÇÃO */
 
