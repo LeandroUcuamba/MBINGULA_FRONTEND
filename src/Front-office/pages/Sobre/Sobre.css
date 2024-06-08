@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
 
-:root {
-    --bg-color2: #FFFFFF;
-    --second-bg-color2: #323A3C;
-    --text-color2: #000000;
-    --main-color2: rgb(255, 123, 0);
-}
-
 .container-about {
     background: #222831;
     justify-content: center;
@@ -50,30 +43,68 @@
 .heading_about h2 {
     font-family: 'Dancing Script', cursive;
     margin-bottom: 20px;
-    color: var(--main-color2);
+    color: var(--main-color);
     font-size: 40px;
 }
 
-.btn-about {
-    margin-top: 20px;
-}
-
-.btn-content-about {
-    margin-top: 40px;
-    padding: 10px;
+.leia-mais {
+    display: block;
+    cursor: pointer;
+    margin-left: 5px;
+    width: 25%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.89);
-    border: none;
-    background-color: rgb(255, 145, 0);
-    border-radius: 30px;
-    font-size: 20px;
+    border-radius: 100px;
+    overflow: hidden;
+    padding: 2px;
+    isolation: isolate;
 }
 
-.btn-content-about:hover {
-    color: rgb(255, 145, 0);
-    background-color: white;
-    transition: 0.5s;
-    border: none;
+.leia-mais::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 100%;
+    background: linear-gradient(115deg, #d1d1d1, #F2C771, #a7bfde);
+    background-size: 25% 100%;
+    animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop 0.75s linear infinite;
+    animation-play-state: running;
+    translate: -5% 0%;
+    transition: translate 0.25s ease-out;
+}
+
+.leia-mais:hover::before {
+    animation-play-state: running;
+    transition-duration: 0.75s;
+    translate: 0% 0%;
+}
+
+@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
+    to {
+        transform: translateX(-25%);
+    }
+}
+
+.leia-mais span {
+    position: relative;
+    display: block;
+    padding: .4rem;
+    font-size: 1.1rem;
+    background: #150F03;
+    border-radius: 100px;
+    height: 100%;
+    transition: .5s;
+}
+
+.leia-mais span:hover {
+    color: #F2C771;
+    transition: .5s;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -114,6 +145,15 @@
         width: 100%;
     }
 
+    .leia-mais {
+        width: 20%;
+    }
+
+    .leia-mais span {
+        padding: .5rem 1.5rem;
+        font-size: 1.2rem;
+    }
+
 }
 
 
@@ -122,7 +162,7 @@
     .container-about {
         color: #ffffff;
         margin-top: 0px;
-        padding-top: 50px;
+        padding-top: 60px;
         height: 100vh;
         flex-direction: column-reverse;
     }
@@ -155,5 +195,14 @@
 
     .detail-box-about {
         width: 100%;
+    }
+
+    .leia-mais {
+        width: 45%;
+    }
+
+    .leia-mais span {
+        padding: .4rem 1.5rem;
+        font-size: 1.2rem;
     }
 }
