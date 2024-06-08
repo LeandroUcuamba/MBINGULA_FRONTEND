@@ -53,6 +53,7 @@ const Home = () => {
             </div>
             <Cardapio />
             <Sobre />
+            <Cardapio />
             <Footer />
         </>
     )
