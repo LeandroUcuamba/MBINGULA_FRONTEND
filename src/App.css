@@ -10,6 +10,15 @@
 @import url('./Front-office/pages/Cardapio/Cardapio.css');
 @import url('./Front-office/pages/Sobre/Sobre.css');
 
+:root {
+  --bg-color: #FFFFFF;
+  --second-bg-color1: #F1F2F3;
+  --second-bg-color: #323A3C;
+  --text-color: #000000;
+  --second-color: #150F03;
+  --main-color: #F2C771;
+  --main-color2: #FF7B00;
+}
 
 * {
   padding: 0;

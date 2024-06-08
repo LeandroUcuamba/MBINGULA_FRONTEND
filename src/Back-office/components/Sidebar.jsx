@@ -14,7 +14,7 @@ function Sidebar() {
 
         <a href="" className='p-3 text-decoration-none text-white'>
           {/* <i className="bi bi-code-slash fs-4 me-4"></i> */}
-          <i className="fa fa-cutlery m-1"></i>
+          <i id='logo-B' className=" fa fa-cutlery m-1"></i>
           <span id='nome-mbingula' className="fs-3 m-1 me-5"><strong>Mbingula</strong></span>
         </a>
 

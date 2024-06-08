@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { FaWhatsapp, FaFacebook, FaInstagram } from 'react-icons/fa';
 import home3 from '../../assets/hero-bg3.jpg';
 
 import Cardapio from '../Cardapio/Cardapio.jsx';
@@ -8,8 +8,13 @@ import Footer from '../../components/Footer.jsx';
 import Menu from '../../components/Menu.jsx'
 import { NavLink } from "react-router-dom";
 
-const Home = () => {
+const socialNetworks = [
+    { name: "whatsapp", icon: <FaWhatsapp /> },
+    { name: "facebook", icon: <FaFacebook /> },
+    { name: "instagram", icon: <FaInstagram /> }
+]
 
+const Home = () => {
     return (
         <>
             <Menu />
@@ -26,15 +31,23 @@ const Home = () => {
                     </NavLink>
 
                     <div className="social-media-btn">
-                        <a href="">
-                            <i className="fa-brands fa-whatsapp"></i>
+                        {/* <a href="">
+                            <FaWhatsapp />
                         </a>
                         <a href="">
-                            <i className="fa-brands fa-instagram"></i>
+                            <FaInstagram />
                         </a>
                         <a href="">
-                            <i className="fa-brands fa-facebook"></i>
-                        </a>
+                            <FaFacebook />
+                        </a> */}
+                        {socialNetworks.map((network) => (
+                            <a href="#"
+                                className='social-btn'
+                                id={network.name}
+                                key={network.name}>
+                                {network.icon}
+                            </a>
+                        ))}
                     </div>
                 </div>
             </div>

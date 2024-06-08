@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
 
-:root {
-    --bg-color2: #FFFFFF;
-    --second-bg-color2: #323A3C;
-    --text-color2: #000000;
-    --main-color2: rgb(255, 123, 0);
-}
-
 .container-about {
     background: #222831;
     justify-content: center;
@@ -50,14 +43,14 @@
 .heading_about h2 {
     font-family: 'Dancing Script', cursive;
     margin-bottom: 20px;
-    color: var(--main-color2);
+    color: var(--main-color);
     font-size: 40px;
 }
 
 .leia-mais {
     display: block;
     cursor: pointer;
-    margin-left: 0px;
+    margin-left: 5px;
     width: 25%;
     text-align: center;
     justify-content: center;
@@ -67,7 +60,7 @@
     text-decoration: none;
     border-radius: 100px;
     overflow: hidden;
-    padding: 3px;
+    padding: 2px;
     isolation: isolate;
 }
 
@@ -78,7 +71,7 @@
     left: 0;
     width: 400%;
     height: 100%;
-    background: linear-gradient(115deg, #d1d1d1, #ffb752, #a7bfde);
+    background: linear-gradient(115deg, #d1d1d1, #F2C771, #a7bfde);
     background-size: 25% 100%;
     animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop 0.75s linear infinite;
     animation-play-state: running;
@@ -103,9 +96,15 @@
     display: block;
     padding: .4rem;
     font-size: 1.1rem;
-    background: var(--main-color);
+    background: #150F03;
     border-radius: 100px;
     height: 100%;
+    transition: .5s;
+}
+
+.leia-mais span:hover {
+    color: #F2C771;
+    transition: .5s;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -147,11 +146,11 @@
     }
 
     .leia-mais {
-        width: 40%;
+        width: 20%;
     }
 
     .leia-mais span {
-        padding: .4rem 1.5rem;
+        padding: .5rem 1.5rem;
         font-size: 1.2rem;
     }
 
@@ -163,7 +162,7 @@
     .container-about {
         color: #ffffff;
         margin-top: 0px;
-        padding-top: 50px;
+        padding-top: 60px;
         height: 100vh;
         flex-direction: column-reverse;
     }
@@ -199,7 +198,7 @@
     }
 
     .leia-mais {
-        width: 40%;
+        width: 45%;
     }
 
     .leia-mais span {
