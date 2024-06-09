@@ -4,6 +4,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { Navigate } from 'react-router-dom';
 
 const LoginRegisterForm = () => {
+
    const [name, setName] = useState("");
    const [email, setEmail] = useState("");
    const [phone, setPhone] = useState("");
@@ -36,7 +37,7 @@ const LoginRegisterForm = () => {
     {
 
       return (
-          <>
+          <div id='login-register'>
               <div className="div-main">
                   <div className="main1">
                       <input type="checkbox" id="chk" aria-hidden="true" />
@@ -46,9 +47,9 @@ const LoginRegisterForm = () => {
 
                               <h1>Login</h1>
 
-                              <input className="input" id="telSign" type="tel" name="tel" placeholder="Telefone" required="" 
+                              <input className="input" id="telSign" type="tel" name="tel" placeholder="Telefone" required="" autoComplete='off' 
                                 onChange={(e) => setPhone(e.target.value)} />
-                              <input className="input" id="passwordSign" type="password" name="password" placeholder="Password" required="" 
+                              <input className="input" id="passwordSign" type="password" name="password" placeholder="Password" required="" autoComplete='off' 
                                 onChange={(e) => setPassword(e.target.value)} />
                               
                               <button type='submit'>Entrar</button>
@@ -70,13 +71,13 @@ const LoginRegisterForm = () => {
 
                               <h1>SignUp</h1>
 
-                              <input className="input" type="text" name="txt" placeholder="Nome" required 
+                              <input className="input" type="text" name="txt" placeholder="Nome" required="" autoComplete='off'
                                 onChange={(e) => setName(e.target.value)} />
-                              <input className="input" type="email" name="email" placeholder="Email" required 
+                              <input className="input" type="email" name="email" placeholder="Email" required="" autoComplete='off'
                                 onChange={(e) => setEmail(e.target.value)} />
-                              <input className="input" type="number" name="pswd" placeholder="Telefone" required 
+                              <input className="input" type="number" name="pswd" placeholder="Telefone" required="" autoComplete='off'
                                 onChange={(e) => setPhone(e.target.value)} />
-                              <input className="input" type="password" name="pswd" placeholder="Senha" required 
+                              <input className="input" type="password" name="pswd" placeholder="Senha" required="" autoComplete='off'
                                 onChange={(e) => setPassword(e.target.value)} />
 
                               <button type='submit'>Registrar</button>
@@ -85,7 +86,7 @@ const LoginRegisterForm = () => {
                       </div>
                   </div>
               </div>
-          </>
+          </div>
       )
     }
 }
