@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
+@import url();
+
+
 
 #login-register {
     background-color: transparent;
@@ -23,8 +26,7 @@
     overflow: hidden;
     border-radius: 10px;
     background: linear-gradient(0deg, rgb(30, 14, 0), #0D0E10);
-    box-shadow: 20px 20px 60px #888888,
-        -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px #888888, -20px -20px 60px #ffffff;
 }
 
 .form {
@@ -174,7 +176,7 @@ input::-webkit-input-placeholder {
 }
 
 .form1 button {
-    width: 100%;
+    width: 85%;
     height: 35px;
     margin: 4px auto 0%;
     color: var(--main-color);
