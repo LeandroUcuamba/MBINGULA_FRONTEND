@@ -2,7 +2,7 @@ import React from 'react'
 
 const LoginRegisterForm = () => {
     return (
-        <>
+        <div id='login-register'>
             <div className="div-main">
                 <div className="main1">
                     <input type="checkbox" id="chk" aria-hidden="true" />
@@ -12,8 +12,8 @@ const LoginRegisterForm = () => {
 
                             <h1>Login</h1>
 
-                            <input className="input" type="email" name="email" placeholder="Email" required="" />
-                            <input className="input" type="password" name="pswd" placeholder="Password" required="" />
+                            <input className="input" type="email" name="email" placeholder="Email" required="" autoComplete='off' />
+                            <input className="input" type="password" name="pswd" placeholder="Password" required="" autoComplete='off' />
                             
                             <button>Entrar</button>
                             
@@ -34,10 +34,10 @@ const LoginRegisterForm = () => {
 
                             <h1>SignUp</h1>
 
-                            <input className="input" type="text" name="txt" placeholder="Nome" required="" />
-                            <input className="input" type="email" name="email" placeholder="Email" required="" />
-                            <input className="input" type="number" name="pswd" placeholder="Telefone" required="" />
-                            <input className="input" type="password" name="pswd" placeholder="Senha" required="" />
+                            <input className="input" type="text" name="txt" placeholder="Nome" required="" autoComplete='off' />
+                            <input className="input" type="email" name="email" placeholder="Email" required="" autoComplete='off' />
+                            <input className="input" type="number" name="pswd" placeholder="Telefone" required="" autoComplete='off' />
+                            <input className="input" type="password" name="pswd" placeholder="Senha" required="" autoComplete='off' />
 
                             <button>Registrar</button>
 
@@ -45,7 +45,7 @@ const LoginRegisterForm = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
