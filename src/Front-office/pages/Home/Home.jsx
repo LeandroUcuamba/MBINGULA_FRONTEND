@@ -1,5 +1,10 @@
 import React from 'react'
 import { FaWhatsapp, FaFacebook, FaInstagram } from 'react-icons/fa';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import home1 from '../../assets/hero-bg1.jpg';
+import home2 from '../../assets/hero-bg2.jpg';
 import home3 from '../../assets/hero-bg3.jpg';
 
 import Cardapio from '../Cardapio/Cardapio.jsx';
@@ -15,12 +20,31 @@ const socialNetworks = [
 ]
 
 const Home = () => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 1600,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000
+    };
+
     return (
         <>
             <Menu />
             <div className='home'>
-
-                <img src={home3} alt="home" />
+                    <Slider {...settings}>
+                        <div className='home'>
+                            <img src={home1} alt="home" />
+                        </div>
+                        <div className='home'>
+                            <img src={home2} alt="home" />
+                        </div>
+                        <div className='home'>
+                            <img src={home3} alt="home" />
+                        </div>
+                    </Slider>
 
                 <div className='home-content'>
                     <h1>O sabor que vai até você</h1>
@@ -31,15 +55,7 @@ const Home = () => {
                     </NavLink>
 
                     <div className="social-media-btn">
-                        {/* <a href="">
-                            <FaWhatsapp />
-                        </a>
-                        <a href="">
-                            <FaInstagram />
-                        </a>
-                        <a href="">
-                            <FaFacebook />
-                        </a> */}
+                        {}
                         {socialNetworks.map((network) => (
                             <a href="#"
                                 className='social-btn'

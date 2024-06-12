@@ -45,6 +45,7 @@ const LoginRegisterForm = () => {
         await api.post("/user", data);
         setRegistrationSuccess(true);
         setAlertText("Criado com sucesso!");
+        location.reload();
       } catch (error) {
         console.error("Erro ao criar usuário:", error);
       }
