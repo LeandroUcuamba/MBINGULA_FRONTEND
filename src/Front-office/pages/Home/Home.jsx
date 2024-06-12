@@ -21,7 +21,7 @@ const socialNetworks = [
 
 const Home = () => {
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 1600,
         slidesToShow: 1,
