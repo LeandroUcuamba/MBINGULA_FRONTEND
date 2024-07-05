@@ -48,7 +48,7 @@ const Home = () => {
 
                 <div className='home-content'>
                     <h1>O sabor que vai até você</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit vel quia, sit voluptas aliquam !</p>
+                    <p>O restaurante mais proximo dos seus desejos, venha e prove !</p>
 
 
                     <NavLink to="/components/comida/Comida" className="peca-aqui"><span>Peça aqui!</span>
