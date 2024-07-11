@@ -34,18 +34,19 @@ const Home = () => {
         <>
             <Menu />
             <div className='home'>
-                    <Slider {...settings}>
+                
+                    <Slider className='home-img' {...settings}>
                         <div className='home'>
                             <img src={home1} alt="home" />
                         </div>
                         <div className='home'>
-                            <img src={home2} alt="home" />
+                            <img src={home1} alt="home" />
                         </div>
                         <div className='home'>
-                            <img src={home3} alt="home" />
+                            <img src={home1} alt="home" />
                         </div>
                     </Slider>
-
+              
                 <div className='home-content'>
                     <h1>O sabor que vai até você</h1>
                     <p>O restaurante mais proximo dos seus desejos, venha e prove !</p>
@@ -55,7 +56,7 @@ const Home = () => {
                     </NavLink>
 
                     <div className="social-media-btn">
-                        {}
+                        { }
                         {socialNetworks.map((network) => (
                             <a href="#"
                                 className='social-btn'
