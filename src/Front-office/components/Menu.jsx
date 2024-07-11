@@ -1,6 +1,11 @@
 import { useRef, useContext } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { NavLink, Link } from "react-router-dom";
+import { RiRestaurant2Fill } from "react-icons/ri";
+import { IoHome } from "react-icons/io5";
+import { MdRoomService } from "react-icons/md";
+import { MdRoundaboutRight } from "react-icons/md";
+import { BiLogIn } from "react-icons/bi";
 
 import { AuthContext } from '../../context/AuthContext';
 
@@ -16,21 +21,22 @@ function Navbar() {
         return (
           <header className="header">
             <Link to="/" className="logo">
-              <i className="fa fa-cutlery"></i>
+              {/* <i className="fa fa-cutlery"></i> */}
+              <RiRestaurant2Fill className="fa-cutlery"/>
               Restaurant Mbingula
             </Link>
 
             <div className="navbar">
               <nav ref={navRef}>
                 <ul>
-                  <li><NavLink to="/">Home</NavLink></li>
-                  <li><NavLink to="/components/comida/Comida">Servicos</NavLink></li>
-                  <li><NavLink to="/pages/Sobre/Sobre">Sobre</NavLink></li>
+                  <li><NavLink to="/"><IoHome className="home-menu" /> Home</NavLink></li>
+                  <li><NavLink to="/components/comida/Comida"> <MdRoomService className="home-menu" /> Servicos</NavLink></li>
+                  <li><NavLink to="/pages/Sobre/Sobre"> <MdRoundaboutRight className="home-menu" /> Sobre</NavLink></li>
                   <li>
                         {signed ? (
                             <NavLink to="/" onClick={signOut}>Sair</NavLink>
                         ) : (
-                            <NavLink to="/Front-office/components/LoginRegisterForm">Entrar</NavLink>
+                        <NavLink to="/Front-office/components/LoginRegisterForm"> <BiLogIn className="home-menu" /> Entrar</NavLink>
                         )}
                   </li>
                   <li><NavLink to="/Back-office/App_BackOffice">Admin</NavLink></li>

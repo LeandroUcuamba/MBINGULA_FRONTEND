@@ -30,12 +30,20 @@
     text-decoration: none;
     color: var(--main-color);
     position: relative;
+    display: flex;
     margin-left: 3px;
 }
 
 .fa-cutlery {
     margin-left: 70px;
-    font-size: 30px;
+    font-size: 40px;
+    color: var(--main-color);
+    letter-spacing: 2px;
+}
+
+.home-menu {
+    margin-bottom: 8%;
+    font-size: 20px;
     color: var(--main-color);
     letter-spacing: 2px;
 }
@@ -75,8 +83,8 @@ header .nav-btn {
 }
 
 .navbar ul li a.active::after {
-    content: '';
-    width: 100%;
+    /* content: ''; */
+    width: 30%;
     height: 2px;
     background-color: rgb(255, 207, 168);
     position: absolute;
@@ -90,6 +98,7 @@ header .nav-btn {
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
+
 }
 
 /* PONTOS DE INTERRUPÇÃO */
