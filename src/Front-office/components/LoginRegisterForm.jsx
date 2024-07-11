@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import api from '../../service/api'
 import { AuthContext } from '../../context/AuthContext';
 import { Navigate } from 'react-router-dom';
@@ -10,26 +10,66 @@ const LoginRegisterForm = () => {
    const [phone, setPhone] = useState("");
    const [password, setPassword] = useState("");
    const accessName = "normal";
+   
+   const [registrationSuccess, setRegistrationSuccess] = useState(false);
+   const [alertText, setAlertText] = useState("");
+   const [errorText, setErrorText] = useState("");
 
    const { signIn, signed } = useContext(AuthContext);
 
    const handleSaveUser = async (e) => {
+
+      if (!name || !email || !phone || !password) {
+        setErrorText("Todos os campos são obrigatórios.");
+        setTimeout(() => setErrorText(""), 10000);
+        return;
+      }
+
+      if (!email.includes("@")) {
+        setErrorText("Este email não é valido.");
+        setTimeout(() => setErrorText(""), 10000);
+        return;
+      }
+
+      if (!phone.startsWith("9") || phone.length !== 9) {
+        setErrorText("O telefone deve começar com '9' e ter apenas 9 dígitos.");
+        setTimeout(() => setErrorText(""), 10000);
+        return;
+      }
+
       e.preventDefault();
       const data = {
         name, email, phone, password, accessName
       }
-      await api.post("/user", data);
+      try {
+        await api.post("/user", data);
+        setRegistrationSuccess(true);
+        setAlertText("Criado com sucesso!");
+        location.reload();
+      } catch (error) {
+        console.error("Erro ao criar usuário:", error);
+      }
    }
 
-   const handleSignIn = async (e) => {
-        e.preventDefault();
-        const data = {
-          phone,
-          password
-        }
+   useEffect(() => {
+     let timer;
+     if (registrationSuccess) {
+       timer = setTimeout(() => {
+         setRegistrationSuccess(false);
+         setAlertText("");
+       }, 4000);
+     }
+     return () => clearTimeout(timer);
+   }, [registrationSuccess]);
 
-        await signIn(data);
-    }
+   const handleSignIn = async (e) => {
+     e.preventDefault();
+     const data = {
+       phone,
+       password,
+     };
+     await signIn(data);
+   };
     
     if(signed){
       return <Navigate to="/" />
@@ -81,6 +121,16 @@ const LoginRegisterForm = () => {
                                 onChange={(e) => setPassword(e.target.value)} />
 
                               <button type='submit'>Registrar</button>
+                              {registrationSuccess && (
+                                  <div className="alert alert-success" role="alert">
+                                      {alertText}
+                                  </div>
+                              )}
+                              {errorText && (
+                                <div className="alert alert-danger" role="alert">
+                                    {errorText}
+                                </div>
+                              )}
 
                           </form>
                       </div>
