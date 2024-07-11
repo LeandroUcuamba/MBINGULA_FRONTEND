@@ -9,11 +9,6 @@ const MenuServicos = () => {
         <li><NavLink to="/components/comida/Comida" >Comida</NavLink></li>
         <li><NavLink to="/components/bebida/Bebida" >Bebida</NavLink></li>
         <li><NavLink to="/components/reserva/Reserva" >Reserva</NavLink></li>
-        {/* <li><NavLink to="/pages/Servicos/Servicos">Bebida</NavLink></li>
-        <li><NavLink to="/pages/Sobre/Sobre">Reserva</NavLink></li> */}
-        {/* <li className='active'>Comida</li>
-              <li>Bebida</li>
-              <li>Reserva</li> */}
       </ul>
     </div>
   )

@@ -61,7 +61,7 @@
 
 .dish-heart {
     position: absolute;
-    background-color: #323A3C;
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -14,11 +14,13 @@ const Sobre = () => {
                     </div>
 
                     <div className="detail-box-about">
-                        <div className="heading_about">
-                            <h2>
+                        <div >
+                            <h2 className="heading_about">
                                Sobre Nós
                             </h2>
+                            
                         </div>
+
                         <p>
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto delectus nobis aliquam necessitatibus, nemo quae dicta doloribus obcaecati aspernatur consequatur, quaerat reprehenderit ducimus perspiciatis a iure enim at veniam eveniet!
                         </p>

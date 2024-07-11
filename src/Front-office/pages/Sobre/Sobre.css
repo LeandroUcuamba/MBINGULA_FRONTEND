@@ -3,11 +3,10 @@
 .container-about {
     background: #0D0E10;
     justify-content: center;
-    /* align-items: center; */
     display: flex;
     color: #ffffff;
-    padding: 0;
-    height: 100vh;
+    width: 100%;
+    height: 100dvh;
     margin: 0px;
 }
 
@@ -15,14 +14,15 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
 }
 
 .img-box-about {
     width: 40%;
     background: transparent;
     padding: 0px 2%;
-    height: 100vh;
+    height: 100dvh;
 }
 
 .img-box-about img {
@@ -32,17 +32,16 @@
 }
 
 .detail-box-about {
-    padding: 11% 2%;
+    padding: 11% 1%;
     text-align: left;
-    height: 100vh;
+    height: 100dvh;
     line-height: 20px;
     justify-content: center;
     width: 40%;
 }
 
-.heading_about h2 {
+.heading_about {
     font-family: 'Dancing Script', cursive;
-    margin-bottom: 20px;
     color: var(--main-color);
     font-size: 40px;
 }
@@ -50,7 +49,6 @@
 .leia-mais {
     display: block;
     cursor: pointer;
-    margin-left: 5px;
     width: 25%;
     text-align: center;
     justify-content: center;
@@ -161,19 +159,22 @@
 @media (max-width: 720px) {
     .container-about {
         color: #ffffff;
-        margin-top: 0px;
-        padding-top: 60px;
-        height: 100vh;
+        margin: 0px;
+        height: 100dvh;
         flex-direction: column-reverse;
     }
 
     .detail-box-about {
-        padding: 10% 2%;
+        padding: 0% 2%;
         text-align: left;
         height: auto;
         line-height: 20px;
         justify-content: center;
         flex-direction: column-reverse;
+    }
+
+    .heading_about h2 {
+        margin-top: 15%;
     }
 
     .row-about {
