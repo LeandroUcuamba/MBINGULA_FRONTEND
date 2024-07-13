@@ -30,7 +30,7 @@ function Navbar() {
         <nav ref={navRef}>
           <ul>
 
-            <li><NavLink to="/"><IoHome className="icones-menu icon-active" /> Home</NavLink></li>
+            <li><NavLink to="/"><IoHome className="icones-menu" /> Home</NavLink></li>
             
             <li><NavLink to="/components/comida/Comida"> <MdRoomService className="icones-menu" /> Serviços</NavLink></li>
 
