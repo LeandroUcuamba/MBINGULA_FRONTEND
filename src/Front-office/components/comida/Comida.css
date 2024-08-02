@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
+
 .box-main {
     /* perspective: 400px; */
     display: flex;
@@ -35,40 +37,47 @@
 }
 
 
-
+/* ############################################################### */
 
 #servico-comida {
-    padding: 130px 0px 30px 0px;
+    padding: 0px 0px 0px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100dvh;
-    border: 2px solid purple;
+    padding-top: 8%;
+    height: 100%;
+    /* border: 2px solid purple; */
     /* overflow: hidden; */
 }
 
 .comida-subtitle {
     font-size: 2.5rem;
     padding-top: 0px;
-    margin-top: 10px;
+    margin: 5px 0px 20px 0px;
 }
 
 .img-box-comida {
     /* border: 1px solid red; */
     width: 100%;
-    padding: 10px;
+    height: 55%;
+    margin-bottom: 2%;
+    /* padding: 10px; */
+    display: flex;
+    justify-content: center;
     background: var(--second-bg-color1);
-    border-radius: 0px 0px 0px 30px;
+    border-radius: 10px 10px 0px 30px;
     /* transform:rotate3d(0,2,10, 60deg);   */
     /* transform:translateX(100px);   */
 }
 
 .img-box-comida img {
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
     justify-content: center;
     align-items: center;
+    border-radius: 10px 10px 0px 20px;
+    /* border: 2px solid yellow; */
 }
 
 #container-comida {
@@ -79,7 +88,7 @@
     gap: 24px;
     margin-top: 0px;
     /* background: purple; */
-    border: 1px solid red;
+    /* border: 2px solid rgb(0, 162, 255); */
 }
 
 .card-comida {
@@ -87,33 +96,21 @@
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
-    gap: 19px;
-    width: 25%;
-    padding-bottom: 10px;
-    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+    width: 20%;
+    height: 100%;
+    padding-bottom: 20px;
+    box-shadow: 0px 5px 10px 0px rgb(94, 94, 94);
     position: relative;
     overflow: hidden;
-    background: #323A3C;
-    border: 1px solid blue;
+    /* background: var(--second-color); */
+    background: #0D0E10;
+    /* border: 1px solid blue; */
 }
 
 .dish-title-comida {
-    color: white;
-}
-
-.dish-heart-comida {
-    position: absolute;
-    background-color: wheat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.563rem;
-    color: var(--main-color1);
-    width: 70px;
-    height: 70px;
-    right: -10px;
-    top: -10px;
-    border-radius: 0px 37.5px 0px 42.5px;
+    color: var(--main-color);
+    font-family: 'Dancing Script', cursive;
 }
 
 .dish-description-comida {
@@ -126,7 +123,7 @@
     display: flex;
     color: white;
     align-items: center;
-    gap: 2px;
+    /* gap: 2px; */
     /* border: 1px solid red; */
 }
 
@@ -134,8 +131,8 @@
     margin-left: 10px;
     padding: 5px;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.89);
-    background-color: rgb(255, 145, 0);
+    color: var(--second-color);
+    background-color: #F2C771;
     border: none;
     border-radius: 10px;
     font-size: 20px;
@@ -143,7 +140,7 @@
 }
 
 .btn-default-comida:hover {
-    color: rgb(255, 145, 0);
+    color: var(--second-color);
     background-color: white;
     transition: 0.5s;
     border: none;
@@ -152,7 +149,8 @@
 @media only screen and (max-width: 1200px) {
 
     #servico-comida {
-        padding-top: 10px;
+        padding-top: 13%;
+        height: 100%;
     }
 
     .comida-subtitle {
@@ -174,6 +172,10 @@
 }
 
 @media (max-width: 720px) {
+
+    #servico-comida {
+        height: 100%;
+    }
 
     .box-main {
         /* perspective: 400px; */

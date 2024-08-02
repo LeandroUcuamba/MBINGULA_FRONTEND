@@ -1,5 +1,5 @@
 import React from 'react'
-import Dish from '../../assets/dish.png';
+import Carne from '../../assets/carne.jpg';
 import Menu from '../Menu'
 
 import MenuServicos from '../MenuServicos';
@@ -8,7 +8,7 @@ const Comida = () => {
   return (
     <div>
 
-      {/* <Menu /> */}
+      <Menu />
       <section id="servico-comida">
         <MenuServicos />
         <h3 className="comida-subtitle">Nossos pratos especiais</h3>
@@ -16,14 +16,11 @@ const Comida = () => {
         <div id="container-comida">
 
           <div className="card-comida">
-            <div className="dish-heart-comida">
-              <i className="fa-solid fa-heart"></i>
-            </div>
             <div className='img-box-comida'>
-              <img src={Dish} alt="home" />
+              <img src={Carne} alt="home" />
             </div>
             <h3 className="dish-title-comida">
-              Lorem Ipsum
+              Carne na tábua
             </h3>
             <span className="dish-description-comida">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -37,12 +34,90 @@ const Comida = () => {
             </div>
           </div>
 
-          <div className="box-main">
+          {/* <div className="box-main">
             <h1>cola</h1>
             <div id='box'>
               <div id="oval"></div>
             </div>
+          </div> */}
+
+          <div className="card-comida">
+            <div className='img-box-comida'>
+              <img src={Carne} alt="home" />
+            </div>
+            <h3 className="dish-title-comida">
+              Carne na tábua
+            </h3>
+            <span className="dish-description-comida">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </span>
+
+            <div className="dish-price-comida">
+              <h4>20,00kz</h4>
+              <button className="btn-default-comida">
+                <i className="fa-solid fa-basket-shopping"></i>
+              </button>
+            </div>
           </div>
+
+          {/* <div className="box-main">
+            <h1>cola</h1>
+            <div id='box'>
+              <div id="oval"></div>
+            </div>
+          </div> */}
+
+          <div className="card-comida">
+            <div className='img-box-comida'>
+              <img src={Carne} alt="home" />
+            </div>
+            <h3 className="dish-title-comida">
+              Carne na tábua
+            </h3>
+            <span className="dish-description-comida">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </span>
+
+            <div className="dish-price-comida">
+              <h4>20,00kz</h4>
+              <button className="btn-default-comida">
+                <i className="fa-solid fa-basket-shopping"></i>
+              </button>
+            </div>
+          </div>
+
+          {/* <div className="box-main">
+            <h1>cola</h1>
+            <div id='box'>
+              <div id="oval"></div>
+            </div>
+          </div> */}
+
+          <div className="card-comida">
+            <div className='img-box-comida'>
+              <img src={Carne} alt="home" />
+            </div>
+            <h3 className="dish-title-comida">
+              Carne na tábua
+            </h3>
+            <span className="dish-description-comida">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </span>
+
+            <div className="dish-price-comida">
+              <h4>20,00kz</h4>
+              <button className="btn-default-comida">
+                <i className="fa-solid fa-basket-shopping"></i>
+              </button>
+            </div>
+          </div>
+
+          {/* <div className="box-main">
+            <h1>cola</h1>
+            <div id='box'>
+              <div id="oval"></div>
+            </div>
+          </div> */}
 
         </div>
       </section>
