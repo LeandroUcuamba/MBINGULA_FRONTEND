@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
-    margin: 40% 0px 15px 0px;
+    margin: 0% 0px 15px 0px;
     width: 100%;
 }
 
@@ -42,7 +42,7 @@
 @media (max-width: 720px) {
 
     .select-servico {
-        margin: 35% 0px 20px 0px;
+        margin: 15% 0px 20px 0px;
     }
 
     .select-servico li {

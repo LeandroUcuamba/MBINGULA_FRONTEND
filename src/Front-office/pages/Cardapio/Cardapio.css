@@ -1,135 +1,152 @@
-.section-title {
-    color: var(--main-color);
-    font-size: 2rem;
-}
-
-.section-subtitle {
-    font-size: 2.5rem;
-}
-
-.img-box {
-    width: 100%;
-    padding: 10px;
-    background: var(--second-bg-color1);
-    border-radius: 0px 0px 0px 50px;
-}
-
-.img-box img {
-    width: 100%;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-#menu {
-    padding-top: 50px;
+#cardapio-comida {
+    padding: 2% 0%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    height: 100%;
 }
 
-#dishes {
+.cardapio-title {
+    color: var(--main-color);
+    font-size: 2rem;
+}
+
+.cardapio-subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 2%;
+}
+
+#container-cardapio-comida {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
-    margin: 32px 0px 32px 0px;
+    margin-top: 0px;
+    /* background: purple; */
+    /* border: 2px solid rgb(0, 162, 255); */
 }
 
-.dish {
+
+#servico-comida {
+    padding: 0px 0px 0px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 20px;
-    gap: 19px;
+    justify-content: center;
+    padding-top: 8%;
+    height: 100%;
+    /* border: 2px solid purple; */
+    /* overflow: hidden; */
+}
+
+.comida-subtitle {
+    font-size: 2.5rem;
+    padding-top: 0px;
+    margin: 5px 0px 20px 0px;
+}
+
+.card-cardapio-comida {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    gap: 10px;
     width: 20%;
-    padding-bottom: 10px;
-    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    padding-bottom: 20px;
+    box-shadow: 0px 5px 10px 0px rgb(94, 94, 94);
     position: relative;
     overflow: hidden;
-    background: #323A3C;
-
+    /* background: var(--second-color); */
+    background: #0D0E10;
+    /* border: 1px solid blue; */
 }
 
-.dish-title {
-    color: white;
-}
-
-.dish-heart {
-    position: absolute;
-    background-color: #323A3C;
+.img-box-cardapio-comida {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 55%;
+    margin-bottom: 2%;
+    /* padding: 10px; */
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 1.563rem;
-    color: var(--main-color);
-    width: 70px;
-    height: 70px;
-    right: -10px;
-    top: -10px;
-    border-radius: 0px 37.5px 0px 42.5px;
+    background: var(--second-bg-color1);
+    border-radius: 10px 10px 0px 30px;
+    /* transform:rotate3d(0,2,10, 60deg);   */
+    /* transform:translateX(100px);   */
 }
 
-.dish-description {
+.img-box-cardapio-comida img {
+    width: 100%;
+    /* padding: 10px; */
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0px 20px;
+    /* border: 2px solid yellow; */
+}
+
+.dish-title-cardapio-comida {
+    color: var(--main-color);
+    font-family: 'Dancing Script', cursive;
+}
+
+.dish-description-cardapio-comida {
     color: white;
     text-align: center;
+    /* border: 1px solid red; */
 }
 
-.dish-rate i {
-    color: var(--color-primary-6);
-    color: white;
-    padding: 5px;
-}
-
-.dish-price {
+.dish-price-cardapio-comida {
     display: flex;
     color: white;
     align-items: center;
-    gap: 2px;
+    /* gap: 2px; */
+    /* border: 1px solid red; */
 }
 
-.btn-default1 {
+.btn-default-cardapio-comida {
     margin-left: 10px;
     padding: 5px;
     text-decoration: none;
     color: var(--second-color);
-    background-color: var(--main-color);
+    background-color: #F2C771;
     border: none;
     border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
 }
 
-.btn-default1:hover {
-    color: rgb(255, 145, 0);
+.btn-default-cardapio-comida:hover {
+    color: var(--second-color);
     background-color: white;
     transition: 0.5s;
     border: none;
 }
 
 @media only screen and (max-width: 1200px) {
-    .section-title {
-        color: var(--main-color);
+
+    #cardapio-comida {
+        text-align: center;
+    }
+
+    #servico-comida {
+        padding-top: 13%;
+        height: 100%;
+    }
+
+    .comida-subtitle {
         font-size: 2rem;
+        text-align: center;
     }
 
-    .section-subtitle {
-        font-size: 2.5rem;
-    }
-
-    #menu {
-        padding-top: 50px;
-    }
-
-    #dishes {
+    #container-cardapio-comida {
         width: 100%;
         padding: 0px 2%;
     }
 
-    .dish {
+    .card-cardapio-comida {
         gap: 19px;
         width: calc(50% - 12px);
         padding-bottom: 3%;
@@ -138,57 +155,19 @@
 }
 
 @media (max-width: 720px) {
-    .section-title {
-        color: var(--main-color);
-        font-size: 2rem;
-    }
 
-    .section-subtitle {
-        font-size: 2.5rem;
+    #cardapio-comida {
         text-align: center;
     }
 
-    #menu {
-        padding-top: 50px;
-    }
-
-    #dishes {
+    #container-cardapio-comida {
         flex-direction: column;
         justify-content: center;
         width: 100%;
         padding: 0px 3%;
     }
 
-    .dish {
-        gap: 19px;
-        width: 100%;
-        padding-bottom: 4%;
-    }
-}
-
-@media (max-width: 320px) {
-    .section-title {
-        color: var(--main-color);
-        font-size: 2rem;
-    }
-
-    .section-subtitle {
-        font-size: 2.5rem;
-        text-align: center;
-    }
-
-    #menu {
-        padding-top: 50px;
-    }
-
-    #dishes {
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        padding: 0px 3%;
-    }
-
-    .dish {
+    .card-cardapio-comida {
         gap: 19px;
         width: 100%;
         padding-bottom: 4%;
