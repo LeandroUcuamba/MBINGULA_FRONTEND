@@ -13,7 +13,6 @@ function Sidebar() {
       <div>
 
         <a href="" className='p-3 text-decoration-none text-white'>
-          {/* <i className="bi bi-code-slash fs-4 me-4"></i> */}
           <i id='logo-B' className=" fa fa-cutlery m-1"></i>
           <span id='nome-mbingula' className="fs-3 m-1 me-5"><strong>Mbingula</strong></span>
         </a>
@@ -51,11 +50,11 @@ function Sidebar() {
           <div className=" nav-item d-flex">
 
             <NavLink to="/" className="navLink" >
-              <button id='btn-conta' class=" p-1 d-flex btn btn-danger "><i className="bi bi-person-circle me-1"></i>Account</button>
+              <button id='btn-conta' class=" p-1 d-flex btn btn-danger "><i className="bi bi-person-circle me-1"></i>Conta</button>
             </NavLink>
 
             <NavLink to="/" className="navLink" >
-              <button id='btn-logout' class=" p-1 d-flex btn btn-danger "><i class="bi bi-box-arrow-right me-1"></i>Logout</button>
+              <button id='btn-logout' class=" p-1 d-flex btn btn-danger "><i class="bi bi-box-arrow-right me-1"></i>Sair</button>
             </NavLink>
 
           </div>
