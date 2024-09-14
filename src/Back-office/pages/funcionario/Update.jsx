@@ -17,16 +17,13 @@ function UpdateFuncionario() {
   const [sectores, setSectores] = useState([]);
   const navigate = useNavigate();
 
-  // Buscar os detalhes do funcionário e os sectores ao carregar o componente
   useEffect(() => {
-    // Buscar os detalhes do funcionário
     axios.get(`http://localhost:3000/get-funcionario/${id}`)
       .then(res => {
         setValues(res.data);
       })
       .catch(err => console.log(err));
 
-    // Buscar os sectores
     axios.get('http://localhost:3000/sectores')
       .then(response => {
         setSectores(response.data);
@@ -46,9 +43,9 @@ function UpdateFuncionario() {
   }
 
   return (
-    <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100'>
+    <div className='d-flex flex-column justify-content-center align-items-center bg-dark vh-100'>
       <div className="w-50 border bg-white shadow px-5 pt-3 pb-5 rounded">
-        <h1>Update Funcionario</h1>
+        <h1>atualizar dados do funcionário</h1>
         <form onSubmit={handleUpdate}>
           <div className="mb-2">
             <label htmlFor="name">Nome:</label>
@@ -132,8 +129,8 @@ function UpdateFuncionario() {
               ))}
             </select>
           </div>
-          <button className="btn btn-success">Update</button>
-          <Link to="/" className="btn btn-primary ms-3">Back</Link>
+          <button className="btn btn-success">Atualizar</button>
+          <Link to="/Back-office/pages/funcionario" className="btn btn-primary ms-3">Voltar</Link>
         </form>
       </div>
     </div>

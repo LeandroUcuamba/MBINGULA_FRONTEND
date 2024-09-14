@@ -8,11 +8,9 @@ function Read() {
     const { id } = useParams();
 
     useEffect(() => {
-        // Obter detalhes do funcionário
         axios.get(`http://localhost:3000/get-funcionario/${id}`)
             .then(res => {
                 setData(res.data);
-                // Obter detalhes do setor
                 if (res.data.Sector && res.data.Sector.name) {
                     axios.get(`http://localhost:3000/sectores`)
                         .then(sectorRes => {
@@ -26,36 +24,39 @@ function Read() {
     }, [id]);
 
     return (
-        <div>
-            <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100'>
-                <div className="w-50 border bg-white shadow px-5 pt-3 pb-5 rounded">
-                    <h3>Detail of Funcionario</h3>
-                    <div className="mb-2">
-                        <strong>ID: {data.id}</strong>
+        <div className='d-flex flex-column justify-content-center align-items-center bg-dark vh-100'>
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-12 col-md-6 border bg-white shadow px-4 py-5 rounded">
+                        <h3 className="text-center">Dados do funcionário</h3>
+                        <div className="mb-2 mt-4">
+                            <strong className="orange-text">ID: </strong> {data.id}
+                        </div>
+                        <div className="mb-2">
+                            <strong className="orange-text">Nome: </strong> {data.name}
+                        </div>
+                        <div className="mb-2">
+                            <strong className="orange-text">Morada: </strong> {data.morada}
+                        </div>
+                        <div className="mb-2">
+                            <strong className="orange-text">Bilhete Identidade: </strong> {data.bilheteidentidade}
+                        </div>
+                        <div className="mb-2">
+                            <strong className="orange-text">Telefone: </strong> {data.telefone}
+                        </div>
+                        <div className="mb-2">
+                            <strong className="orange-text">Cargo: </strong> {data.cargo}
+                        </div>
+                        <div className="mb-2">
+                            <strong className="orange-text">Salário: </strong> {data.salario}
+                        </div>
+                        <div className="mb-2">
+                            <strong className="orange-text">Sector: </strong> {sector ? sector.name : 'Loading...'}
+                        </div>
+                        <div className="text-center">
+                            <Link to="/Back-office/pages/funcionario" className='btn btn-primary mt-3'>Voltar</Link>
+                        </div>
                     </div>
-                    <div className="mb-2">
-                        <strong>Nome: {data.name}</strong>
-                    </div>
-                    <div className="mb-2">
-                        <strong>Morada: {data.morada}</strong>
-                    </div>
-                    <div className="mb-2">
-                        <strong>Bilhete Identidade: {data.bilheteidentidade}</strong>
-                    </div>
-                    <div className="mb-2">
-                        <strong>Telefone: {data.telefone}</strong>
-                    </div>
-                    <div className="mb-2">
-                        <strong>Cargo: {data.cargo}</strong>
-                    </div>
-                    <div className="mb-2">
-                        <strong>Salário: {data.salario}</strong>
-                    </div>
-                    <div className="mb-2">
-                        <strong>Sector: {sector ? sector.name : 'Loading...'}</strong>
-                    </div>
-                    <Link to={`/update/${id}`} className='btn btn-success'>Edit</Link>
-                    <Link to="/" className='btn btn-primary ms-3'>Back</Link>
                 </div>
             </div>
         </div>

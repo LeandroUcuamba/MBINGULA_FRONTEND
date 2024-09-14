@@ -16,7 +16,6 @@ function CreateFuncionario() {
   const [sectores, setSectores] = useState([]);
   const navigate = useNavigate();
 
-  // Buscar os sectores ao carregar o componente
   useEffect(() => {
     axios.get('http://localhost:3000/sectores')
       .then(response => {
@@ -27,7 +26,6 @@ function CreateFuncionario() {
       });
   }, []);
 
-  // Submeter os dados do funcionário
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.post('http://localhost:3000/create-funcionario', values)
@@ -38,9 +36,9 @@ function CreateFuncionario() {
   }
 
   return (
-    <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100'>
+    <div className='d-flex flex-column justify-content-center align-items-center bg-dark vh-100'>
       <div className="w-50 border bg-white shadow px-5 pt-3 pb-5 rounded">
-        <h1>Add a Funcionario</h1>
+        <h1>cadastrar funcionário</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-2">
             <label htmlFor="name">Nome:</label>
@@ -117,8 +115,8 @@ function CreateFuncionario() {
               ))}
             </select>
           </div>
-          <button className="btn btn-success">Submit</button>
-          <Link to="/" className="btn btn-primary ms-3">Back</Link>
+          <button className="btn btn-success">Criar</button>
+          <Link to="/Back-office/pages/funcionario" className="btn btn-primary ms-3">Voltar</Link>
         </form>
       </div>
     </div>

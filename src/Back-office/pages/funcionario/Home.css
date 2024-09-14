@@ -1,0 +1,42 @@
+.custom-container {
+  border: 2px solid #dee2e6;
+  border-radius: 0.375rem;
+  padding: 1rem;
+}
+
+.btn-info, .btn-primary, .btn-danger {
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-info:hover {
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+
+.btn-primary:hover {
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.btn-danger:hover {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.custom-container {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .custom-container {
+      width: 100%;
+    }
+  }
+  

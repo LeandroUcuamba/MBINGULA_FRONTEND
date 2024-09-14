@@ -21,7 +21,6 @@ function Navbar() {
   return (
     <header className="header">
       <Link to="/" className="logo">
-        {/* <i className="fa fa-cutlery"></i> */}
         <RiRestaurant2Fill className="fa-cutlery" />
         Restaurant Mbingula
       </Link>
