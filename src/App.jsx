@@ -8,9 +8,13 @@ import Comida from './Front-office/components/comida/Comida.jsx';
 import Bebida from './Front-office/components/bebida/Bebidas.jsx'
 import Reserva from './Front-office/components/reserva/Reserva.jsx';
 import LoginRegisterForm from './Front-office/components/LoginRegisterForm.jsx';
-import App_BackOffice from './Back-office/App_BackOffice.jsx'
-import Order from './Back-office/pages/Order.jsx'
-import User from './Back-office/pages/User.jsx'
+import App_BackOffice from './Back-office/App_BackOffice.jsx';
+import Order from './Back-office/pages/Order.jsx';
+{/* Back-office - Funcionario*/}
+import HomeFuncionario from './Back-office/pages/funcionario/Home.jsx'
+import CreateFuncionario from './Back-office/pages/funcionario/Create.jsx'
+import ReadFuncionario from './Back-office/pages/funcionario/Read.jsx'
+import UpdateFuncionario from './Back-office/pages/funcionario/Update.jsx'
 
 function App() {
   return (
@@ -26,7 +30,11 @@ function App() {
             <Route path="/Front-office/components/LoginRegisterForm" element={<LoginRegisterForm />}></Route>
             <Route path="/Back-office/App_BackOffice" element={<App_BackOffice />}></Route>
             <Route path="/Back-office/pages/Order" element={<Order />}></Route>
-            <Route path="/Back-office/pages/User" element={<User />}></Route>
+            {/* Back-office - Funcionario*/}
+            <Route path="/Back-office/pages/funcionario" element={<HomeFuncionario />}></Route>
+            <Route path="/Back-office/pages/funcionario/create" element={<CreateFuncionario />}></Route>
+            <Route path="/Back-office/pages/funcionario/read/:id" element={<ReadFuncionario />}></Route>
+            <Route path="/Back-office/pages/funcionario/update/:id" element={<UpdateFuncionario />}></Route>
         </Routes>
       </AuthProvider>
     </div>
