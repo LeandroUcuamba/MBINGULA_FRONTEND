@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
@@ -67,9 +66,9 @@ function Home() {
       </div>
       <div className='col overflow-auto'>
         <Navbar Toggle={Toggle} />
-        <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100'>
+        <div className='d-flex flex-column justify-content-center align-items-center bg-black vh-100'>
           <h1>Funcionários</h1>
-          <div className='w-100 rounded bg-dark border shadow p-4 custom-container'>
+          <div className='w-100 rounded bg-black border shadow p-4 custom-container'>
             <div className='d-flex justify-content-end mb-3'>
               <Link to="/Back-office/pages/funcionario/create" className='btn btn-success'>Cadastrar +</Link>
             </div>

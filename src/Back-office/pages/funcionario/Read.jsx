@@ -24,7 +24,7 @@ function Read() {
     }, [id]);
 
     return (
-        <div className='d-flex flex-column justify-content-center align-items-center bg-dark vh-100'>
+        <div className='d-flex flex-column justify-content-center align-items-center bg-black vh-100'>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-12 col-md-6 border bg-white shadow px-4 py-5 rounded">

@@ -30,13 +30,13 @@ function CreateFuncionario() {
     event.preventDefault();
     axios.post('http://localhost:3000/create-funcionario', values)
       .then(res => {
-        navigate('/');
+        navigate('/Back-office/pages/funcionario');
       })
       .catch(err => console.log(err));
   }
 
   return (
-    <div className='d-flex flex-column justify-content-center align-items-center bg-dark vh-100'>
+    <div className='d-flex flex-column justify-content-center align-items-center bg-black vh-100'>
       <div className="w-50 border bg-white shadow px-5 pt-3 pb-5 rounded">
         <h1>cadastrar funcionário</h1>
         <form onSubmit={handleSubmit}>

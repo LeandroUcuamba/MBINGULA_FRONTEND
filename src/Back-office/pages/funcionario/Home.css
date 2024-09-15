@@ -1,42 +1,44 @@
+
+h1{
+  color: white;
+}
 .custom-container {
-  border: 2px solid #dee2e6;
-  border-radius: 0.375rem;
-  padding: 1rem;
+  border: none;
 }
 
 .btn-info, .btn-primary, .btn-danger {
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 0.375rem;
   padding: 0.375rem 0.75rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
 }
 
 .btn-info:hover {
-  background-color: #d1ecf1;
-  border-color: #bee5eb;
+  background-color: #c7e9ef;
+  border-color: #8ed1da;
 }
 
 .btn-primary:hover {
-  background-color: #cce5ff;
-  border-color: #b8daff;
+  background-color: #b4d1f0;
+  border-color: #89b3e1;
 }
 
 .btn-danger:hover {
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
+  background-color: #dfb0b4;
+  border-color: #b5636c;
 }
 
 .custom-container {
-    width: 100%;
-    max-width: 100%;
-  }
+  width: 100%;
+  max-width: 100%;
+}
   
-  @media (max-width: 768px) {
-    .custom-container {
-      width: 100%;
-    }
+@media (max-width: 768px) {
+  .custom-container {
+    width: 100%;
   }
+}
   

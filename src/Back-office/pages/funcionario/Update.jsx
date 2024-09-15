@@ -35,17 +35,20 @@ function UpdateFuncionario() {
 
   const handleUpdate = (event) => {
     event.preventDefault();
+
+    console.log(values);
+
     axios.put(`http://localhost:3000/update-funcionario/${id}`, values)
       .then(res => {
-        navigate('/');
+        navigate('/Back-office/pages/funcionario');
       })
       .catch(err => console.log(err));
   }
 
   return (
-    <div className='d-flex flex-column justify-content-center align-items-center bg-dark vh-100'>
+    <div className='d-flex flex-column justify-content-center align-items-center bg-black vh-100'>
       <div className="w-50 border bg-white shadow px-5 pt-3 pb-5 rounded">
-        <h1>atualizar dados do funcionário</h1>
+        <h2>atualizar dados do funcionário</h2>
         <form onSubmit={handleUpdate}>
           <div className="mb-2">
             <label htmlFor="name">Nome:</label>
