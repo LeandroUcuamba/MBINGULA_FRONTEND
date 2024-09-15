@@ -15,6 +15,7 @@ function UpdateFuncionario() {
   });
 
   const [sectores, setSectores] = useState([]);
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,12 +36,32 @@ function UpdateFuncionario() {
 
   const handleUpdate = (event) => {
     event.preventDefault();
-    axios.put(`http://localhost:3000/update-funcionario/${id}`, values)
-      .then(res => {
-        navigate('/Back-office/pages/funcionario');
-      })
-      .catch(err => console.log(err));
-  }
+    if (validateForm()) {
+      axios.put(`http://localhost:3000/update-funcionario/${id}`, values)
+        .then(res => {
+          navigate('/Back-office/pages/funcionario');
+        })
+        .catch(err => console.log(err));
+    }
+  };
+
+  const handleChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!values.name) newErrors.name = "* campo obrigatório";
+    if (!values.morada) newErrors.morada = "* campo obrigatório";
+    if (!values.bilheteidentidade) newErrors.bilheteidentidade = "* campo obrigatório";
+    if (!values.telefone) newErrors.telefone = "* campo obrigatório";
+    if (!values.cargo) newErrors.cargo = "* campo obrigatório";
+    if (!values.salario) newErrors.salario = "* campo obrigatório";
+    if (!values.sectorId) newErrors.sectorId = "* campo obrigatório";
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   return (
     <div className='d-flex flex-column justify-content-center align-items-center bg-black vh-100'>
@@ -54,10 +75,11 @@ function UpdateFuncionario() {
                 type="text" 
                 name="name" 
                 className="form-control" 
-                placeholder="Enter Name" 
+                placeholder="Digite o nome" 
                 value={values.name} 
-                onChange={e => setValues({...values, name: e.target.value})}
+                onChange={handleChange}
               />
+              {errors.name && <small className="text-danger">{errors.name}</small>}
             </div>
             <div className="col-md-6 mb-3">
               <label htmlFor="morada">Morada:</label>
@@ -65,10 +87,11 @@ function UpdateFuncionario() {
                 type="text" 
                 name="morada" 
                 className="form-control" 
-                placeholder="Enter Morada" 
+                placeholder="Digite a sua Morada" 
                 value={values.morada} 
-                onChange={e => setValues({...values, morada: e.target.value})}
+                onChange={handleChange}
               />
+              {errors.morada && <small className="text-danger">{errors.morada}</small>}
             </div>
           </div>
 
@@ -79,10 +102,11 @@ function UpdateFuncionario() {
                 type="text" 
                 name="bilheteidentidade" 
                 className="form-control" 
-                placeholder="Enter Bilhete de Identidade" 
+                placeholder="Digite o número do BI" 
                 value={values.bilheteidentidade} 
-                onChange={e => setValues({...values, bilheteidentidade: e.target.value})}
+                onChange={handleChange}
               />
+              {errors.bilheteidentidade && <small className="text-danger">{errors.bilheteidentidade}</small>}
             </div>
             <div className="col-md-6 mb-3">
               <label htmlFor="telefone">Telefone:</label>
@@ -90,10 +114,11 @@ function UpdateFuncionario() {
                 type="text" 
                 name="telefone" 
                 className="form-control" 
-                placeholder="Enter Telefone" 
+                placeholder="Digite seu número" 
                 value={values.telefone} 
-                onChange={e => setValues({...values, telefone: e.target.value})}
+                onChange={handleChange}
               />
+              {errors.telefone && <small className="text-danger">{errors.telefone}</small>}
             </div>
           </div>
 
@@ -104,10 +129,11 @@ function UpdateFuncionario() {
                 type="text" 
                 name="cargo" 
                 className="form-control" 
-                placeholder="Enter Cargo" 
+                placeholder="Digite o Cargo" 
                 value={values.cargo} 
-                onChange={e => setValues({...values, cargo: e.target.value})}
+                onChange={handleChange}
               />
+              {errors.cargo && <small className="text-danger">{errors.cargo}</small>}
             </div>
             <div className="col-md-6 mb-3">
               <label htmlFor="salario">Salário:</label>
@@ -115,10 +141,11 @@ function UpdateFuncionario() {
                 type="text" 
                 name="salario" 
                 className="form-control" 
-                placeholder="Enter Salário" 
+                placeholder="Digite o Salário" 
                 value={values.salario} 
-                onChange={e => setValues({...values, salario: e.target.value})}
+                onChange={handleChange}
               />
+              {errors.salario && <small className="text-danger">{errors.salario}</small>}
             </div>
           </div>
 
@@ -129,7 +156,7 @@ function UpdateFuncionario() {
                 className="form-control" 
                 name="sectorId" 
                 value={values.sectorId}
-                onChange={e => setValues({...values, sectorId: e.target.value})}
+                onChange={handleChange}
               >
                 <option value="">Selecione um sector</option>
                 {sectores.map(sector => (
@@ -138,6 +165,7 @@ function UpdateFuncionario() {
                   </option>
                 ))}
               </select>
+              {errors.sectorId && <small className="text-danger">{errors.sectorId}</small>}
             </div>
           </div>
 
