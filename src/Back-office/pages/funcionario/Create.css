@@ -1,0 +1,13 @@
+.form-grid {
+   display: grid;
+   gap: 1rem;
+}
+
+.form-row {
+   display: flex;
+   gap: 1rem;
+}
+
+.form-row > .mb-2, .form-row > .mb-3 {
+   flex: 1;
+}
