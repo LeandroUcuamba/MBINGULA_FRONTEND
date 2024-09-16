@@ -142,4 +142,8 @@ h1 {
   .custom-container {
     width: 90%;
   }
+
+  h1 {
+    margin-bottom: 8%;
+  }
 }
