@@ -15,6 +15,7 @@ import HomeFuncionario from './Back-office/pages/funcionario/Home.jsx'
 import CreateFuncionario from './Back-office/pages/funcionario/Create.jsx'
 import ReadFuncionario from './Back-office/pages/funcionario/Read.jsx'
 import UpdateFuncionario from './Back-office/pages/funcionario/Update.jsx'
+import ReadFuncionarioByFilter from './Back-office/pages/funcionario/ReadByFilter.jsx'
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/Back-office/pages/funcionario/create" element={<CreateFuncionario />}></Route>
             <Route path="/Back-office/pages/funcionario/read/:id" element={<ReadFuncionario />}></Route>
             <Route path="/Back-office/pages/funcionario/update/:id" element={<UpdateFuncionario />}></Route>
+            <Route path="/Back-office/pages/funcionarioFilter" element={<ReadFuncionarioByFilter />}></Route>
         </Routes>
       </AuthProvider>
     </div>

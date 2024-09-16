@@ -45,7 +45,7 @@ function Home() {
   };
 
   const handleDelete = (id) => {
-    const confirm = window.confirm("Are you sure, you want to delete this?");
+    const confirm = window.confirm("Tem certeza que pretendes deletar?");
     if (confirm) {
       axios.delete(`http://localhost:3000/delete-funcionario/${id}`)
         .then(res => {
@@ -69,7 +69,14 @@ function Home() {
           <h1>Funcionários</h1>
           <div className='custom-container'>
             <div className='button-container'>
-              <Link to="/Back-office/pages/funcionario/create" className='btn btn-success'>Cadastrar +</Link>
+              <div className='left-buttons'>
+                <Link to="/Back-office/pages/funcionarioFilter" className='btn btn-search'>
+                  <i className="bi bi-search"></i> Pesquisar Por
+                </Link>
+              </div>
+              <div className='right-buttons'>
+                <Link to="/Back-office/pages/funcionario/create" className='btn btn-success'>Cadastrar +</Link>
+              </div>
             </div>
             <div className="funcionario-list">
               {data.map((d, i) => (
