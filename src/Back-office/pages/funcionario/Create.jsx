@@ -58,29 +58,29 @@ function CreateFuncionario() {
   };
 
   return (
-    <div className='d-flex flex-column justify-content-center align-items-center bg-black vh-100'>
-      <div className="w-50 border bg-white shadow px-5 pt-3 pb-5 rounded">
+    <div className='container'>
+      <div className="form-container">
         <h2>Cadastrar Funcionário</h2>
         <form onSubmit={handleSubmit} className="form-grid">
           <div className="form-row">
-            <div className="mb-2">
+            <div className="form-group">
               <label htmlFor="name">Nome:</label>
               <input 
                 type="text" 
                 name="name" 
-                className="form-control" 
+                className="form-input" 
                 placeholder="Digite o nome" 
                 value={values.name}
                 onChange={handleChange}
               />
               {errors.name && <small className="text-danger">{errors.name}</small>}
             </div>
-            <div className="mb-2">
+            <div className="form-group">
               <label htmlFor="morada">Morada:</label>
               <input 
                 type="text" 
                 name="morada" 
-                className="form-control" 
+                className="form-input" 
                 placeholder="Digite a sua Morada" 
                 value={values.morada}
                 onChange={handleChange}
@@ -89,24 +89,24 @@ function CreateFuncionario() {
             </div>
           </div>
           <div className="form-row">
-            <div className="mb-2">
+            <div className="form-group">
               <label htmlFor="bilheteidentidade">Bilhete de Identidade:</label>
               <input 
                 type="text" 
                 name="bilheteidentidade" 
-                className="form-control" 
+                className="form-input" 
                 placeholder="Digite o número do BI" 
                 value={values.bilheteidentidade}
                 onChange={handleChange}
               />
               {errors.bilheteidentidade && <small className="text-danger">{errors.bilheteidentidade}</small>}
             </div>
-            <div className="mb-2">
+            <div className="form-group">
               <label htmlFor="telefone">Telefone:</label>
               <input 
                 type="text" 
                 name="telefone" 
-                className="form-control" 
+                className="form-input" 
                 placeholder="Digite seu número" 
                 value={values.telefone}
                 onChange={handleChange}
@@ -115,24 +115,24 @@ function CreateFuncionario() {
             </div>
           </div>
           <div className="form-row">
-            <div className="mb-2">
+            <div className="form-group">
               <label htmlFor="cargo">Cargo:</label>
               <input 
                 type="text" 
                 name="cargo" 
-                className="form-control" 
+                className="form-input" 
                 placeholder="Digite o Cargo" 
                 value={values.cargo}
                 onChange={handleChange}
               />
               {errors.cargo && <small className="text-danger">{errors.cargo}</small>}
             </div>
-            <div className="mb-2">
+            <div className="form-group">
               <label htmlFor="salario">Salário:</label>
               <input 
                 type="text" 
                 name="salario" 
-                className="form-control" 
+                className="form-input" 
                 placeholder="Digite o Salário" 
                 value={values.salario}
                 onChange={handleChange}
@@ -141,10 +141,10 @@ function CreateFuncionario() {
             </div>
           </div>
           <div className="form-row">
-            <div className="mb-3">
+            <div className="form-group">
               <label>Sector:</label>
               <select 
-                className="form-control" 
+                className="form-input" 
                 name="sectorId" 
                 value={values.sectorId}
                 onChange={handleChange}
@@ -159,8 +159,10 @@ function CreateFuncionario() {
               {errors.sectorId && <small className="text-danger">{errors.sectorId}</small>}
             </div>
           </div>
-          <button className="btn btn-success">Criar</button>
-          <Link to="/Back-office/pages/funcionario" className="btn btn-primary">Voltar</Link>
+          <div className="botoes">
+             <button className="btn-submit">Criar</button>
+             <Link to="/Back-office/pages/funcionario" className="btn-back">Voltar</Link>
+          </div>
         </form>
       </div>
     </div>

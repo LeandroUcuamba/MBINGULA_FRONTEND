@@ -15,7 +15,6 @@
     left: 5%;
     color: white;
     z-index: 2;
-    /* border: 1px solid green; */
 }
 
 .home-content h1 {
@@ -25,14 +24,12 @@
     font-size: 50px;
     padding: 10px;
     color: var(--main-color);
-    /* border: 1px solid red; */
 }
 
 .home-content p {
     margin-bottom: 10px;
     padding: 10px;
     text-align: left;
-    /* border: 1px solid red; */
 }
 
 
@@ -102,7 +99,6 @@
     width: 100%;
     justify-content: left;
     gap: 18px;
-    /* border: 1px solid red; */
 }
 
 .social-media-btn a {
@@ -112,12 +108,9 @@
     justify-content: center;
     width: 37px;
     height: 37px;
-    /* background-color: var(--bg-color); */
     font-size: 1.6rem;
     border-radius: 100px;
     text-decoration: none;
-    /* color: var(--second-bg-color); */
-    /* transition: box-shadow .3s ease; */
 }
 
 #whatsapp {
@@ -155,8 +148,6 @@
     color: whitesmoke;
     border: 1px solid whitesmoke;
 }
-
-/* PONTOS DE INTERRUPÃ‡ÃƒO */
 
 @media only screen and (max-width: 1200px) {
 

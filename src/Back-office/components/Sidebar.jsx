@@ -53,7 +53,7 @@ function Sidebar() {
 
           <NavLink to="/Back-office/pages/funcionario" className="navLink">
             <i className="m-4 bi bi-people me-3 fs-4"></i>
-            <span className="fs-4">Funcionario</span>
+            <span className="fs-4">Funcionário</span>
           </NavLink>
 
           <NavLink to="/Back-office/pages/Order" className="navLink">

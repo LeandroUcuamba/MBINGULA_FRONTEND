@@ -1,9 +1,81 @@
-
-h1{
-  color: white;
+.home-container {
+  display: flex;
 }
+
+.sidebar-container {
+  width: auto;
+  position: fixed;
+}
+
+.sidebar-invisible {
+  visibility: hidden;
+}
+
+.content {
+  flex: 1;
+  overflow: auto;
+}
+
+.content-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+}
+
 .custom-container {
+  width: 90%;
+  max-width: 100%;
+  background-color: #e9e8e8;
   border: none;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.funcionario-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.funcionario-item {
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #e9e8e8;
+  border-radius: 8px;
+}
+
+.button-group {
+  display: flex;
+  margin-top: 8px;
+}
+
+.button-group .btn-sm {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.button-group .btn-sm:last-child {
+  margin-right: 0;
 }
 
 .btn-info, .btn-primary, .btn-danger {
@@ -11,9 +83,6 @@ h1{
   border-radius: 0.375rem;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .btn-info:hover {
@@ -31,14 +100,9 @@ h1{
   border-color: #b5636c;
 }
 
-.custom-container {
-  width: 100%;
-  max-width: 100%;
-}
-  
+
 @media (max-width: 768px) {
   .custom-container {
-    width: 100%;
+    width: 90%;
   }
 }
-  
