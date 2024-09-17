@@ -16,6 +16,7 @@ function CreateFuncionario() {
 
   const [sectores, setSectores] = useState([]);
   const [errors, setErrors] = useState({});
+  const [alert, setAlert] = useState({ show: false, message: '' });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,7 +34,11 @@ function CreateFuncionario() {
     if (validateForm()) {
       axios.post('http://localhost:3000/create-funcionario', values)
         .then(res => {
-          navigate('/Back-office/pages/funcionario');
+          setAlert({ show: true, message: 'Criado com sucesso!' });
+          setTimeout(() => {
+            setAlert({ show: false, message: '' });
+            navigate('/Back-office/pages/funcionario');
+          }, 3000);
         })
         .catch(err => console.log(err));
     }
@@ -61,6 +66,13 @@ function CreateFuncionario() {
     <div className='container'>
       <div className="form-container">
         <h2>Cadastrar Funcionário</h2>
+
+        {alert.show && (
+          <div className="alert alert-success" role="alert">
+            {alert.message}
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="form-grid">
           <div className="form-row">
             <div className="form-group">
@@ -160,8 +172,8 @@ function CreateFuncionario() {
             </div>
           </div>
           <div className="botoes">
-             <button className="btn-submit">Criar</button>
-             <Link to="/Back-office/pages/funcionario" className="btn-back">Voltar</Link>
+            <button className="btn-submit">Criar</button>
+            <Link to="/Back-office/pages/funcionario" className="btn-back">Voltar</Link>
           </div>
         </form>
       </div>

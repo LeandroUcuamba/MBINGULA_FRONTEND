@@ -17,6 +17,7 @@ function UpdateFuncionario() {
 
   const [sectores, setSectores] = useState([]);
   const [errors, setErrors] = useState({});
+  const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,7 +41,11 @@ function UpdateFuncionario() {
     if (validateForm()) {
       axios.put(`http://localhost:3000/update-funcionario/${id}`, values)
         .then(res => {
-          navigate('/Back-office/pages/funcionario');
+          setShowAlert(true);
+          setTimeout(() => {
+            setShowAlert(false);
+            navigate('/Back-office/pages/funcionario');
+          }, 3000);
         })
         .catch(err => console.log(err));
     }
@@ -68,6 +73,13 @@ function UpdateFuncionario() {
     <div className='container'>
       <div className="form-container">
         <h2>Atualizar Dados do Funcionário</h2>
+
+        {showAlert && (
+          <div className="alert alert-success" role="alert">
+            Atualizado com sucesso!
+          </div>
+        )}
+
         <form onSubmit={handleUpdate}>
           <div className="row">
             <div className="column">

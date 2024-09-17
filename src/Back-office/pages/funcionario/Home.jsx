@@ -3,12 +3,17 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar';
 import Navbar from '../../components/Navbar';
+import { Modal, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Home.css';
 
 function Home() {
   const [data, setData] = useState([]);
   const [sectores, setSectores] = useState([]);
   const [toggle, setToggle] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -45,11 +50,20 @@ function Home() {
   };
 
   const handleDelete = (id) => {
-    const confirm = window.confirm("Tem certeza que pretendes deletar?");
-    if (confirm) {
-      axios.delete(`http://localhost:3000/delete-funcionario/${id}`)
+    setSelectedId(id);
+    setShowConfirmModal(true);
+  };
+
+  const confirmDelete = () => {
+    if (selectedId) {
+      axios.delete(`http://localhost:3000/delete-funcionario/${selectedId}`)
         .then(res => {
-          location.reload();
+          setShowConfirmModal(false);
+          setShowSuccessModal(true);
+          setTimeout(() => {
+            setShowSuccessModal(false);
+            location.reload();
+          }, 1500);
         })
         .catch(err => console.log(err));
     }
@@ -106,6 +120,27 @@ function Home() {
           </div>
         </div>
       </div>
+
+      <Modal show={showConfirmModal} onHide={() => setShowConfirmModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirmar Exclusão</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Tem certeza que deseja deletar este funcionário?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowConfirmModal(false)}>Cancelar</Button>
+          <Button variant="danger" onClick={confirmDelete}>Deletar</Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={showSuccessModal} onHide={() => setShowSuccessModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Sucesso</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Funcionário deletado com sucesso!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={() => setShowSuccessModal(false)}>Ok</Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
