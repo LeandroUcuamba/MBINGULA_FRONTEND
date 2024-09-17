@@ -17,6 +17,10 @@ import UpdateFuncionario from './Back-office/pages/funcionario/Update.jsx'
 import ReadFuncionarioByFilter from './Back-office/pages/funcionario/ReadByFilter.jsx'
 {/* Back-office - Fornecedores*/}
 import HomeFornecedor from './Back-office/pages/fornecedor/Home.jsx';
+import CreateFornecedor from './Back-office/pages/fornecedor/Create.jsx'
+import ReadFornecedor from './Back-office/pages/fornecedor/Read.jsx'
+import UpdateFornecedor from './Back-office/pages/fornecedor/Update.jsx'
+import ReadFornecedorByFilter from './Back-office/pages/fornecedor/ReadByFilter.jsx'
 
 function App() {
   return (
@@ -39,6 +43,10 @@ function App() {
             <Route path="/Back-office/pages/funcionarioFilter" element={<ReadFuncionarioByFilter />}></Route>
             {/* Back-office - Fornecedores*/}
             <Route path="/Back-office/pages/fornecedor" element={<HomeFornecedor />}></Route>
+            <Route path="/Back-office/pages/fornecedor/create" element={<CreateFornecedor />}></Route>
+            <Route path="/Back-office/pages/fornecedor/read/:id" element={<ReadFornecedor />}></Route>
+            <Route path="/Back-office/pages/fornecedor/update/:id" element={<UpdateFornecedor />}></Route>
+            <Route path="/Back-office/pages/fornecedorFilter" element={<ReadFornecedorByFilter />}></Route>
         </Routes>
       </AuthProvider>
     </div>

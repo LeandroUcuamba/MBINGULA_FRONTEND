@@ -21,35 +21,11 @@ function Sidebar() {
 
         <hr className="text-white mt-2" />
         <ul className="nav nav-pills flex-column mt-3">
-          <li className="nav-item">
-            <a 
-              href="#"
-              onClick={handleDashboardClick}
-              className={`nav-link ${isDashboardOpen ? 'active' : ''}`}
-            >
-              <i className="m-4 bi bi-speedometer2 me-2 fs-4"></i>
-              <span className="fs-4">Dashboard</span>
-            </a>
-            {isDashboardOpen && (
-              <ul className="nav flex-column ms-4">
-                <li className="nav-item">
-                  <NavLink to="/Back-office/pages/Leandro" className="nav-link fs-5">
-                    Leandro
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink to="/Back-office/pages/Andi" className="nav-link fs-5">
-                    Andi
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink to="/Back-office/pages/Coutinho" className="nav-link fs-5">
-                    Coutinho
-                  </NavLink>
-                </li>
-              </ul>
-            )}
-          </li>
+
+          <NavLink to="/Back-office/App_BackOffice" className="navLink">
+            <i className="m-4 bi bi-speedometer2 me-2 fs-4"></i>
+            <span className="fs-4">Dashboard</span>
+          </NavLink>
 
           <NavLink to="/Back-office/pages/funcionario" className="navLink">
             <i className="m-4 bi bi-people me-3 fs-4"></i>
@@ -57,7 +33,7 @@ function Sidebar() {
           </NavLink>
 
           <NavLink to="/Back-office/pages/fornecedor" className="navLink">
-            <i className="m-4 bi bi-table me-3 fs-4"></i>
+            <i className="m-4 bi bi-people me-3 fs-4"></i>
             <span className="fs-4">Fornecedores</span>
           </NavLink>
 
