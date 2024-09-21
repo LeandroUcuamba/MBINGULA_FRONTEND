@@ -37,9 +37,9 @@ function Sidebar() {
             <span className="fs-4">Fornecedores</span>
           </NavLink>
 
-          <NavLink to="/" className="navLink">
+          <NavLink to="/Back-office/pages/produto" className="navLink">
             <i className="m-4 bi bi-grid me-3 fs-4"></i>
-            <span className="fs-4">Report</span>
+            <span className="fs-4">Produtos - fornecidos</span>
           </NavLink>
         </ul>
       </div>

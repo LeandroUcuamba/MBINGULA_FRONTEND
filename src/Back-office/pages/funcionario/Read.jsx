@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Read.css';  // Importando o arquivo de estilo
+import './Read.css';
 
 function Read() {
     const [data, setData] = useState({});

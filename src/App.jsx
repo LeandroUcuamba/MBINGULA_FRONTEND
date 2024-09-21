@@ -21,6 +21,12 @@ import CreateFornecedor from './Back-office/pages/fornecedor/Create.jsx'
 import ReadFornecedor from './Back-office/pages/fornecedor/Read.jsx'
 import UpdateFornecedor from './Back-office/pages/fornecedor/Update.jsx'
 import ReadFornecedorByFilter from './Back-office/pages/fornecedor/ReadByFilter.jsx'
+{/* Back-office - Produto*/}
+import HomeProduto from './Back-office/pages/produto/Home.jsx';
+import CreateProduto from './Back-office/pages/produto/Create.jsx'
+import ReadProduto from './Back-office/pages/produto/Read.jsx'
+import UpdateProduto from './Back-office/pages/produto/Update.jsx'
+import ReadProdutoByFilter from './Back-office/pages/produto/ReadByFilter.jsx'
 
 function App() {
   return (
@@ -47,6 +53,12 @@ function App() {
             <Route path="/Back-office/pages/fornecedor/read/:id" element={<ReadFornecedor />}></Route>
             <Route path="/Back-office/pages/fornecedor/update/:id" element={<UpdateFornecedor />}></Route>
             <Route path="/Back-office/pages/fornecedorFilter" element={<ReadFornecedorByFilter />}></Route>
+            {/* Back-office - Produto*/}
+            <Route path="/Back-office/pages/produto" element={<HomeProduto />}></Route>
+            <Route path="/Back-office/pages/produto/create" element={<CreateProduto />}></Route>
+            <Route path="/Back-office/pages/produto/read/:id" element={<ReadProduto />}></Route>
+            <Route path="/Back-office/pages/produto/update/:id" element={<UpdateProduto />}></Route>
+            <Route path="/Back-office/pages/produtoFilter" element={<ReadProdutoByFilter />}></Route>
         </Routes>
       </AuthProvider>
     </div>
