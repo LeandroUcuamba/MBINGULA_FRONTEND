@@ -7,7 +7,7 @@ import { Modal, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Home.css';
 
-function Home() {
+function HomeAtividades() {
   const [data, setData] = useState([]);
   const [toggle, setToggle] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -127,4 +127,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeAtividades;
