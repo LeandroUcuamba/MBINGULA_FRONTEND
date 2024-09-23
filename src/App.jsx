@@ -34,12 +34,16 @@ import ReadEstoque from './Back-office/pages/estoque/Read.jsx'
 import UpdateEstoque from './Back-office/pages/estoque/Update.jsx'
 import ReadEstoqueByFilter from './Back-office/pages/estoque/ReadByFilter.jsx'
 import UpdateQtdEstoque from './Back-office/pages/estoque/UpdateQtdEstoque.jsx'
-{/* Back-office - Estoque*/}
+{/* Back-office - Atividade*/}
 import HomeAtividadeCasa from './Back-office/pages/atividadeCasa/Home.jsx';
 import CreateAtividadeCasa from './Back-office/pages/atividadeCasa/Create.jsx'
 import ReadAtividadeCasa from './Back-office/pages/atividadeCasa/Read.jsx'
 import UpdateAtividadeCasa from './Back-office/pages/atividadeCasa/Update.jsx'
-
+{/* Back-office - Sector*/}
+import HomeSector from './Back-office/pages/sector/Home.jsx';
+import CreateSector from './Back-office/pages/sector/Create.jsx'
+import ReadSector from './Back-office/pages/sector/Read.jsx'
+import UpdateSector from './Back-office/pages/sector/Update.jsx'
 
 
 function App() {
@@ -80,11 +84,16 @@ function App() {
             <Route path="/Back-office/pages/estoque/update/:id" element={<UpdateEstoque />}></Route>
             <Route path="/Back-office/pages/estoqueFilter" element={<ReadEstoqueByFilter />}></Route>
             <Route path="/Back-office/pages/updateQtdEstoque/:id" element={<UpdateQtdEstoque />}></Route>
-            {/* Back-office - Estoque*/}
+            {/* Back-office - Atividade*/}
             <Route path="/Back-office/pages/atividade" element={<HomeAtividadeCasa />}></Route>
             <Route path="/Back-office/pages/atividade/create" element={<CreateAtividadeCasa />}></Route>
             <Route path="/Back-office/pages/atividade/read/:id" element={<ReadAtividadeCasa />}></Route>
             <Route path="/Back-office/pages/atividade/update/:id" element={<UpdateAtividadeCasa />}></Route>
+            {/* Back-office - Sector*/}
+            <Route path="/Back-office/pages/sector" element={<HomeSector />}></Route>
+            <Route path="/Back-office/pages/sector/create" element={<CreateSector />}></Route>
+            <Route path="/Back-office/pages/sector/read/:id" element={<ReadSector />}></Route>
+            <Route path="/Back-office/pages/sector/update/:id" element={<UpdateSector />}></Route>
 
         </Routes>
       </AuthProvider>
