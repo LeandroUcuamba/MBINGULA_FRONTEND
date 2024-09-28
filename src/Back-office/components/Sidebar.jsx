@@ -56,6 +56,10 @@ function Sidebar() {
             <i className="m-4 bi bi-grid me-3 fs-4"></i>
             <span className="fs-4">Sector</span>
           </NavLink>
+          <NavLink to="/Back-office/pages/mesa" className="navLink">
+            <i className="m-4 bi bi-grid me-3 fs-4"></i>
+            <span className="fs-4">Mesa</span>
+          </NavLink>
         </ul>
       </div>
 

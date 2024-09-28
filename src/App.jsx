@@ -44,6 +44,12 @@ import HomeSector from './Back-office/pages/sector/Home.jsx';
 import CreateSector from './Back-office/pages/sector/Create.jsx'
 import ReadSector from './Back-office/pages/sector/Read.jsx'
 import UpdateSector from './Back-office/pages/sector/Update.jsx'
+{/* Back-office - Mesa*/}
+import HomeMesa from './Back-office/pages/mesa/Home.jsx'
+import CreateMesa from './Back-office/pages/mesa/Create.jsx'
+import ReadMesa from './Back-office/pages/mesa/Read.jsx'
+import UpdateMesa from './Back-office/pages/mesa/Update.jsx'
+import ReadMesaByFilter from './Back-office/pages/mesa/ReadByFilter.jsx'
 
 
 function App() {
@@ -94,6 +100,12 @@ function App() {
             <Route path="/Back-office/pages/sector/create" element={<CreateSector />}></Route>
             <Route path="/Back-office/pages/sector/read/:id" element={<ReadSector />}></Route>
             <Route path="/Back-office/pages/sector/update/:id" element={<UpdateSector />}></Route>
+            {/* Back-office - Mesa*/}
+            <Route path="/Back-office/pages/mesa" element={<HomeMesa />}></Route>
+            <Route path="/Back-office/pages/mesa/create" element={<CreateMesa />}></Route>
+            <Route path="/Back-office/pages/mesa/read/:id" element={<ReadMesa />}></Route>
+            <Route path="/Back-office/pages/mesa/update/:id" element={<UpdateMesa />}></Route>
+            <Route path="/Back-office/pages/mesaFilter" element={<ReadMesaByFilter />}></Route>
 
         </Routes>
       </AuthProvider>
