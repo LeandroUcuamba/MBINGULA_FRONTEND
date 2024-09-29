@@ -55,6 +55,11 @@ import OtherSidebar from './Back-office/components/OtherSidebar.jsx'
 {/* Back-office - Acesso*/}
 import HomeAcesso from './Back-office/pages/acesso/Home.jsx'
 import ReadAcesso from './Back-office/pages/acesso/Read.jsx'
+{/* Back-office - Servico*/}
+import HomeServico from './Back-office/pages/servico/Home.jsx'
+import CreateServico from './Back-office/pages/servico/Create.jsx'
+import ReadServico from './Back-office/pages/servico/Read.jsx'
+import UpdateServico from './Back-office/pages/servico/Update.jsx'
 
 function App() {
   return (
@@ -115,6 +120,11 @@ function App() {
             {/* Back-office - Acesso*/}
             <Route path="/Back-office/pages/acesso" element={<HomeAcesso />}></Route>
             <Route path="/Back-office/pages/acesso/read/:id" element={<ReadAcesso />}></Route>
+            {/* Back-office - Servico*/}
+            <Route path="/Back-office/pages/servico" element={<HomeServico />}></Route>
+            <Route path="/Back-office/pages/servico/create" element={<CreateServico />}></Route>
+            <Route path="/Back-office/pages/servico/read/:id" element={<ReadServico />}></Route>
+            <Route path="/Back-office/pages/servico/update/:id" element={<UpdateServico />}></Route>
 
         </Routes>
       </AuthProvider>

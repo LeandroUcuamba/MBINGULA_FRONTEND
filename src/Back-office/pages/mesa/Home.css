@@ -45,12 +45,12 @@ h1 {
   margin-bottom: 16px;
 }
 
-.funcionario-list {
+.mesa-list {
   display: flex;
   flex-direction: column;
 }
 
-.funcionario-item {
+.mesa-item {
   border: 1px solid #ddd;
   padding: 16px;
   margin-bottom: 16px;
