@@ -60,6 +60,11 @@ import HomeServico from './Back-office/pages/servico/Home.jsx'
 import CreateServico from './Back-office/pages/servico/Create.jsx'
 import ReadServico from './Back-office/pages/servico/Read.jsx'
 import UpdateServico from './Back-office/pages/servico/Update.jsx'
+{/* Back-office - Item*/}
+import HomeItem from './Back-office/pages/item/Home.jsx'
+import CreateItem from './Back-office/pages/item/Create.jsx'
+import UpdateItem from './Back-office/pages/item/Update.jsx'
+import ReadItemByFilter from './Back-office/pages/item/ReadByFilter.jsx'
 
 function App() {
   return (
@@ -125,6 +130,11 @@ function App() {
             <Route path="/Back-office/pages/servico/create" element={<CreateServico />}></Route>
             <Route path="/Back-office/pages/servico/read/:id" element={<ReadServico />}></Route>
             <Route path="/Back-office/pages/servico/update/:id" element={<UpdateServico />}></Route>
+            {/* Back-office - Item*/}
+            <Route path="/Back-office/pages/item" element={<HomeItem />}></Route>
+            <Route path="/Back-office/pages/item/create" element={<CreateItem />}></Route>
+            <Route path="/Back-office/pages/item/update/:id" element={<UpdateItem />}></Route>
+            <Route path="/Back-office/pages/item/itemFilter" element={<ReadItemByFilter />}></Route>
 
         </Routes>
       </AuthProvider>
