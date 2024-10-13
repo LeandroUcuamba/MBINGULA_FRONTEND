@@ -65,6 +65,9 @@ import HomeItem from './Back-office/pages/item/Home.jsx'
 import CreateItem from './Back-office/pages/item/Create.jsx'
 import UpdateItem from './Back-office/pages/item/Update.jsx'
 import ReadItemByFilter from './Back-office/pages/item/ReadByFilter.jsx'
+{/* Back-office - Atualizar Acesso Utilizador*/}
+import HomeUtilizador from './Back-office/pages/utilizador/Home.jsx'
+import UpdateUtilizador from './Back-office/pages/utilizador/Update.jsx'
 
 function App() {
   return (
@@ -135,6 +138,9 @@ function App() {
             <Route path="/Back-office/pages/item/create" element={<CreateItem />}></Route>
             <Route path="/Back-office/pages/item/update/:id" element={<UpdateItem />}></Route>
             <Route path="/Back-office/pages/item/itemFilter" element={<ReadItemByFilter />}></Route>
+            {/* Back-office - Atualizar Acesso Utilizador*/}
+            <Route path="/Back-office/pages/utilizador" element={<HomeUtilizador />}></Route>
+            <Route path="/Back-office/pages/utilizador/update/:id" element={<UpdateUtilizador />}></Route>
 
         </Routes>
       </AuthProvider>

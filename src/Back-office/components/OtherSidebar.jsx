@@ -39,6 +39,10 @@ function Sidebar() {
             <i className="m-4 bi bi-people me-3 fs-4"></i>
             <span className="fs-4">Serviços prestados</span>
           </NavLink>
+          <NavLink to="/Back-office/pages/utilizador" className="navLink">
+            <i className="m-4 bi bi-people me-3 fs-4"></i>
+            <span className="fs-4">Alterar acesso para utilizador</span>
+          </NavLink>
         </ul>
       </div>
 
