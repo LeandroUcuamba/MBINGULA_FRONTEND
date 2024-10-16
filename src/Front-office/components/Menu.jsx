@@ -43,7 +43,6 @@ function Navbar() {
             {!showMore ? (
               <>
                 <li><NavLink to="/"><IoHome className="icones-menu" /> Home</NavLink></li>
-                <li><NavLink to="/components/comida/Comida"> <MdRoomService className="icones-menu" /> Serviços</NavLink></li>
                 <li><NavLink to="/pages/Sobre/Sobre"> <AiOutlineQuestionCircle className="icones-menu" /> Sobre</NavLink></li>
                 <li>
                   {signed ? (
