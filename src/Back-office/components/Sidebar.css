@@ -26,15 +26,15 @@
     color: var(--main-color2);
 }
 
-#btn-logout {
+#btn-voltar {
     background-color: #191c1f;
     border-radius: 10px;
     color: red;
     border: 1px solid red;
 }
 
-#btn-logout:hover {
-    background-color: red;
+#btn-voltar:hover {
+    background-color: #191c1f;
     border: 1px solid white;
     color: white;
 }

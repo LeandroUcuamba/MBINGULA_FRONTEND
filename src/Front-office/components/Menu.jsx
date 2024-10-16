@@ -1,16 +1,20 @@
-import { useRef, useContext } from "react";
+import { useRef, useState, useContext } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { NavLink, Link } from "react-router-dom";
 import { RiRestaurant2Fill } from "react-icons/ri";
 import { IoHome } from "react-icons/io5";
 import { MdRoomService } from "react-icons/md";
-import { MdRoundaboutRight } from "react-icons/md";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
+import { AiOutlinePlusCircle } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineReload } from "react-icons/ai";
 import { BiLogOut, BiLogIn } from "react-icons/bi";
 
 import { AuthContext } from '../../context/AuthContext';
 
 function Navbar() {
   const navRef = useRef();
+  const [showMore, setShowMore] = useState(false);
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav");
@@ -18,33 +22,49 @@ function Navbar() {
 
   const { signed, signOut } = useContext(AuthContext);
 
+  const handleShowMore = () => {
+    setShowMore(true);
+  };
+
+  const handleBack = () => {
+    setShowMore(false);
+  };
+
   return (
     <header className="header">
       <Link to="/" className="logo">
         <RiRestaurant2Fill className="fa-cutlery" />
-        Restaurant Mbingula
+        Restaurante Mbingula
       </Link>
 
       <div className="navbar">
         <nav ref={navRef}>
           <ul>
-
-            <li><NavLink to="/"><IoHome className="icones-menu" /> Home</NavLink></li>
-            
-            <li><NavLink to="/components/comida/Comida"> <MdRoomService className="icones-menu" /> Serviços</NavLink></li>
-
-            <li><NavLink to="/pages/Sobre/Sobre"> <MdRoundaboutRight className="icones-menu" /> Sobre</NavLink></li>
-
-            <li>
-              {signed ? (
-                <NavLink to="/" onClick={signOut}> <BiLogOut className="icones-menu" /> Sair</NavLink>
-              ) : (
-                <NavLink to="/Front-office/components/LoginRegisterForm"> <BiLogIn className="icones-menu" /> Entrar</NavLink>
-              )}
-            </li>
-
-            <li><NavLink to="/Back-office/App_BackOffice">Admin</NavLink></li>
-
+            {!showMore ? (
+              <>
+                <li><NavLink to="/"><IoHome className="icones-menu" /> Home</NavLink></li>
+                <li><NavLink to="/components/comida/Comida"> <MdRoomService className="icones-menu" /> Serviços</NavLink></li>
+                <li><NavLink to="/pages/Sobre/Sobre"> <AiOutlineQuestionCircle className="icones-menu" /> Sobre</NavLink></li>
+                <li>
+                  {signed ? (
+                    <NavLink to="/" onClick={signOut}> <BiLogOut className="icones-menu" /> Sair</NavLink>
+                  ) : (
+                    <NavLink to="/Front-office/components/LoginRegisterForm"> <BiLogIn className="icones-menu" /> Entrar</NavLink>
+                  )}
+                </li>
+                <li><NavLink to="/Back-office/App_BackOffice"><AiOutlineUser className="icones-menu" /> Admin</NavLink></li>
+                <li>
+                  <NavLink to="#" onClick={handleShowMore}><AiOutlinePlusCircle className="icones-menu" /> Ver mais</NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li><NavLink to="/"><IoHome className="icones-menu" /> Leandro</NavLink></li>
+                <li><NavLink to="/"><IoHome className="icones-menu" /> Andi</NavLink></li>
+                <li><NavLink to="/"><IoHome className="icones-menu" /> Celso</NavLink></li>
+                <li><NavLink to="#" onClick={handleBack}><AiOutlineReload className="icones-menu" /> Voltar</NavLink></li>
+              </>
+            )}
             <button
               className="nav-btn nav-close-btn"
               onClick={showNavbar}>

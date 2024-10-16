@@ -78,8 +78,8 @@ function Sidebar() {
             </NavLink>
 
             <NavLink to="/" className="navLink">
-              <button id='btn-logout' className="p-1 d-flex btn btn-danger">
-                <i className="bi bi-box-arrow-right me-1"></i> Sair
+              <button id='btn-voltar' className="p-1 d-flex btn btn-danger">
+                <i className="bi bi-chevron-double-left me-1"></i> Voltar
               </button>
             </NavLink>
           </div>
