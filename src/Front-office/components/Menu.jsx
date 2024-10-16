@@ -3,7 +3,6 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { NavLink, Link } from "react-router-dom";
 import { RiRestaurant2Fill } from "react-icons/ri";
 import { IoHome } from "react-icons/io5";
-import { MdRoomService } from "react-icons/md";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
@@ -52,6 +51,7 @@ function Navbar() {
                   )}
                 </li>
                 <li><NavLink to="/Back-office/App_BackOffice"><AiOutlineUser className="icones-menu" /> Admin</NavLink></li>
+                <li><NavLink to="/Front-office/pages/mesaReservada"> Reservar Mesa</NavLink></li>
                 <li>
                   <NavLink to="#" onClick={handleShowMore}><AiOutlinePlusCircle className="icones-menu" /> Ver mais</NavLink>
                 </li>
