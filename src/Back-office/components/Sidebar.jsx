@@ -23,12 +23,12 @@ function Sidebar() {
         <ul className="nav nav-pills flex-column mt-3">
 
           <NavLink to="/Back-office/App_BackOffice" className="navLink">
-            <i className="m-4 bi bi-speedometer2 me-2 fs-4"></i>
+            <i className="m-4 bi bi-clipboard2-data me-3 fs-4"></i>
             <span className="fs-4">Dashboard</span>
           </NavLink>
 
           <NavLink to="/Back-office/pages/funcionario" className="navLink">
-            <i className="m-4 bi bi-people me-3 fs-4"></i>
+            <i className="m-4 bi bi-person-lines-fill me-3 fs-4"></i>
             <span className="fs-4">Funcionários</span>
           </NavLink>
 
@@ -38,31 +38,31 @@ function Sidebar() {
           </NavLink>
 
           <NavLink to="/Back-office/pages/produto" className="navLink">
-            <i className="m-4 bi bi-grid me-3 fs-4"></i>
-            <span className="fs-4">Produtos - fornecidos</span>
+            <i className="m-4 bi bi-box-seam me-3 fs-4"></i>
+            <span className="fs-4">Produto e fornecidor</span>
           </NavLink>
 
           <NavLink to="/Back-office/pages/estoque" className="navLink">
-            <i className="m-4 bi bi-grid me-3 fs-4"></i>
-            <span className="fs-4">Produto - Estoque</span>
+            <i className="m-4 bi bi-boxes me-3 fs-4"></i>
+            <span className="fs-4">Estoque de produto</span>
           </NavLink>
 
           <NavLink to="/Back-office/pages/atividade" className="navLink">
-            <i className="m-4 bi bi-grid me-3 fs-4"></i>
+            <i className="m-4 bi bi-calendar2-event me-3 fs-4"></i>
             <span className="fs-4">Atividades da casa</span>
           </NavLink>
 
           <NavLink to="/Back-office/pages/sector" className="navLink">
-            <i className="m-4 bi bi-grid me-3 fs-4"></i>
+            <i className="m-4 bi bi-ui-checks-grid me-3 fs-4"></i>
             <span className="fs-4">Sector</span>
           </NavLink>
           <NavLink to="/Back-office/pages/mesa" className="navLink">
-            <i className="m-4 bi bi-grid me-3 fs-4"></i>
-            <span className="fs-4">Mesa</span>
+            <i className="m-4 bi bi-octagon-fill me-3 fs-4"></i>
+            <span className="fs-4">Mesas</span>
           </NavLink>
           <NavLink to="/Back-office/components/otherSidebar" className="navLink">
-            <i className="m-4 bi bi-grid me-3 fs-4"></i>
-            <span className="fs-4">Outros</span>
+            <i className="m-4 bi bi-arrow-down-circle me-3 fs-4"></i>
+            <span className="fs-4">Ver mais</span>
           </NavLink>
         </ul>
       </div>

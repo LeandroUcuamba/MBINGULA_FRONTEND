@@ -23,24 +23,24 @@ function Sidebar() {
         <ul className="nav nav-pills flex-column mt-3">
 
           <NavLink to="/Back-office/App_BackOffice" className="navLink">
-            <i className="m-4 bi bi-speedometer2 me-2 fs-4"></i>
+            <i className="m-4 bi bi-clipboard2-data me-3 fs-4"></i>
             <span className="fs-4">Dashboard</span>
           </NavLink>
 
           <NavLink to="/Back-office/pages/acesso" className="navLink">
-            <i className="m-4 bi bi-people me-3 fs-4"></i>
+            <i className="m-4 bi bi-key me-3 fs-4"></i>
             <span className="fs-4">Privilegios de acesso</span>
           </NavLink>
           <NavLink to="/Back-office/pages/item" className="navLink">
-            <i className="m-4 bi bi-people me-3 fs-4"></i>
-            <span className="fs-4">Items cardapio</span>
+            <i className="m-4 bi bi-file-text me-3 fs-4"></i>
+            <span className="fs-4">Items do cardapio</span>
           </NavLink>
           <NavLink to="/Back-office/pages/servico" className="navLink">
-            <i className="m-4 bi bi-people me-3 fs-4"></i>
+            <i className="m-4 bi bi-house me-3 fs-4"></i>
             <span className="fs-4">Serviços prestados</span>
           </NavLink>
           <NavLink to="/Back-office/pages/utilizador" className="navLink">
-            <i className="m-4 bi bi-people me-3 fs-4"></i>
+            <i className="m-4 bi bi-person-lock me-3 fs-4"></i>
             <span className="fs-4">Alterar acesso para utilizador</span>
           </NavLink>
         </ul>
