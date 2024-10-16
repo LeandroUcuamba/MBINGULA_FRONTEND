@@ -71,7 +71,6 @@ import UpdateUtilizador from './Back-office/pages/utilizador/Update.jsx'
 
 function App() {
   return (
-
     <div>
       <AuthProvider>
         <Routes>
@@ -141,7 +140,6 @@ function App() {
             {/* Back-office - Atualizar Acesso Utilizador*/}
             <Route path="/Back-office/pages/utilizador" element={<HomeUtilizador />}></Route>
             <Route path="/Back-office/pages/utilizador/update/:id" element={<UpdateUtilizador />}></Route>
-
         </Routes>
       </AuthProvider>
     </div>
