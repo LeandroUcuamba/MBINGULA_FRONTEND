@@ -17,15 +17,15 @@ const Footer = () => {
                     <div className='contactos'>
                         <h4>Contactos</h4>
                         <div className='links'>
-                            <a href=''>localização</a>
-                            <a href=''>Tel: 67893242</a>
-                            <a href=''>Bing@mail.com</a>
+                            <a href=''>Rua do MAT, a 400m da AngoMart</a>
+                            <a href=''>Tel: 942555666</a>
+                            <a href=''>restaurantembingula@gmail.com</a>
                         </div>
                     </div>
 
                     <div className="detalhes">
-                        <h4>Sobre</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sit eius quod nostrum excepturi expedita ea possimus animi iure placeat reiciendis odit adipisci laboriosam, est minus, ad atque molestias recusandae.</p>
+                        <h4>Redes sociais</h4>
+                        <p>Visite as nossas redes sociais e conheça o restaurante Mbingula.</p>
                         <div className="social-media-buttons">
                             {socialNetworks.map((network) => (
                                 <a href="#"
@@ -39,7 +39,7 @@ const Footer = () => {
                     </div>
                     <div className='horario'>
                         <h4>Horário</h4>
-                        <p>Todos dias</p>
+                        <p>Aberto todos dias:</p>
                         <p><span>8:00</span> até <span>22:00</span></p>
                     </div>
                 </div>
