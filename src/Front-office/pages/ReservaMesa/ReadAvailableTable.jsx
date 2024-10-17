@@ -14,6 +14,10 @@ function Mesa() {
       .catch(err => console.log(err));
   }, []);
 
+  const handleReserva = (numero) => {
+    navigate(`/Front-office/pages/reservaMesa?mesa=${numero}`, { state: { url: `http://localhost:3000/create-reserva/${numero}` } });
+  };
+
   return (
     <div className="home-container">
       <div className='content'>
@@ -26,31 +30,43 @@ function Mesa() {
                   <i className="bi bi-arrow-left-circle"></i> Voltar
                 </Link>
               </div>
-              <div className='right-buttons'>
-                <Link to="/" className='btn btn-success'>Reservar +</Link>
-              </div>
             </div>
             <div className="mesa-list">
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>Número</th>
-                    <th>Lugares</th>
-                    <th>Posição</th>
-                    <th>Status de Ocupação</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.map((d, i) => (
-                    <tr key={i}>
-                      <td>{d.numero}</td>
-                      <td>{d.lugares}</td>
-                      <td>{d.posicao}</td>
-                      <td>{d.statusOcupacao}</td>
+              {data.length > 0 ? (
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th>Número</th>
+                      <th>Lugares</th>
+                      <th>Posição</th>
+                      <th>Status de Ocupação</th>
+                      <th>Ações</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {data.map((d, i) => (
+                      <tr key={i}>
+                        <td>{d.numero}</td>
+                        <td>{d.lugares}</td>
+                        <td>{d.posicao}</td>
+                        <td style={{ color: 'green' }}>
+                          {d.statusOcupacao}
+                        </td>
+                        <td>
+                          <button
+                            className="btn btn-success"
+                            onClick={() => handleReserva(d.numero)}
+                          >
+                            Reservar
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <p>De momento não há mesa disponível.</p>
+              )}
             </div>
           </div>
         </div>

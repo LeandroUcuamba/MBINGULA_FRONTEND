@@ -58,9 +58,8 @@ function Navbar() {
               </>
             ) : (
               <>
-                <li><NavLink to="/"><IoHome className="icones-menu" /> Leandro</NavLink></li>
-                <li><NavLink to="/"><IoHome className="icones-menu" /> Andi</NavLink></li>
-                <li><NavLink to="/"><IoHome className="icones-menu" /> Celso</NavLink></li>
+                <li><NavLink to="/Front-office/pages/AtividadeCasa"><IoHome className="icones-menu" /> Atividades</NavLink></li>
+                <li><NavLink to="/Front-office/pages/Servicos"><IoHome className="icones-menu" /> Serviços</NavLink></li>
                 <li><NavLink to="#" onClick={handleBack}><AiOutlineReload className="icones-menu" /> Voltar</NavLink></li>
               </>
             )}

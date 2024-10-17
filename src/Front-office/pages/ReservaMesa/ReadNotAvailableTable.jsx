@@ -22,12 +22,14 @@ function Mesa() {
           <div className='custom-container'>
             <div className='button-container'>
               <div className='left-buttons'>
-                <Link to="/Front-office/pages/mesaDisponivel" className='btn btn-search'>
-                  <i className="bi bi-search"></i> Ver mesas disponíveis
+                <Link to="/" className='btn btn-search'>
+                  <i className="bi bi-arrow-left-circle"></i> Voltar
                 </Link>
               </div>
               <div className='right-buttons'>
-                <Link to="/" className='btn btn-success'>Reservar +</Link>
+                <Link to="/Front-office/pages/mesaDisponivel" className='btn btn-search'>
+                  <i className="bi bi-search"></i> Ver mesas disponíveis
+                </Link>
               </div>
             </div>
             <div className="mesa-list">
@@ -50,7 +52,11 @@ function Mesa() {
                       <td>{d.numero}</td>
                       <td>{d.lugares}</td>
                       <td>{d.posicao}</td>
-                      <td>{d.statusOcupacao}</td>
+                      <td>
+                        <span style={{ color: d.statusOcupacao === 'Reservada' ? 'red' : 'yellow' }}>
+                          {d.statusOcupacao}
+                        </span>
+                      </td>
                       <td>{d.qtd_pessoa}</td>
                       <td>{d.nome_cliente}</td>
                       <td>{d.tel_cliente}</td>

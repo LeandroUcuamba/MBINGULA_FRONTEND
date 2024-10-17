@@ -68,6 +68,11 @@ import UpdateUtilizador from './Back-office/pages/utilizador/Update.jsx'
 {/* Front-office - Reserva de Mesa*/}
 import ReadNotAvailableTable from './Front-office/pages/ReservaMesa/ReadNotAvailableTable.jsx'
 import ReadAvailableTable from './Front-office/pages/ReservaMesa/ReadAvailableTable.jsx'
+import CreateReservaMesa from './Front-office/pages/ReservaMesa/CreateReservaMesa.jsx'
+{/* Front-office - Atividade casa*/}
+import ReadAtividades from './Front-office/pages/AtividadeCasa/ReadAtividades.jsx'
+{/* Front-office - Servicos*/}
+import ReadServicos from './Front-office/pages/Servicos/ReadServicos.jsx'
 
 function App() {
   return (
@@ -140,6 +145,11 @@ function App() {
             {/* Front-office - Reserva de Mesa*/}
             <Route path="/Front-office/pages/mesaReservada" element={<ReadNotAvailableTable />}></Route>
             <Route path="/Front-office/pages/mesaDisponivel" element={<ReadAvailableTable />}></Route>
+            <Route path="/Front-office/pages/reservaMesa" element={<CreateReservaMesa />}></Route>
+            {/* Front-office - Atividade casa*/}
+            <Route path="/Front-office/pages/AtividadeCasa" element={<ReadAtividades />}></Route>
+            {/* Front-office - Servicos*/}
+            <Route path="/Front-office/pages/Servicos" element={<ReadServicos />}></Route>
 
         </Routes>
       </AuthProvider>
