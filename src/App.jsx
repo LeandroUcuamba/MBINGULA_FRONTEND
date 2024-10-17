@@ -65,6 +65,8 @@ import ReadItemByFilter from './Back-office/pages/item/ReadByFilter.jsx'
 {/* Back-office - Atualizar Acesso Utilizador*/}
 import HomeUtilizador from './Back-office/pages/utilizador/Home.jsx'
 import UpdateUtilizador from './Back-office/pages/utilizador/Update.jsx'
+{/* Back-office - Avaliacao*/}
+import HomeAvaliacao from './Back-office/pages/avaliacao/Home.jsx'
 {/* Front-office - Reserva de Mesa*/}
 import ReadNotAvailableTable from './Front-office/pages/ReservaMesa/ReadNotAvailableTable.jsx'
 import ReadAvailableTable from './Front-office/pages/ReservaMesa/ReadAvailableTable.jsx'
@@ -142,6 +144,8 @@ function App() {
             {/* Back-office - Atualizar Acesso Utilizador*/}
             <Route path="/Back-office/pages/utilizador" element={<HomeUtilizador />}></Route>
             <Route path="/Back-office/pages/utilizador/update/:id" element={<UpdateUtilizador />}></Route>
+            {/* Back-office - Avaliacao*/}
+            <Route path="/Back-office/pages/avaliacao" element={<HomeAvaliacao />}></Route>
             {/* Front-office - Reserva de Mesa*/}
             <Route path="/Front-office/pages/mesaReservada" element={<ReadNotAvailableTable />}></Route>
             <Route path="/Front-office/pages/mesaDisponivel" element={<ReadAvailableTable />}></Route>
