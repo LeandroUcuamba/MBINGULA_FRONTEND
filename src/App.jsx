@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext.jsx";
 
 import Home from './Front-office/pages/Home/Home.jsx';
-import Sobre from './Front-office/pages/Sobre/Sobre.jsx';
+import AtividadeHome from './Front-office/pages/MostrarAtividadeHome/AtividadeHome.jsx';
 import LoginRegisterForm from './Front-office/components/LoginRegisterForm.jsx';
 import App_BackOffice from './Back-office/App_BackOffice.jsx';
 {/* Back-office - Funcionario*/}
@@ -87,7 +87,7 @@ function App() {
       <AuthProvider>
         <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/pages/Sobre/Sobre" element={<Sobre />}></Route>
+            <Route path="/Front-office/pages/MostrarAtividadeHome" element={<AtividadeHome />}></Route>
             <Route path="/Front-office/components/LoginRegisterForm" element={<LoginRegisterForm />}></Route>
             <Route path="/Back-office/App_BackOffice" element={<App_BackOffice />}></Route>
             {/* Back-office - Funcionario*/}

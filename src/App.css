@@ -3,7 +3,7 @@
 @import url('./Front-office/components/LoginRegisterForm.css');
 @import url('./Front-office/pages/Home/Home.css');
 @import url('./Front-office/pages/Cardapio/Cardapio.css');
-@import url('./Front-office/pages/Sobre/Sobre.css');
+@import url('./Front-office/pages/MostrarAtividadeHome/AtividadeHome.css');
 
 :root {
   --bg-color: #FFFFFF;

@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import home1 from '../../assets/hero-bg1.jpg';
 
 import Cardapio from '../Cardapio/Cardapio.jsx';
-import Sobre from '../Sobre/Sobre.jsx';
+import Sobre from '../MostrarAtividadeHome/AtividadeHome.jsx';
 import Footer from '../../components/Footer.jsx';
 import Menu from '../../components/Menu.jsx'
 import { NavLink } from "react-router-dom";
