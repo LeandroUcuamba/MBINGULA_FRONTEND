@@ -138,6 +138,12 @@ h1 {
   margin-right: 4px;
 }
 
+.btn-disponibilizar:hover {
+  background-color: rgba(49, 177, 49, 0.752);
+  border-color: rgba(49, 177, 49, 0.752);
+  color: white;
+}
+
 @media (max-width: 768px) {
   .custom-container {
     width: 90%;

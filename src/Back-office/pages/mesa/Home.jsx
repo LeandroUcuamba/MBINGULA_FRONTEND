@@ -59,6 +59,14 @@ function Mesa() {
     }
   };
 
+  const handleDisponibilizar = (id) => {
+    axios.patch(`http://localhost:3000/makeMesaAvailable-mesa/${id}`)
+      .then(res => {
+        alert('Mesa disponibilizada com sucesso!');
+      })
+      .catch(err => console.log(err));
+  };
+
   return (
     <div className="home-container">
       <div className={toggle ? "d-none" : "sidebar-container"}>
@@ -99,6 +107,9 @@ function Mesa() {
                     </Link>
                     <button onClick={() => handleDelete(d.id)} className='btn-sm btn-danger'>
                       <i className="bi bi-trash"></i>
+                    </button>
+                    <button onClick={() => handleDisponibilizar(d.id)} className='btn-sm btn-warning btn-disponibilizar'>
+                     Disponibilizar
                     </button>
                   </div>
                 </div>
