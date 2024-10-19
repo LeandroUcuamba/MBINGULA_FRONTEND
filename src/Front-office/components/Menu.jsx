@@ -60,6 +60,7 @@ function Navbar() {
               <>
                 <li><NavLink to="/Front-office/pages/AtividadeCasa"><IoHome className="icones-menu" /> Atividades</NavLink></li>
                 <li><NavLink to="/Front-office/pages/Servicos"><IoHome className="icones-menu" /> Serviços</NavLink></li>
+                <li><NavLink to="/Front-office/pages/pages/avaliacao/create"><IoHome className="icones-menu" /> Avaliação</NavLink></li>
                 <li><NavLink to="#" onClick={handleBack}><AiOutlineReload className="icones-menu" /> Voltar</NavLink></li>
               </>
             )}

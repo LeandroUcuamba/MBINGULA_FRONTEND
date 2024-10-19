@@ -75,6 +75,8 @@ import CreateReservaMesa from './Front-office/pages/ReservaMesa/CreateReservaMes
 import ReadAtividades from './Front-office/pages/AtividadeCasa/ReadAtividades.jsx'
 {/* Front-office - Servicos*/}
 import ReadServicos from './Front-office/pages/Servicos/ReadServicos.jsx'
+{/* Front-office - Avaliacao*/}
+import CreateAvaliacao from './Front-office/pages/avaliacao/CreateAvaliacao.jsx'
 
 function App() {
   return (
@@ -154,6 +156,8 @@ function App() {
             <Route path="/Front-office/pages/AtividadeCasa" element={<ReadAtividades />}></Route>
             {/* Front-office - Servicos*/}
             <Route path="/Front-office/pages/Servicos" element={<ReadServicos />}></Route>
+            {/* Front-office - Avaliacao*/}
+            <Route path="/Front-office/pages/pages/avaliacao/create" element={<CreateAvaliacao />}></Route>
 
         </Routes>
       </AuthProvider>
