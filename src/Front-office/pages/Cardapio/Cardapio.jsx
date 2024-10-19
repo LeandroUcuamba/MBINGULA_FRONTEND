@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Menu from '../../components/Menu';
 
 const Cardapio = () => {
@@ -36,7 +37,7 @@ const Cardapio = () => {
             <Menu />
             <section id="cardapio-comida">
                 <h2 className="cardapio-title">Cardápio</h2>
-                <h3 className="cardapio-subtitle">Nossos pratos especiais</h3>
+                <h3 className="cardapio-subtitle">Vizualize o nosso cardápio</h3>
 
                 <div id="container-cardapio-comida">
                     {itensCardapio.map(item => (
@@ -57,9 +58,9 @@ const Cardapio = () => {
 
                             <div className="dish-price-cardapio-comida">
                                 <h4>{item.price} kz</h4>
-                                <button className="btn-default-cardapio-comida">
-                                    <i className="fa-solid fa-basket-shopping"></i>
-                                </button>
+                                <Link to="/Front-office/pages/CardapioItems" className="btn-default-cardapio-comida">
+                                    ver mais
+                                </Link>
                             </div>
                         </div>
                     ))}
