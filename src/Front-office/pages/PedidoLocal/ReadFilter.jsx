@@ -1,0 +1,135 @@
+import { useState } from 'react';
+import axios from 'axios';
+
+function ReadByFilter() {
+  const [searchValue, setSearchValue] = useState('');
+  const [selectedFilter, setSelectedFilter] = useState('userName');
+  const [data, setData] = useState([]);
+  const [error, setError] = useState('');
+  const [filterInfo, setFilterInfo] = useState('');
+
+  // Função que limpa os dados, mensagens de erro e informações do filtro
+  const clearResults = () => {
+    setData([]);
+    setError('');
+    setFilterInfo('');
+  };
+
+  // Lida com a mudança no valor do campo de pesquisa
+  const handleSearchChange = (e) => {
+    setSearchValue(e.target.value);
+    if (!e.target.value.trim()) {
+      clearResults(); // Limpa os resultados se o campo estiver vazio
+    }
+  };
+
+  // Lida com a mudança de filtro
+  const handleFilterChange = (filter) => {
+    setSelectedFilter(filter);
+    clearResults(); // Limpa os resultados ao mudar o filtro
+  };
+
+  const handleSearch = () => {
+    if (!searchValue.trim()) {
+      setError('O campo de pesquisa não pode estar vazio.');
+      clearResults(); // Limpa os resultados ao tentar pesquisar com campo vazio
+      return;
+    }
+
+    let url = '';
+
+    switch (selectedFilter) {
+      case 'userName':
+        url = `http://localhost:3000/getPedidoLocalByUserName/${searchValue}`;
+        break;
+      case 'userPhone':
+        url = `http://localhost:3000/getPedidoLocalByUserPhone/${searchValue}`;
+        break;
+      default:
+        setError('Filtro selecionado inválido.');
+        clearResults();
+        return;
+    }
+
+    axios.get(url)
+      .then(res => {
+        if (Array.isArray(res.data)) {
+          setData(res.data);
+        } else {
+          setData([res.data]);
+        }
+        setError('');
+        setFilterInfo(`${selectedFilter === 'userName' ? 'Nome' : 'Telefone'}`);
+      })
+      .catch(err => {
+        setError('Ocorreu um erro ao buscar os dados.');
+        clearResults();
+      });
+  };
+
+  return (
+    <div className="filter-container">
+      <div className="checkbox-container">
+        <label>
+          <input
+            type="radio"
+            name="filter"
+            value="userName"
+            checked={selectedFilter === 'userName'}
+            onChange={() => handleFilterChange('userName')}
+          />
+          Por Nome
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="filter"
+            value="userPhone"
+            checked={selectedFilter === 'userPhone'}
+            onChange={() => handleFilterChange('userPhone')}
+          />
+          Por Número de Telefone
+        </label>
+      </div>
+      <div className="search-container">
+        <input
+          type="text"
+          value={searchValue}
+          onChange={handleSearchChange}
+          placeholder="Digite o valor de pesquisa"
+        />
+        <button onClick={handleSearch} className="btn-search">
+          <i className="bi bi-search"></i> Pesquisar
+        </button>
+      </div>
+      {filterInfo && <p className="filter-info"><span className='filter-theme'>Filtrado por:</span> {filterInfo}</p>}
+      {error && <p className="error-message">{error}</p>}
+      <div className="result-container">
+        {data.length > 0 ? (
+          <div className="result-list">
+            {data.map((d, i) => (
+              <div key={i} className="result-item">
+                <p><strong>ID:</strong> {d.id}</p>
+                <p><strong>Tipo de Consumo:</strong> {d.tipoConsumo}</p>
+                <p><strong>Valor Total:</strong> {d.valorTotal}</p>
+                <p><strong>Itens do Pedido:</strong> {d.itemsPedido}</p>
+                <p><strong>Método de Pagamento:</strong> {d.metodoPagamento}</p>
+                <p><strong>Status:</strong> {d.status}</p>
+                <p><strong>Número da Mesa:</strong> {d.numeroMesa}</p>
+                <p><strong>Nome do Usuário:</strong> {d.userName}</p>
+                <p><strong>Telefone do Usuário:</strong> {d.userPhone}</p>
+                <p><strong>Número do Pedido:</strong> {d.numeroPedido}</p>
+                <p><strong>Criado em:</strong> {new Date(d.created_at).toLocaleString()}</p>
+                <p><strong>Atualizado em:</strong> {new Date(d.updated_at).toLocaleString()}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>Nenhum resultado encontrado.</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default ReadByFilter;

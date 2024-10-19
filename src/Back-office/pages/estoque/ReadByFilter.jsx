@@ -52,9 +52,10 @@ function ReadByFilter() {
           <div className="result-list">
             {data.map((d, i) => (
               <div key={i} className="result-item">
-                <p><strong>ID:</strong> {d.id}</p>
-                <p><strong>Nome do Produto:</strong> {d.nome}</p>
-                <p><strong>Quantidade:</strong> {d.quantidade}</p>
+                <p><strong>ID do Estoque:</strong> {d.id}</p>
+                <p><strong>Nome do Produto:</strong> {d.Produto.nome}</p>
+                <p><strong>Quantidade:</strong> {d.quantidade} {d.unidade}</p>
+                <p><strong>Descrição do Produto:</strong> {d.Produto.descricao}</p>
               </div>
             ))}
           </div>

@@ -45,7 +45,7 @@ function PedidoLocal() {
           <div className='custom-container'>
           <div className='button-container'>
               <div className='left-buttons'>
-                <Link to="/Front-office/pages/PedidoLocal/Update/" className='btn btn-search'>
+                <Link to="/Front-office/pages/PedidoLocalFilter" className='btn btn-search'>
                   <i className="bi bi-search"></i> Pesquisar Por
                 </Link>
               </div>

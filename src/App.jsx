@@ -86,6 +86,7 @@ import Sobre from './Front-office/pages/Sobre/Sobre.jsx'
 import HomePedidoLocal from './Front-office/pages/PedidoLocal/Home.jsx'
 import CreatePedidoLocal from './Front-office/pages/PedidoLocal/Create.jsx'
 import UpdatePedidoLocal from './Front-office/pages/PedidoLocal/Update.jsx'
+import ReadPedidoLocalFilter from './Front-office/pages/PedidoLocal/ReadFilter.jsx'
 
 function App() {
   return (
@@ -176,6 +177,7 @@ function App() {
             <Route path="/Front-office/pages/PedidoLocal" element={<HomePedidoLocal />}></Route>
             <Route path="/Front-office/pages/PedidoLocal/Create" element={<CreatePedidoLocal />}></Route>
             <Route path="/Front-office/pages/PedidoLocal/Update/:id" element={<UpdatePedidoLocal />}></Route>
+            <Route path="/Front-office/pages/PedidoLocalFilter" element={<ReadPedidoLocalFilter />}></Route>
 
         </Routes>
       </AuthProvider>
