@@ -49,8 +49,13 @@ function Mesa() {
                         <td>{d.numero}</td>
                         <td>{d.lugares}</td>
                         <td>{d.posicao}</td>
-                        <td style={{ color: 'green' }}>
-                          {d.statusOcupacao}
+                        <td><p style={{ 
+                            color: d.statusOcupacao === 'Reservada' ? 'red' : d.statusOcupacao === 'Disponível' ? 'green' : 'black',
+                            backgroundColor: d.statusOcupacao === 'Reservada' ? 'rgba(255, 0, 0, 0.2)' : d.statusOcupacao === 'Disponível' ? 'rgba(0, 128, 0, 0.2)' : 'transparent',
+                            padding: '2px',
+                            borderRadius: '5px',
+                            marginLeft: '4px'
+                         }}> {d.statusOcupacao} </p>
                         </td>
                         <td>
                           <button

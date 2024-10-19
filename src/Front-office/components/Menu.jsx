@@ -63,7 +63,7 @@ function Navbar() {
               </>
             ) : showOrderMenu ? (
               <>
-                <li><NavLink to="/"><IoHome className="icones-menu" /> Pedido no local</NavLink></li>
+                <li><NavLink to="/Front-office/pages/PedidoLocal"><IoHome className="icones-menu" /> Pedido no local</NavLink></li>
                 <li><NavLink to="/"><IoHome className="icones-menu" /> Pedido de Casa</NavLink></li>
                 <li><NavLink to="#" onClick={handleBack}><AiOutlineReload className="icones-menu" /> Voltar</NavLink></li>
               </>

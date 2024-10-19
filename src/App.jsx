@@ -82,6 +82,10 @@ import ReadAllCardapio from './Front-office/pages/Cardapio/ReadAllCardapio.jsx'
 import FilterAllCardapio from './Front-office/pages/Cardapio/FiltroAllCardapio.jsx'
 {/* Front-office - Sobre*/}
 import Sobre from './Front-office/pages/Sobre/Sobre.jsx'
+{/* Front-office - Pedido local*/}
+import HomePedidoLocal from './Front-office/pages/PedidoLocal/Home.jsx'
+import CreatePedidoLocal from './Front-office/pages/PedidoLocal/Create.jsx'
+import UpdatePedidoLocal from './Front-office/pages/PedidoLocal/Update.jsx'
 
 function App() {
   return (
@@ -168,6 +172,10 @@ function App() {
             <Route path="/Front-office/pages/FilterCardapioItems" element={<FilterAllCardapio />}></Route>
             {/* Front-office - Sobre*/}
             <Route path="/Front-office/pages/Sobre" element={<Sobre />}></Route>
+            {/* Front-office - Pedido local*/}
+            <Route path="/Front-office/pages/PedidoLocal" element={<HomePedidoLocal />}></Route>
+            <Route path="/Front-office/pages/PedidoLocal/Create" element={<CreatePedidoLocal />}></Route>
+            <Route path="/Front-office/pages/PedidoLocal/Update/:id" element={<UpdatePedidoLocal />}></Route>
 
         </Routes>
       </AuthProvider>
