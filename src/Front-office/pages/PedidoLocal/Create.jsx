@@ -65,6 +65,7 @@ function CreateMesa() {
     const newErrors = {};
     if (!values.tipoConsumo) newErrors.tipoConsumo = "* campo obrigatório";
     if (!values.valorTotal) newErrors.valorTotal = "* campo obrigatório";
+    if (!values.itemsPedido) newErrors.itemsPedido = "* campo obrigatório";
     if (!values.numeroMesa) newErrors.numeroMesa = "* campo obrigatório";
     if (!values.metodoPagamento) newErrors.metodoPagamento = "* campo obrigatório";
     if (values.metodoPagamento === "outro" && !otherPaymentMethod) {
@@ -80,7 +81,7 @@ function CreateMesa() {
   return (
     <div className='container'>
       <div className="form-container">
-        <h2>Cadastrar Mesa</h2>
+        <h2>Fazer pedido</h2>
 
         {alert.show && (
           <div className="alert alert-success" role="alert">
@@ -90,7 +91,7 @@ function CreateMesa() {
 
         <form onSubmit={handleSubmit} className="form-grid">
           <div className="form-row">
-            <div className="form-group">
+            <div className="form-group col-md-6">
               <label htmlFor="tipoConsumo">Tipo de Consumo:</label>
               <select
                 name="tipoConsumo"
@@ -105,9 +106,8 @@ function CreateMesa() {
               </select>
               {errors.tipoConsumo && <small className="text-danger">{errors.tipoConsumo}</small>}
             </div>
-          </div>
-          <div className="form-row">
-            <div className="form-group">
+
+            <div className="form-group col-md-6">
               <label htmlFor="valorTotal">Valor Total:</label>
               <input 
                 type="number" 
@@ -122,8 +122,9 @@ function CreateMesa() {
               {errors.valorTotal && <small className="text-danger">{errors.valorTotal}</small>}
             </div>
           </div>
+
           <div className="form-row">
-            <div className="form-group">
+            <div className="form-group col-md-6">
               <label htmlFor="metodoPagamento">Método de Pagamento:</label>
               <select
                 name="metodoPagamento"
@@ -153,9 +154,8 @@ function CreateMesa() {
                 />
               )}
             </div>
-          </div>
-          <div className="form-row">
-            <div className="form-group">
+
+            <div className="form-group col-md-6">
               <label htmlFor="numeroMesa">Número da Mesa:</label>
               <select
                 name="numeroMesa"
@@ -172,8 +172,9 @@ function CreateMesa() {
               {errors.numeroMesa && <small className="text-danger">{errors.numeroMesa}</small>}
             </div>
           </div>
+
           <div className="form-row">
-            <div className="form-group">
+            <div className="form-group col-md-6">
               <label htmlFor="userName">Nome:</label>
               <input
                 type="text"
@@ -186,9 +187,8 @@ function CreateMesa() {
               />
               {errors.userName && <small className="text-danger">{errors.userName}</small>}
             </div>
-          </div>
-          <div className="form-row">
-            <div className="form-group">
+
+            <div className="form-group col-md-6">
               <label htmlFor="userPhone">Telefone:</label>
               <input
                 type="tel"
@@ -202,6 +202,22 @@ function CreateMesa() {
               {errors.userPhone && <small className="text-danger">{errors.userPhone}</small>}
             </div>
           </div>
+
+          <div className="form-row">
+            <div className="form-group col-md-12">
+              <label htmlFor="itemsPedido">Items Pedido:</label>
+              <textarea
+                name="itemsPedido"
+                className="form-input"
+                placeholder="Digite os itens do pedido"
+                value={values.itemsPedido}
+                onChange={handleChange}
+                required
+              />
+              {errors.itemsPedido && <small className="text-danger">{errors.itemsPedido}</small>}
+            </div>
+          </div>
+
           <div className="botoes">
             <button type="submit" className="btn-submit">Criar</button>
             <Link to="/Front-office/pages/PedidoLocal" className="btn-back">Voltar</Link>

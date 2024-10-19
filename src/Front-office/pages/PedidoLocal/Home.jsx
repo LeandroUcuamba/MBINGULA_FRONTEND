@@ -6,16 +6,34 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function PedidoLocal() {
   const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     axios.get('http://localhost:3000/getAllPedidoLocal')
-      .then(res => setData(res.data))
+      .then(res => {
+        setData(res.data);
+        setFilteredData(res.data);
+      })
       .catch(err => console.log(err));
   }, []);
+
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+
+    const filtered = data.filter(pedido =>
+      pedido.numeroPedido.toString().toLowerCase().includes(value) ||
+      pedido.userName.toLowerCase().includes(value) ||
+      pedido.userPhone.toLowerCase().includes(value)
+    );
+    
+    setFilteredData(filtered);
+  };
 
   const handleDelete = (id) => {
     setSelectedId(id);
@@ -42,8 +60,17 @@ function PedidoLocal() {
       <div className='content'>
         <div className='content-inner'>
           <h1>Pedidos no Local</h1>
+          <div className='filter-container mb-3'>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Filtrar por Número do Pedido, Nome ou Telefone"
+              value={searchTerm}
+              onChange={handleSearch}
+            />
+          </div>
           <div className='custom-container'>
-          <div className='button-container'>
+            <div className='button-container'>
               <div className='left-buttons'>
                 <Link to="/Front-office/pages/PedidoLocalFilter" className='btn btn-search'>
                   <i className="bi bi-search"></i> Pesquisar Por
@@ -53,9 +80,9 @@ function PedidoLocal() {
                 <Link to="/Front-office/pages/PedidoLocal/Create" className='btn btn-success'>Fazer pedido +</Link>
               </div>
             </div>
-            <div className="pedido-local-list">
-              {data.map((pedido, i) => (
-                <div key={i} className="pedido-local-item border rounded p-3 mb-3">
+            <div className="mesa-list">
+              {filteredData.map((pedido, i) => (
+                <div key={i} className="mesa-item border rounded p-3 mb-3">
                   <div className="row">
                     <div className="col-md-4">
                       <p><strong>ID:</strong> {pedido.id}</p>
