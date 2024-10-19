@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import imagem from '../../assets/hero-bg.jpeg'
 import Menu from '../../components/Menu';
+import './AtividadeHome.css';
 
 const Sobre = () => {
     const [atividade, setAtividade] = useState(null);

@@ -80,6 +80,8 @@ import CreateAvaliacao from './Front-office/pages/avaliacao/CreateAvaliacao.jsx'
 {/* Front-office - Cardápio*/}
 import ReadAllCardapio from './Front-office/pages/Cardapio/ReadAllCardapio.jsx'
 import FilterAllCardapio from './Front-office/pages/Cardapio/FiltroAllCardapio.jsx'
+{/* Front-office - Sobre*/}
+import Sobre from './Front-office/pages/Sobre/Sobre.jsx'
 
 function App() {
   return (
@@ -164,6 +166,8 @@ function App() {
             {/* Front-office - Cardápio*/}
             <Route path="/Front-office/pages/CardapioItems" element={<ReadAllCardapio />}></Route>
             <Route path="/Front-office/pages/FilterCardapioItems" element={<FilterAllCardapio />}></Route>
+            {/* Front-office - Sobre*/}
+            <Route path="/Front-office/pages/Sobre" element={<Sobre />}></Route>
 
         </Routes>
       </AuthProvider>

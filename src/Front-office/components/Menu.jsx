@@ -42,7 +42,7 @@ function Navbar() {
             {!showMore ? (
               <>
                 <li><NavLink to="/"><IoHome className="icones-menu" /> Home</NavLink></li>
-                <li><NavLink to="/"> <AiOutlineQuestionCircle className="icones-menu" /> Sobre</NavLink></li>
+                <li><NavLink to="/Front-office/pages/Sobre"> <AiOutlineQuestionCircle className="icones-menu" /> Sobre</NavLink></li>
                 <li>
                   {signed ? (
                     <NavLink to="/" onClick={signOut}> <BiLogOut className="icones-menu" /> Sair</NavLink>
