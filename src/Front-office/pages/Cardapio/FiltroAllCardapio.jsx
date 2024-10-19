@@ -7,6 +7,7 @@ function ReadByFilter() {
   const [maxValue, setMaxValue] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('disponivel');
   const [categoria, setCategoria] = useState('Comida');
+  const [customCategory, setCustomCategory] = useState('');
   const [data, setData] = useState([]);
   const [error, setError] = useState('');
   const [filterInfo, setFilterInfo] = useState('');
@@ -27,7 +28,8 @@ function ReadByFilter() {
         url = `http://localhost:3000/getItemsCardapioByInterval/${minValue}/${maxValue}`;
         break;
       case 'categoria':
-        url = `http://localhost:3000/getItemByCategoria/${categoria}`;
+        const categoryToUse = customCategory.trim() ? customCategory : categoria;
+        url = `http://localhost:3000/getItemByCategoria/${categoryToUse}`;
         break;
       default:
         setError('Filtro selecionado inválido.');
@@ -47,7 +49,7 @@ function ReadByFilter() {
             ? 'Disponibilidade'
             : selectedFilter === 'intervalo'
             ? `Intervalo de Preço: ${minValue} - ${maxValue}`
-            : `Categoria: ${categoria}`
+            : `Categoria: ${categoryToUse}`
         );
       })
       .catch(err => {
@@ -85,7 +87,10 @@ function ReadByFilter() {
             name="filter"
             value="categoria"
             checked={selectedFilter === 'categoria'}
-            onChange={() => setSelectedFilter('categoria')}
+            onChange={() => {
+              setSelectedFilter('categoria');
+              setCustomCategory('');
+            }}
           />
           Por categoria
         </label>
@@ -127,13 +132,28 @@ function ReadByFilter() {
         <div className="category-container">
           <select
             value={categoria}
-            onChange={(e) => setCategoria(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+              setCategoria(value);
+              if (value === 'Outro') {
+                setCustomCategory('');
+              }
+            }}
             className="category-select"
           >
             <option value="Comida">Comida</option>
             <option value="Bebida">Bebida</option>
             <option value="Sobremesa">Sobremesa</option>
+            <option value="Outro">Outro</option>
           </select>
+          {categoria === 'Outro' && (
+            <input
+              type="text"
+              value={customCategory}
+              onChange={(e) => setCustomCategory(e.target.value)}
+              placeholder="Insira a categoria"
+            />
+          )}
           <button onClick={handleSearch} className="btn-search">
             <i className="bi bi-search"></i> Pesquisar
           </button>
