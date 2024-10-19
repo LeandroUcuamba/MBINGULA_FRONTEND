@@ -3,10 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { NavLink, Link } from "react-router-dom";
 import { RiRestaurant2Fill } from "react-icons/ri";
 import { IoHome } from "react-icons/io5";
-import { AiOutlineQuestionCircle } from "react-icons/ai";
-import { AiOutlinePlusCircle } from "react-icons/ai";
-import { AiOutlineUser } from "react-icons/ai";
-import { AiOutlineReload } from "react-icons/ai";
+import { AiOutlineQuestionCircle, AiOutlinePlusCircle, AiOutlineUser, AiOutlineReload } from "react-icons/ai";
 import { BiLogOut, BiLogIn } from "react-icons/bi";
 
 import { AuthContext } from '../../context/AuthContext';
@@ -14,6 +11,7 @@ import { AuthContext } from '../../context/AuthContext';
 function Navbar() {
   const navRef = useRef();
   const [showMore, setShowMore] = useState(false);
+  const [showOrderMenu, setShowOrderMenu] = useState(false);
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav");
@@ -23,9 +21,16 @@ function Navbar() {
 
   const handleShowMore = () => {
     setShowMore(true);
+    setShowOrderMenu(false);
   };
 
   const handleBack = () => {
+    setShowMore(false);
+    setShowOrderMenu(false);
+  };
+
+  const handleOrderClick = () => {
+    setShowOrderMenu(true);
     setShowMore(false);
   };
 
@@ -39,7 +44,7 @@ function Navbar() {
       <div className="navbar">
         <nav ref={navRef}>
           <ul>
-            {!showMore ? (
+            {!showMore && !showOrderMenu ? (
               <>
                 <li><NavLink to="/"><IoHome className="icones-menu" /> Home</NavLink></li>
                 <li><NavLink to="/Front-office/pages/Sobre"> <AiOutlineQuestionCircle className="icones-menu" /> Sobre</NavLink></li>
@@ -56,12 +61,21 @@ function Navbar() {
                   <NavLink to="#" onClick={handleShowMore}><AiOutlinePlusCircle className="icones-menu" /> Ver mais</NavLink>
                 </li>
               </>
+            ) : showOrderMenu ? (
+              <>
+                <li><NavLink to="/"><IoHome className="icones-menu" /> Pedido no local</NavLink></li>
+                <li><NavLink to="/"><IoHome className="icones-menu" /> Pedido de Casa</NavLink></li>
+                <li><NavLink to="#" onClick={handleBack}><AiOutlineReload className="icones-menu" /> Voltar</NavLink></li>
+              </>
             ) : (
               <>
                 <li><NavLink to="/Front-office/pages/AtividadeCasa"><IoHome className="icones-menu" /> Atividades</NavLink></li>
                 <li><NavLink to="/Front-office/pages/CardapioItems"><IoHome className="icones-menu" /> Cardápio </NavLink></li>
                 <li><NavLink to="/Front-office/pages/Servicos"><IoHome className="icones-menu" /> Serviços</NavLink></li>
                 <li><NavLink to="/Front-office/pages/pages/avaliacao/create"><IoHome className="icones-menu" /> Avaliação</NavLink></li>
+                <li>
+                  <NavLink to="#" onClick={handleOrderClick}><IoHome className="icones-menu" /> Pedido</NavLink>
+                </li>
                 <li><NavLink to="#" onClick={handleBack}><AiOutlineReload className="icones-menu" /> Voltar</NavLink></li>
               </>
             )}
