@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Menu from '../../components/Menu';
+import { useNavigate } from 'react-router-dom';
+import './ReadAllCardapio.css';
 
 const Cardapio = () => {
     const [itensCardapio, setItensCardapio] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await fetch('http://localhost:3000/getItemsCardapio');
                 const data = await response.json();
-                ensureFourItems(data);
+                setItensCardapio(data);
             } catch (error) {
                 console.error("Erro ao buscar os itens do cardápio:", error);
             }
@@ -18,17 +21,8 @@ const Cardapio = () => {
         fetchData();
     }, []);
 
-    const ensureFourItems = (data) => {
-        const totalItems = data.length;
-        if (totalItems < 4) {
-            const repeatedItems = [...data];
-            while (repeatedItems.length < 4) {
-                repeatedItems.push(data[repeatedItems.length % totalItems]);
-            }
-            setItensCardapio(repeatedItems);
-        } else {
-            setItensCardapio(data.slice(0, 4));
-        }
+    const handleFilterClick = () => {
+        navigate('/Front-office/pages/FilterCardapioItems');
     };
 
     return (
@@ -36,7 +30,14 @@ const Cardapio = () => {
             <Menu />
             <section id="cardapio-comida">
                 <h2 className="cardapio-title">Cardápio</h2>
-                <h3 className="cardapio-subtitle">Nossos pratos especiais</h3>
+                <h3 className="cardapio-subtitle">Visualize o que temos:</h3>
+
+                <button 
+                    className="btn-filtrar-pesquisa" 
+                    onClick={handleFilterClick}
+                >
+                    Filtrar pesquisa
+                </button>
 
                 <div id="container-cardapio-comida">
                     {itensCardapio.map(item => (

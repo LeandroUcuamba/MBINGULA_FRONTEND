@@ -77,6 +77,9 @@ import ReadAtividades from './Front-office/pages/AtividadeCasa/ReadAtividades.js
 import ReadServicos from './Front-office/pages/Servicos/ReadServicos.jsx'
 {/* Front-office - Avaliacao*/}
 import CreateAvaliacao from './Front-office/pages/avaliacao/CreateAvaliacao.jsx'
+{/* Front-office - Cardápio*/}
+import ReadAllCardapio from './Front-office/pages/Cardapio/ReadAllCardapio.jsx'
+import FilterAllCardapio from './Front-office/pages/Cardapio/FiltroAllCardapio.jsx'
 
 function App() {
   return (
@@ -158,6 +161,9 @@ function App() {
             <Route path="/Front-office/pages/Servicos" element={<ReadServicos />}></Route>
             {/* Front-office - Avaliacao*/}
             <Route path="/Front-office/pages/pages/avaliacao/create" element={<CreateAvaliacao />}></Route>
+            {/* Front-office - Cardápio*/}
+            <Route path="/Front-office/pages/CardapioItems" element={<ReadAllCardapio />}></Route>
+            <Route path="/Front-office/pages/FilterCardapioItems" element={<FilterAllCardapio />}></Route>
 
         </Routes>
       </AuthProvider>

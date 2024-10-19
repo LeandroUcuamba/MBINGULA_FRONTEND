@@ -70,12 +70,12 @@
   }
 
   textarea {
-    width: 100%; /* Ajusta a largura */
-    height: 100px; /* Define a altura fixa */
-    resize: none; /* Impede o redimensionamento */
-    padding: 8px; /* Adiciona um padding */
-    border: 1px solid #ccc; /* Estilo de borda */
-    border-radius: 4px; /* Borda arredondada */
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
   
   @media (max-width: 768px) {
