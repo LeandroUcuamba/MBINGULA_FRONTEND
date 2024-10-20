@@ -99,7 +99,7 @@ function PedidoLocal() {
                         <span
                             style={{
                             color: pedido.status === 'em preparação' ? 'yellow' : pedido.status === 'pronto a levantar' ? 'green' : 'black',
-                            backgroundColor: pedido.status === 'em preparação' ? 'rgba(255, 165, 0, 0.2)' : pedido.status === 'pronto a levantar' ? 'rgba(0, 128, 0, 0.2)' : 'transparent',
+                            backgroundColor: pedido.status === 'em preparação' ? 'rgba(0, 0, 0, 0.4)' : pedido.status === 'pronto a levantar' ? 'rgba(0, 128, 0, 0.2)' : 'transparent',
                             padding: '5px',
                             borderRadius: '5px',
                             marginLeft: '4px'
