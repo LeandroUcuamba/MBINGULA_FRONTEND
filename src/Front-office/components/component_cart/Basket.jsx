@@ -136,7 +136,6 @@ export default function Basket(props) {
         <h1 style={{ color: 'blue' }}>Restaurante Mbingula</h1>
       </div>
       <div ref={basketRef} id="basket-content">
-        <h2>Pedido</h2>
         {cartItems.length === 0 && <div>Nenhum produto adicionado</div>}
         {cartItems.map((item) => (
           <div key={item.id} className="row">
