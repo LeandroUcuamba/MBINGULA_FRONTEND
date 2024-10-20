@@ -11,6 +11,7 @@ function PedidoLocal() {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchBy, setSearchBy] = useState('numeroPedido');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,12 +27,16 @@ function PedidoLocal() {
     const value = e.target.value.toLowerCase();
     setSearchTerm(value);
 
-    const filtered = data.filter(pedido =>
-      pedido.numeroPedido.toString().toLowerCase().includes(value) ||
-      pedido.userName.toLowerCase().includes(value) ||
-      pedido.userPhone.toLowerCase().includes(value)
-    );
-    
+    let filtered = [];
+
+    if (searchBy === 'numeroPedido') {
+      filtered = data.filter(pedido => pedido.numeroPedido.toString().toLowerCase().includes(value));
+    } else if (searchBy === 'userName') {
+      filtered = data.filter(pedido => pedido.userName.toLowerCase().includes(value));
+    } else if (searchBy === 'userPhone') {
+      filtered = data.filter(pedido => pedido.userPhone.toLowerCase().includes(value));
+    }
+
     setFilteredData(filtered);
   };
 
@@ -60,6 +65,7 @@ function PedidoLocal() {
       <div className='content'>
         <div className='content-inner'>
           <h1>Pedidos no Local</h1>
+
           <div className='filter-container mb-3'>
             <input
               type="text"
@@ -68,18 +74,53 @@ function PedidoLocal() {
               value={searchTerm}
               onChange={handleSearch}
             />
+
+            <div className="search-options mt-3">
+              <label>
+                <input
+                  type="radio"
+                  name="searchBy"
+                  value="numeroPedido"
+                  checked={searchBy === 'numeroPedido'}
+                  onChange={() => setSearchBy('numeroPedido')}
+                />
+                Número do Pedido
+              </label>
+              <label className="ms-3">
+                <input
+                  type="radio"
+                  name="searchBy"
+                  value="userName"
+                  checked={searchBy === 'userName'}
+                  onChange={() => setSearchBy('userName')}
+                />
+                Nome
+              </label>
+              <label className="ms-3">
+                <input
+                  type="radio"
+                  name="searchBy"
+                  value="userPhone"
+                  checked={searchBy === 'userPhone'}
+                  onChange={() => setSearchBy('userPhone')}
+                />
+                Telefone
+              </label>
+            </div>
           </div>
+
           <div className='custom-container'>
             <div className='button-container'>
               <div className='left-buttons'>
                 <Link to="/Front-office/pages/PedidoLocalFilter" className='btn btn-search'>
-                  <i className="bi bi-search"></i> Pesquisar Por
+                  <i className="bi bi-search"></i> Pesquisa avançada
                 </Link>
               </div>
               <div className='right-buttons'>
                 <Link to="/Front-office/pages/PedidoLocal/Create" className='btn btn-success'>Fazer pedido +</Link>
               </div>
             </div>
+
             <div className="mesa-list">
               {filteredData.map((pedido, i) => (
                 <div key={i} className="mesa-item border rounded p-3 mb-3">
