@@ -117,7 +117,7 @@ function PedidoLocal() {
                 </Link>
               </div>
               <div className='right-buttons'>
-                <Link to="/Front-office/pages/PedidoLocal/Create" className='btn btn-success'>Fazer pedido +</Link>
+                <Link to="/Front-office/carrinho" className='btn btn-success'>Fazer pedido +</Link>
               </div>
             </div>
 
