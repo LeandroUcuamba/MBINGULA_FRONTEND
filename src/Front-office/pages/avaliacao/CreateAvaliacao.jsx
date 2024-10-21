@@ -94,6 +94,26 @@ function CreateAvaliacao() {
           <div className="botoes">
             <button type="submit" className="btn-submit">Submeter</button>
             <Link to="/" className="btn-back">Voltar</Link>
+            <Link 
+                to="/Front-office/pages/pages/avaliacao/read" 
+                style={{
+                  width: '200px', 
+                  textAlign: 'center', 
+                  padding: '10px', 
+                  backgroundColor: '#4CAF50', 
+                  color: 'white', 
+                  border: 'none', 
+                  borderRadius: '5px', 
+                  cursor: 'pointer', 
+                  display: 'inline-block',
+                  marginLeft: '10px', 
+                  transition: 'background-color 0.3s ease'
+                }}
+                onMouseEnter={e => e.target.style.backgroundColor = '#45a049'}
+                onMouseLeave={e => e.target.style.backgroundColor = '#4CAF50'}
+            >
+              Ver Avaliações feitas
+            </Link>
           </div>
         </form>
       </div>
