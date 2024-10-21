@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import logoImg from '../../assets/logo.png';
 import carimboImg from '../../assets/carimbo.png';
-
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
@@ -12,6 +12,7 @@ export default function Basket(props) {
   const totalPrice = itemsPrice;
 
   const basketRef = useRef(null);
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     tipoConsumo: '',
@@ -22,6 +23,27 @@ export default function Basket(props) {
     userName: '',
     userPhone: ''
   });
+
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  const validateForm = () => {
+    const { tipoConsumo, numeroMesa, userName, userPhone, metodoPagamento } = formData;
+    if (
+      tipoConsumo !== '' &&
+      numeroMesa !== '' &&
+      userName !== '' &&
+      userPhone !== '' &&
+      metodoPagamento !== ''
+    ) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  };
+
+  useEffect(() => {
+    validateForm();
+  }, [formData]);
 
   const handleDownloadPDF = () => {
     const input = basketRef.current;
@@ -84,13 +106,21 @@ export default function Basket(props) {
             pdf.setFontSize(10);
             pdf.text(dateTimeString, pdf.internal.pageSize.getWidth() - 60, pdf.internal.pageSize.getHeight() - 10);
   
+            const offsetY = 10;
+            pdf.setFontSize(12);
+            pdf.text(`Nome: ${formData.userName}`, 10, pdf.internal.pageSize.getHeight() - 10 - offsetY);
+            pdf.text(`Telefone: ${formData.userPhone}`, 10, pdf.internal.pageSize.getHeight() - 10 - (offsetY * 2));
+            pdf.text(`Método de Pagamento: ${formData.metodoPagamento}`, 10, pdf.internal.pageSize.getHeight() - 10 - (offsetY * 3));
+  
             pdf.save('Restaurante_Mbingula_pedido.pdf');
+            navigate('/Front-office/pages/PedidoLocal');
           });
       })
       .catch(error => {
         console.error('Erro ao carregar as imagens:', error);
       });
   };
+   
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -102,18 +132,18 @@ export default function Basket(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const updatedItemsPedido = cartItems.map(item => `${item.qty} x ${item.name}`).join(', ');
-  
+
     const payload = {
       ...formData,
       itemsPedido: updatedItemsPedido,
       valorTotal: totalPrice,
       numeroMesa: parseInt(formData.numeroMesa, 10),
     };
-  
+
     console.log("Dados enviados para o backend:", payload);
-  
+
     try {
       const response = await axios.post('http://localhost:3000/create-pedidoLocal', payload);
       console.log("Resposta do servidor:", response);
@@ -175,12 +205,16 @@ export default function Basket(props) {
             <div>
               <label>
                 Tipo de Consumo:
-                <input 
-                  type="text" 
+                <select 
                   name="tipoConsumo" 
                   value={formData.tipoConsumo} 
                   onChange={handleChange} 
-                />
+                  required
+                >
+                  <option value="">Selecione um tipo</option>
+                  <option value="para levar">Para levar</option>
+                  <option value="para consumir">Para consumir</option>
+                </select>
               </label>
             </div>
             <div>
@@ -222,16 +256,28 @@ export default function Basket(props) {
             <div>
               <label>
                 Método de Pagamento:
-                <input 
-                  type="text" 
+                <select 
                   name="metodoPagamento" 
                   value={formData.metodoPagamento} 
                   onChange={handleChange} 
-                />
+                  required
+                >
+                  <option value="">Selecione um método</option>
+                  <option value="pagamento à vista">Pagamento à vista</option>
+                  <option value="pagamento com o cartão">Pagamento com o cartão</option>
+                </select>
               </label>
             </div>
             <div>
-              <button type="submit" onClick={handleDownloadPDF} className="enviarPedido">Enviar Pedido</button>
+              <button 
+                type="submit" 
+                onClick={handleDownloadPDF} 
+                className="enviarPedido"
+                style={{ marginTop: '20px' }}
+                disabled={!isFormValid}
+              >
+                Enviar Pedido
+              </button>
             </div>
           </form>
         </>
