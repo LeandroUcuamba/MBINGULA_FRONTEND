@@ -47,6 +47,10 @@ function Sidebar() {
             <i className="m-4 bi bi-file-text me-3 fs-4"></i>
             <span className="fs-4">Avaliações - "Feedback"</span>
           </NavLink>
+          <NavLink to="/Back-office/pages/PedidoLocal" className="navLink">
+            <i className="m-4 bi bi-pin-angle me-3 fs-4"></i>
+            <span className="fs-4">Pedido Local</span>
+          </NavLink>
         </ul>
       </div>
 

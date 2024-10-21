@@ -88,8 +88,11 @@ import HomePedidoLocal from './Front-office/pages/PedidoLocal/Home.jsx'
 import CreatePedidoLocal from './Front-office/pages/PedidoLocal/Create.jsx'
 import UpdatePedidoLocal from './Front-office/pages/PedidoLocal/Update.jsx'
 import ReadPedidoLocalFilter from './Front-office/pages/PedidoLocal/ReadFilter.jsx'
-{/* Front-office - Carrinho*/}
+{/* Front-office - Carrinho Local*/}
 import Carrinho from './Front-office/components/Cart.jsx'
+{/* Back-office - change status pedido local*/}
+import HomePedidoLocalBack from './Back-office/pages/pedidoLocal/Home.jsx'
+import UpdatePedidoLocalBack from './Back-office/pages/pedidoLocal/Update.jsx'
 
 function App() {
   return (
@@ -182,9 +185,11 @@ function App() {
             <Route path="/Front-office/pages/PedidoLocal/Create" element={<CreatePedidoLocal />}></Route>
             <Route path="/Front-office/pages/PedidoLocal/Update/:id" element={<UpdatePedidoLocal />}></Route>
             <Route path="/Front-office/pages/PedidoLocalFilter" element={<ReadPedidoLocalFilter />}></Route>
-            {/* Front-office - Carrinho*/}
+            {/* Front-office - Carrinho Local*/}
             <Route path="/Front-office/carrinho" element={<Carrinho />}></Route>
-
+            {/* Back-office - change status pedido local*/}
+            <Route path="/Back-office/pages/PedidoLocal" element={<HomePedidoLocalBack />}></Route>
+            <Route path="/Back-office/pages/PedidoLocal/update/:id" element={<UpdatePedidoLocalBack />}></Route>
         </Routes>
       </AuthProvider>
     </div>
