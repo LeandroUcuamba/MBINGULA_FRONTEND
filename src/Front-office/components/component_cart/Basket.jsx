@@ -128,12 +128,11 @@ export default function Basket(props) {
       alert('Erro ao enviar o pedido.');
     }
   };
-  
 
   return (
     <aside className="block col-2">
       <div style={{ marginBottom: '10px' }}>
-        <h1 style={{ color: 'blue' }}>Restaurante Mbingula</h1>
+        <h1 style={{ color: '#f0c038' }}>Restaurante Mbingula</h1>
       </div>
       <div ref={basketRef} id="basket-content">
         {cartItems.length === 0 && <div>Nenhum produto adicionado</div>}
@@ -232,7 +231,7 @@ export default function Basket(props) {
               </label>
             </div>
             <div>
-              <button type="submit" onClick={handleDownloadPDF}>Enviar Pedido</button>
+              <button type="submit" onClick={handleDownloadPDF} className="enviarPedido">Enviar Pedido</button>
             </div>
           </form>
         </>

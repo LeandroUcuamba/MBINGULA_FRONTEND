@@ -5,7 +5,7 @@ export default function Header(props) {
     <header className="block row center">
       <div>
         <a href="#/">
-          <h1>Formulário de Pedidos</h1>
+          <h1 className="cart-main-title">Formulário de Pedidos</h1>
         </a>
       </div>
       <div>
