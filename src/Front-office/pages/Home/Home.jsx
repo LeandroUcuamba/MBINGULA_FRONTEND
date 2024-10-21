@@ -4,6 +4,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import home1 from '../../assets/hero-bg1.jpg';
+import home2 from '../../assets/hero-bg2.jpg';
+import home3 from '../../assets/hero-bg3.jpg';
 
 import Cardapio from '../Cardapio/Cardapio.jsx';
 import AtividadeHome from '../MostrarAtividadeHome/AtividadeHome.jsx';
@@ -38,10 +40,10 @@ const Home = () => {
                             <img src={home1} alt="home" />
                         </div>
                         <div className='home'>
-                            <img src={home1} alt="home" />
+                            <img src={home2} alt="home" />
                         </div>
                         <div className='home'>
-                            <img src={home1} alt="home" />
+                            <img src={home3} alt="home" />
                         </div>
                     </Slider>
               
