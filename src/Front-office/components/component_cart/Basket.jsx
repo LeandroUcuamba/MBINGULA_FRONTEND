@@ -142,7 +142,7 @@ export default function Basket(props) {
             pdf.text(`Método de Pagamento: ${formData.metodoPagamento}`, 10, pdf.internal.pageSize.getHeight() - 10 - (offsetY * 3));
   
             pdf.save('Restaurante_Mbingula_pedido.pdf');
-            navigate('/Front-office/pages/PedidoLocal');
+            navigate('/Front-office/pages/Pedido');
           });
       })
       .catch(error => {

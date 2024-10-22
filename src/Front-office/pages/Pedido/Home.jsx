@@ -148,7 +148,11 @@ function Pedido() {
                             {pedido.status}
                         </span>
                       </p>
-                      <p><strong>Número da Mesa:</strong> {pedido.numeroMesa}</p>
+                      {pedido.numeroMesa === 41 ? (
+                        <p><strong>Não local:</strong> pedido feito de casa</p>
+                      ) : (
+                        <p><strong>Número da Mesa:</strong> {pedido.numeroMesa}</p>
+                      )}
                       <p><strong>Cliente:</strong> {pedido.userName}</p>
                       <p><strong>Telefone:</strong> {pedido.userPhone}</p>
                       <p><strong>Solicitado em:</strong> {new Date(pedido.created_at).toLocaleString()}</p>

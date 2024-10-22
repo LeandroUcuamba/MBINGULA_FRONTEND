@@ -123,7 +123,11 @@ function ReadByFilter() {
                         {d.status}
                     </span>
                 </p>
-                <p><strong>Número da Mesa:</strong> {d.numeroMesa}</p>
+                {d.numeroMesa === 41 ? (
+                  <p><strong>Não local:</strong> pedido feito de casa</p>
+                  ) : (
+                  <p><strong>Número da Mesa:</strong> {d.numeroMesa}</p>
+                )}
                 <p><strong>Nome do Usuário:</strong> {d.userName}</p>
                 <p><strong>Telefone do Usuário:</strong> {d.userPhone}</p>
                 <p><strong>Número do Pedido:</strong> {d.numeroPedido}</p>

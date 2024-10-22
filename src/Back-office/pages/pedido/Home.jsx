@@ -89,7 +89,11 @@ function PedidoLocal() {
                   <p><strong>Número do Pedido:</strong> {pedido.numeroPedido}</p>
                   <p><strong>Nome do Usuário:</strong> {pedido.userName}</p>
                   <p><strong>Telefone do Usuário:</strong> {pedido.userPhone}</p>
-                  <p><strong>Número da Mesa:</strong> {pedido.numeroMesa}</p>
+                  {pedido.numeroMesa === 41 ? (
+                    <p><strong>Não local:</strong> pedido feito de casa</p>
+                      ) : (
+                    <p><strong>Número da Mesa:</strong> {pedido.numeroMesa}</p>
+                  )}
                   <p><strong>Tipo de Consumo:</strong> {pedido.tipoConsumo}</p>
                   <p><strong>Valor Total:</strong> {pedido.valorTotal} KZ</p>
                   <p><strong>Itens do Pedido:</strong> {pedido.itemsPedido}</p>

@@ -21,7 +21,7 @@ function UpdateStatusPedido() {
         setShowAlert(true);
         setTimeout(() => {
           setShowAlert(false);
-          navigate('/Back-office/pages/PedidoLocal');
+          navigate('/Back-office/pages/Pedido');
         }, 3000);
       })
       .catch(err => console.log(err));
