@@ -46,7 +46,7 @@ function Update() {
           setShowAlert(true);
           setTimeout(() => {
             setShowAlert(false);
-            navigate('/Front-office/pages/PedidoLocal');
+            navigate('/Front-office/pages/Pedido');
           }, 3000);
         })
         .catch(err => console.log(err));
@@ -209,7 +209,7 @@ function Update() {
           </div>
 
           <button className="btn-update">Atualizar</button>
-          <Link to="/Front-office/pages/PedidoLocal" className="btn-back">Voltar</Link>
+          <Link to="/Front-office/pages/Pedido" className="btn-back">Voltar</Link>
         </form>
       </div>
     </div>

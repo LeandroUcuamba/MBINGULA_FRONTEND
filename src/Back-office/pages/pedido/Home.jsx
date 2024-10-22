@@ -103,7 +103,7 @@ function PedidoLocal() {
                   <p><strong>Data da Criação:</strong> {formatDate(pedido.created_at)}</p>
                   <p><strong>Data do Último Acesso:</strong> {formatDate(pedido.updated_at)}</p>
                   <div className="button-group">
-                    <Link to={`/Back-office/pages/PedidoLocal/update/${pedido.id}`} className='btn-sm btn-primary'>
+                    <Link to={`/Back-office/pages/Pedido/update/${pedido.id}`} className='btn-sm btn-primary'>
                       <i className="bi bi-pencil"></i>
                     </Link>
                   </div>

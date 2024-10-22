@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
-function CreateMesa() {
+function CreatePedido() {
   const [values, setValues] = useState({
     tipoConsumo: '',
     valorTotal: '',
@@ -47,7 +47,7 @@ function CreateMesa() {
           setAlert({ show: true, message: 'Pedido criado com sucesso!' });
           setTimeout(() => {
             setAlert({ show: false, message: '' });
-            navigate('/Front-office/pages/PedidoLocal');
+            navigate('/Front-office/pages/Pedido');
           }, 3000);
         })
         .catch(err => {
@@ -220,7 +220,7 @@ function CreateMesa() {
 
           <div className="botoes">
             <button type="submit" className="btn-submit">Criar</button>
-            <Link to="/Front-office/pages/PedidoLocal" className="btn-back">Voltar</Link>
+            <Link to="/Front-office/pages/Pedido" className="btn-back">Voltar</Link>
           </div>
         </form>
       </div>
@@ -228,4 +228,4 @@ function CreateMesa() {
   );
 }
 
-export default CreateMesa;
+export default CreatePedido;

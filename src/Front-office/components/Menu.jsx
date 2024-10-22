@@ -35,11 +35,6 @@ function Navbar() {
     setShowOrderMenu(false);
   };
 
-  const handleOrderClick = () => {
-    setShowOrderMenu(true);
-    setShowMore(false);
-  };
-
   return (
     <header className="header">
       <Link to="/" className="logo">
@@ -67,12 +62,6 @@ function Navbar() {
                   <NavLink to="#" onClick={handleShowMore}><AiOutlinePlusCircle className="icones-menu" /> Ver mais</NavLink>
                 </li>
               </>
-            ) : showOrderMenu ? (
-              <>
-                <li><NavLink to="/Front-office/pages/PedidoLocal"><AiOutlineMail className="icones-menu" /> Pedido no local</NavLink></li>
-                <li><NavLink to="/"><AiOutlineMail className="icones-menu" /> Pedido de Casa</NavLink></li>
-                <li><NavLink to="#" onClick={handleBack}><AiOutlineReload className="icones-menu" /> Voltar</NavLink></li>
-              </>
             ) : (
               <>
                 <li><NavLink to="/Front-office/pages/AtividadeCasa"><AiFillSun className="icones-menu" /> Atividades</NavLink></li>
@@ -80,7 +69,7 @@ function Navbar() {
                 <li><NavLink to="/Front-office/pages/Servicos"><AiFillTool className="icones-menu" /> Serviços</NavLink></li>
                 <li><NavLink to="/Front-office/pages/pages/avaliacao/create"><AiOutlineEdit className="icones-menu" /> Avaliação</NavLink></li>
                 <li>
-                  <NavLink to="#" onClick={handleOrderClick}><AiOutlineMail className="icones-menu" /> Pedido</NavLink>
+                  <NavLink to="/Front-office/pages/Pedido"><AiOutlineMail className="icones-menu" /> Pedido</NavLink>
                 </li>
                 <li><NavLink to="#" onClick={handleBack}><AiOutlineReload className="icones-menu" /> Voltar</NavLink></li>
               </>

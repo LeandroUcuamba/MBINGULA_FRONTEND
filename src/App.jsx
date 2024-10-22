@@ -84,15 +84,15 @@ import FilterAllCardapio from './Front-office/pages/Cardapio/FiltroAllCardapio.j
 {/* Front-office - Sobre*/}
 import Sobre from './Front-office/pages/Sobre/Sobre.jsx'
 {/* Front-office - Pedido local*/}
-import HomePedidoLocal from './Front-office/pages/PedidoLocal/Home.jsx'
-import CreatePedidoLocal from './Front-office/pages/PedidoLocal/Create.jsx'
-import UpdatePedidoLocal from './Front-office/pages/PedidoLocal/Update.jsx'
-import ReadPedidoLocalFilter from './Front-office/pages/PedidoLocal/ReadFilter.jsx'
+import HomePedido from './Front-office/pages/Pedido/Home.jsx'
+import CreatePedido from './Front-office/pages/Pedido/Create.jsx'
+import UpdatePedido from './Front-office/pages/Pedido/Update.jsx'
+import ReadPedidoFilter from './Front-office/pages/Pedido/ReadFilter.jsx'
 {/* Front-office - Carrinho Local*/}
 import Carrinho from './Front-office/components/Cart.jsx'
 {/* Back-office - change status pedido local*/}
-import HomePedidoLocalBack from './Back-office/pages/pedidoLocal/Home.jsx'
-import UpdatePedidoLocalBack from './Back-office/pages/pedidoLocal/Update.jsx'
+import HomePedidoBack from './Back-office/pages/pedido/Home.jsx'
+import UpdatePedidoBack from './Back-office/pages/pedido/Update.jsx'
 
 function App() {
   return (
@@ -181,15 +181,15 @@ function App() {
             {/* Front-office - Sobre*/}
             <Route path="/Front-office/pages/Sobre" element={<Sobre />}></Route>
             {/* Front-office - Pedido local*/}
-            <Route path="/Front-office/pages/PedidoLocal" element={<HomePedidoLocal />}></Route>
-            <Route path="/Front-office/pages/PedidoLocal/Create" element={<CreatePedidoLocal />}></Route>
-            <Route path="/Front-office/pages/PedidoLocal/Update/:id" element={<UpdatePedidoLocal />}></Route>
-            <Route path="/Front-office/pages/PedidoLocalFilter" element={<ReadPedidoLocalFilter />}></Route>
+            <Route path="/Front-office/pages/Pedido" element={<HomePedido />}></Route>
+            <Route path="/Front-office/pages/Pedido/Create" element={<CreatePedido />}></Route>
+            <Route path="/Front-office/pages/Pedido/Update/:id" element={<UpdatePedido />}></Route>
+            <Route path="/Front-office/pages/PedidoFilter" element={<ReadPedidoFilter />}></Route>
             {/* Front-office - Carrinho Local*/}
             <Route path="/Front-office/carrinho" element={<Carrinho />}></Route>
             {/* Back-office - change status pedido local*/}
-            <Route path="/Back-office/pages/PedidoLocal" element={<HomePedidoLocalBack />}></Route>
-            <Route path="/Back-office/pages/PedidoLocal/update/:id" element={<UpdatePedidoLocalBack />}></Route>
+            <Route path="/Back-office/pages/Pedido" element={<HomePedidoBack />}></Route>
+            <Route path="/Back-office/pages/Pedido/update/:id" element={<UpdatePedidoBack />}></Route>
         </Routes>
       </AuthProvider>
     </div>

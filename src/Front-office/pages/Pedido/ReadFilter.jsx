@@ -8,31 +8,28 @@ function ReadByFilter() {
   const [error, setError] = useState('');
   const [filterInfo, setFilterInfo] = useState('');
 
-  // Função que limpa os dados, mensagens de erro e informações do filtro
   const clearResults = () => {
     setData([]);
     setError('');
     setFilterInfo('');
   };
 
-  // Lida com a mudança no valor do campo de pesquisa
   const handleSearchChange = (e) => {
     setSearchValue(e.target.value);
     if (!e.target.value.trim()) {
-      clearResults(); // Limpa os resultados se o campo estiver vazio
+      clearResults();
     }
   };
 
-  // Lida com a mudança de filtro
   const handleFilterChange = (filter) => {
     setSelectedFilter(filter);
-    clearResults(); // Limpa os resultados ao mudar o filtro
+    clearResults();
   };
 
   const handleSearch = () => {
     if (!searchValue.trim()) {
       setError('O campo de pesquisa não pode estar vazio.');
-      clearResults(); // Limpa os resultados ao tentar pesquisar com campo vazio
+      clearResults();
       return;
     }
 

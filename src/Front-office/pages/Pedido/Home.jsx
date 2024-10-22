@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Modal, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function PedidoLocal() {
+function Pedido() {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -112,7 +112,7 @@ function PedidoLocal() {
           <div className='custom-container'>
             <div className='button-container'>
               <div className='left-buttons'>
-                <Link to="/Front-office/pages/PedidoLocalFilter" className='btn btn-search'>
+                <Link to="/Front-office/pages/PedidoFilter" className='btn btn-search'>
                   <i className="bi bi-search"></i> Pesquisa avançada
                 </Link>
               </div>
@@ -155,7 +155,7 @@ function PedidoLocal() {
                     </div>
                   </div>
                   <div className="button-group mt-3">
-                    <Link to={`/Front-office/pages/PedidoLocal/Update/${pedido.id}`} className='btn-sm btn-primary'>
+                    <Link to={`/Front-office/pages/Pedido/Update/${pedido.id}`} className='btn-sm btn-primary'>
                       <i className="bi bi-pencil"></i>
                     </Link>
                     <button onClick={() => handleDelete(pedido.id)} className='btn-sm btn-danger'>
@@ -193,4 +193,4 @@ function PedidoLocal() {
   );
 }
 
-export default PedidoLocal;
+export default Pedido;
