@@ -114,7 +114,18 @@ function ReadByFilter() {
                 <p><strong>Valor Total:</strong> {d.valorTotal}</p>
                 <p><strong>Itens do Pedido:</strong> {d.itemsPedido}</p>
                 <p><strong>Método de Pagamento:</strong> {d.metodoPagamento}</p>
-                <p><strong>Status:</strong> {d.status}</p>
+                <p><strong>Status:</strong> 
+                    <span
+                      style={{
+                      color: d.status === 'em preparação' ? 'yellow' : d.status === 'pronto a levantar' ? 'green' : 'black',
+                      backgroundColor: d.status === 'em preparação' ? 'rgba(0, 0, 0, 0.4)' : d.status === 'pronto a levantar' ? 'rgba(0, 128, 0, 0.2)' : 'transparent',
+                      padding: '5px',
+                      borderRadius: '5px',
+                      marginLeft: '4px'
+                      }}>
+                        {d.status}
+                    </span>
+                </p>
                 <p><strong>Número da Mesa:</strong> {d.numeroMesa}</p>
                 <p><strong>Nome do Usuário:</strong> {d.userName}</p>
                 <p><strong>Telefone do Usuário:</strong> {d.userPhone}</p>

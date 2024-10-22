@@ -111,6 +111,7 @@ function Update() {
                 placeholder="Digite o valor total" 
                 value={values.valorTotal} 
                 onChange={handleChange}
+                disabled
               />
               {errors.valorTotal && <small className="error">{errors.valorTotal}</small>}
             </div>
