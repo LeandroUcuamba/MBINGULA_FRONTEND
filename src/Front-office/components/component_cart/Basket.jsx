@@ -24,6 +24,8 @@ export default function Basket(props) {
     userPhone: ''
   });
 
+  const [mesas, setMesas] = useState([]);
+  const [isFromHome, setIsFromHome] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
 
   const validateForm = () => {
@@ -44,6 +46,33 @@ export default function Basket(props) {
   useEffect(() => {
     validateForm();
   }, [formData]);
+
+  useEffect(() => {
+    const fetchMesas = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/getAllMesas');
+        setMesas(response.data);
+      } catch (error) {
+        console.error('Erro ao buscar mesas:', error);
+      }
+    };
+    fetchMesas();
+  }, []);
+
+  useEffect(() => {
+    if (isFromHome) {
+      setFormData((prevData) => ({
+        ...prevData,
+        tipoConsumo: 'para levar',
+        numeroMesa: '41',
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        numeroMesa: '',
+      }));
+    }
+  }, [isFromHome]);
 
   const handleDownloadPDF = () => {
     const input = basketRef.current;
@@ -120,11 +149,10 @@ export default function Basket(props) {
         console.error('Erro ao carregar as imagens:', error);
       });
   };
-   
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
       [name]: value
     }));
@@ -132,7 +160,6 @@ export default function Basket(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const updatedItemsPedido = cartItems.map(item => `${item.qty} x ${item.name}`).join(', ');
 
     const payload = {
@@ -142,19 +169,14 @@ export default function Basket(props) {
       numeroMesa: parseInt(formData.numeroMesa, 10),
     };
 
-    console.log("Dados enviados para o backend:", payload);
-
     try {
       const response = await axios.post('http://localhost:3000/create-pedidoLocal', payload);
-      console.log("Resposta do servidor:", response);
       if (response.status === 200) {
         alert('Pedido enviado com sucesso!');
       } else {
-        console.error('Erro na resposta do servidor:', response);
         alert('Erro ao enviar o pedido.');
       }
     } catch (error) {
-      console.error('Erro ao enviar o pedido:', error.response || error.message);
       alert('Erro ao enviar o pedido.');
     }
   };
@@ -217,18 +239,38 @@ export default function Basket(props) {
                 </select>
               </label>
             </div>
-            <div>
+
+            <div style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
               <label>
                 Número da Mesa:
-                <input 
-                  type="number" 
+                <select 
                   name="numeroMesa" 
                   value={formData.numeroMesa} 
                   onChange={handleChange} 
-                  required
-                />
+                  required 
+                  disabled={isFromHome}
+                >
+                  <option value="41">A partir de casa</option>
+                  {mesas
+                    .filter((mesa) => mesa.numero !== 41)
+                    .map((mesa) => (
+                      <option key={mesa.id} value={mesa.numero}>
+                        {mesa.numero}
+                      </option>
+                    ))}
+                </select>
+              </label>
+
+              <label style={{ marginLeft: '15px', fontSize: '14px' }}>
+                <input
+                  type="checkbox"
+                  checked={isFromHome}
+                  onChange={() => setIsFromHome(!isFromHome)}
+                />{' '}
+                A partir de casa
               </label>
             </div>
+
             <div>
               <label>
                 Nome:
@@ -241,6 +283,7 @@ export default function Basket(props) {
                 />
               </label>
             </div>
+
             <div>
               <label>
                 Telefone:
@@ -253,6 +296,7 @@ export default function Basket(props) {
                 />
               </label>
             </div>
+
             <div>
               <label>
                 Método de Pagamento:
@@ -268,6 +312,7 @@ export default function Basket(props) {
                 </select>
               </label>
             </div>
+
             <div>
               <button 
                 type="submit" 
