@@ -168,18 +168,23 @@ function Update() {
               {errors.status && <small className="error">{errors.status}</small>}
             </div>
             <div className="column">
-              <label htmlFor="numeroMesa">Número da Mesa:</label>
-              <select 
-                name="numeroMesa" 
-                value={values.numeroMesa} 
-                onChange={handleChange}
-              >
-                <option value="">Selecione</option>
-                {mesas.map(mesa => (
-                  <option key={mesa.id} value={mesa.numero}>{mesa.numero}</option>
-                ))}
-              </select>
-              {errors.numeroMesa && <small className="error">{errors.numeroMesa}</small>}
+                <label htmlFor="numeroMesa">Número da Mesa:</label>
+                <select 
+                  name="numeroMesa" 
+                  value={values.numeroMesa} 
+                  onChange={handleChange}
+                  disabled
+                >
+                  <option value="">Selecione</option>
+                  {mesas
+                    .filter(mesa => mesa.numero !== 41)
+                    .map(mesa => (
+                      <option key={mesa.id} value={mesa.numero}>{mesa.numero}</option>
+                    ))
+                  }
+                  <option value="41">A partir de casa</option>
+                </select>
+                {errors.numeroMesa && <small className="error">{errors.numeroMesa}</small>}
             </div>
           </div>
 
