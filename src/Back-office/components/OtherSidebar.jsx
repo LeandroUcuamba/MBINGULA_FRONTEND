@@ -14,7 +14,7 @@ function Sidebar() {
   return (
     <div className="sidebar d-flex justify-content-between flex-column bg-black text-white py-3 ps-3 vh-100">
       <div>
-        <a href="#" className='p-3 text-decoration-none text-white'>
+        <a href="/" className='p-3 text-decoration-none text-white'>
           <i id='logo-B' className="fa fa-cutlery m-1"></i>
           <span id='nome-mbingula' className="fs-3 m-1 me-5"><strong>Mbingula</strong></span>
         </a>
