@@ -68,9 +68,7 @@ function Navbar() {
                 <li><NavLink to="/Front-office/pages/CardapioItems"><AiOutlineContainer className="icones-menu" /> Cardápio </NavLink></li>
                 <li><NavLink to="/Front-office/pages/Servicos"><AiFillTool className="icones-menu" /> Serviços</NavLink></li>
                 <li><NavLink to="/Front-office/pages/pages/avaliacao/create"><AiOutlineEdit className="icones-menu" /> Avaliação</NavLink></li>
-                <li>
-                  <li><NavLink to="/Front-office/pages/mesaReservada"><AiOutlineFileDone className="icones-menu" /> Res. Mesa</NavLink></li>
-                </li>
+                <li><NavLink to="/Front-office/pages/mesaReservada"><AiOutlineFileDone className="icones-menu" /> Res. Mesa</NavLink></li>
                 <li><NavLink to="#" onClick={handleBack}><AiOutlineReload className="icones-menu" /> Voltar</NavLink></li>
               </>
             )}
