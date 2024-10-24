@@ -11,7 +11,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 0px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,6 +114,7 @@ header .nav-btn {
 
     header {
         background-color: #0D0E10;
+        padding: 0px 10px;
     }
 
     header nav {
@@ -193,5 +193,9 @@ header .nav-btn {
 
     header nav {
         height: 100%;
+    }
+
+    .header {
+        padding: 0px 10px;
     }
 }

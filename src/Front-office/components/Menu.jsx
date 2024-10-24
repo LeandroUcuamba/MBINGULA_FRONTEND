@@ -48,7 +48,8 @@ function Navbar() {
             {!showMore && !showOrderMenu ? (
               <>
                 <li><NavLink to="/"><IoHome className="icones-menu" /> Home</NavLink></li>
-                <li><NavLink to="/Front-office/pages/Sobre"> <AiOutlineQuestionCircle className="icones-menu" /> Sobre</NavLink></li>
+                <li><NavLink to="/Front-office/pages/Pedido"><AiOutlineMail className="icones-menu" /> Pedido</NavLink></li>
+                <li><NavLink to="/Back-office/App_BackOffice"><AiOutlineUser className="icones-menu" /> Admin</NavLink></li>
                 <li>
                   {signed ? (
                     <NavLink to="/" onClick={signOut}> <BiLogOut className="icones-menu" /> Sair</NavLink>
@@ -56,8 +57,7 @@ function Navbar() {
                     <NavLink to="/Front-office/components/LoginRegisterForm"> <BiLogIn className="icones-menu" /> Entrar</NavLink>
                   )}
                 </li>
-                <li><NavLink to="/Back-office/App_BackOffice"><AiOutlineUser className="icones-menu" /> Admin</NavLink></li>
-                <li><NavLink to="/Front-office/pages/mesaReservada"><AiOutlineFileDone className="icones-menu" /> Reservar Mesa</NavLink></li>
+                <li><NavLink to="/Front-office/pages/Sobre"> <AiOutlineQuestionCircle className="icones-menu" /> Sobre</NavLink></li>
                 <li>
                   <NavLink to="#" onClick={handleShowMore}><AiOutlinePlusCircle className="icones-menu" /> Ver mais</NavLink>
                 </li>
@@ -69,7 +69,7 @@ function Navbar() {
                 <li><NavLink to="/Front-office/pages/Servicos"><AiFillTool className="icones-menu" /> Serviços</NavLink></li>
                 <li><NavLink to="/Front-office/pages/pages/avaliacao/create"><AiOutlineEdit className="icones-menu" /> Avaliação</NavLink></li>
                 <li>
-                  <NavLink to="/Front-office/pages/Pedido"><AiOutlineMail className="icones-menu" /> Pedido</NavLink>
+                  <li><NavLink to="/Front-office/pages/mesaReservada"><AiOutlineFileDone className="icones-menu" /> Res. Mesa</NavLink></li>
                 </li>
                 <li><NavLink to="#" onClick={handleBack}><AiOutlineReload className="icones-menu" /> Voltar</NavLink></li>
               </>
