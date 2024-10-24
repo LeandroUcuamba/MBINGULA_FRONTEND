@@ -11,7 +11,6 @@ const LoginRegisterForm = () => {
   const [password, setPassword] = useState("");
   const accessName = "normal";
   
-  const [alertText, setAlertText] = useState("");
   const [errorName, setErrorName] = useState("");
   const [errorEmail, setErrorEmail] = useState("");
   const [errorPhone, setErrorPhone] = useState("");

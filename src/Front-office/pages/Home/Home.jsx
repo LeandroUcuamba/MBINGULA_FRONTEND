@@ -52,7 +52,7 @@ const Home = () => {
                     <p>O restaurante mais proximo dos seus desejos, venha e prove !</p>
 
 
-                    <NavLink to="/" className="peca-aqui"><span>Peça aqui!</span>
+                    <NavLink to="/Front-office/carrinho" className="peca-aqui"><span>Peça aqui!</span>
                     </NavLink>
 
                     <div className="social-media-btn">
