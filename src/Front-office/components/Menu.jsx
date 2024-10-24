@@ -87,7 +87,12 @@ function Navbar() {
                 )}
                 <li>
                   {signed ? (
-                    <NavLink to="/" onClick={signOut}><BiLogOut className="icones-menu" /> Sair</NavLink>
+                      <NavLink to="/" onClick={() => {
+                        signOut();
+                        window.location.reload();
+                      }}>
+                        <BiLogOut className="icones-menu" /> Sair
+                      </NavLink>
                   ) : (
                     <NavLink to="/Front-office/components/LoginRegisterForm"><BiLogIn className="icones-menu" /> Entrar</NavLink>
                   )}
