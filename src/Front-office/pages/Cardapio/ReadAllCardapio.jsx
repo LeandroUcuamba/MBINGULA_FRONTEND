@@ -25,6 +25,10 @@ const Cardapio = () => {
         navigate('/Front-office/pages/FilterCardapioItems');
     };
 
+    const handleButtonClick = () => {
+        navigate('/Front-office/carrinho');
+    };
+
     return (
         <div>
             <Menu />
@@ -59,7 +63,9 @@ const Cardapio = () => {
                             <div className="dish-price-cardapio-comida">
                                 <h4>{item.price} kz</h4>
                                 <button className="btn-default-cardapio-comida">
-                                    <i className="fa-solid fa-basket-shopping"></i>
+                                    <i className="fa-solid bi bi-bookmark-plus"
+                                       onClick={handleButtonClick}
+                                    ></i>
                                 </button>
                             </div>
                         </div>

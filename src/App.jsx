@@ -88,9 +88,9 @@ import HomePedido from './Front-office/pages/Pedido/Home.jsx'
 import CreatePedido from './Front-office/pages/Pedido/Create.jsx'
 import UpdatePedido from './Front-office/pages/Pedido/Update.jsx'
 import ReadPedidoFilter from './Front-office/pages/Pedido/ReadFilter.jsx'
-{/* Front-office - Carrinho Local*/}
+{/* Front-office - Carrinho*/}
 import Carrinho from './Front-office/components/Cart.jsx'
-{/* Back-office - change status pedido local*/}
+{/* Back-office - change status pedido*/}
 import HomePedidoBack from './Back-office/pages/pedido/Home.jsx'
 import UpdatePedidoBack from './Back-office/pages/pedido/Update.jsx'
 
@@ -180,12 +180,12 @@ function App() {
             <Route path="/Front-office/pages/FilterCardapioItems" element={<FilterAllCardapio />}></Route>
             {/* Front-office - Sobre*/}
             <Route path="/Front-office/pages/Sobre" element={<Sobre />}></Route>
-            {/* Front-office - Pedido local*/}
+            {/* Front-office - Pedido*/}
             <Route path="/Front-office/pages/Pedido" element={<HomePedido />}></Route>
             <Route path="/Front-office/pages/Pedido/Create" element={<CreatePedido />}></Route>
             <Route path="/Front-office/pages/Pedido/Update/:id" element={<UpdatePedido />}></Route>
             <Route path="/Front-office/pages/PedidoFilter" element={<ReadPedidoFilter />}></Route>
-            {/* Front-office - Carrinho Local*/}
+            {/* Front-office - Carrinho*/}
             <Route path="/Front-office/carrinho" element={<Carrinho />}></Route>
             {/* Back-office - change status pedido local*/}
             <Route path="/Back-office/pages/Pedido" element={<HomePedidoBack />}></Route>
