@@ -32,6 +32,10 @@ const Cardapio = () => {
         }
     };
 
+    const formatPrice = (price) => {
+        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+
     return (
         <div>
             <Menu />
@@ -57,7 +61,7 @@ const Cardapio = () => {
                             </span>
 
                             <div className="dish-price-cardapio-comida">
-                                <h4>{item.price} kz</h4>
+                                <h4>{formatPrice(item.price)},00 kz</h4>
                                 <Link to="/Front-office/pages/CardapioItems" className="btn-default-cardapio-comida">
                                     ver mais
                                 </Link>

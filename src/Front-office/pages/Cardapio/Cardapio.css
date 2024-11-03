@@ -78,6 +78,7 @@
 .dish-title-cardapio-comida {
     color: var(--main-color);
     font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
 }
 
 .dish-description-cardapio-comida {
@@ -89,6 +90,10 @@
     display: flex;
     color: white;
     align-items: center;
+}
+
+.dish-price-cardapio-comida h4 {
+    font-size: 1.4rem;
 }
 
 .btn-default-cardapio-comida {
