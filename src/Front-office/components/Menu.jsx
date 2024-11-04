@@ -97,6 +97,7 @@ function Navbar() {
                     <NavLink to="/Front-office/components/LoginRegisterForm"><BiLogIn className="icones-menu" /> Entrar</NavLink>
                   )}
                 </li>
+                <li><NavLink to="/Front-office/pages/AtividadeCasa"><AiFillSun className="icones-menu" /> Atividades</NavLink></li>
                 <li><NavLink to="/Front-office/pages/Sobre"><AiOutlineQuestionCircle className="icones-menu" /> Sobre</NavLink></li>
                 {(isAdmin || isNormal) && (
                   <li><NavLink to="#" onClick={handleShowMore}><AiOutlinePlusCircle className="icones-menu" /> Ver mais</NavLink></li>
