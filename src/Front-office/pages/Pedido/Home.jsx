@@ -159,13 +159,20 @@ function Pedido() {
                     </div>
                   </div>
                   <div className="button-group mt-3">
-                    <Link to={`/Front-office/pages/Pedido/Update/${pedido.id}`} className='btn-sm btn-primary'>
-                      <i className="bi bi-pencil"></i>
+                    <Link
+                        to={`/Front-office/pages/Pedido/Update/${pedido.id}`}
+                        className='btn-sm btn-primary'
+                        disabled={pedido.status === 'pronto a levantar'}
+                        style={{ pointerEvents: pedido.status === 'pronto a levantar' ? 'none' : 'auto' }}>
+                        <i className="bi bi-pencil"></i>
                     </Link>
-                    <button onClick={() => handleDelete(pedido.id)} className='btn-sm btn-danger'>
-                      <i className="bi bi-trash"></i>
+                    <button
+                        onClick={() => handleDelete(pedido.id)}
+                        className='btn-sm btn-danger'
+                        disabled={pedido.status === 'pronto a levantar'}>
+                        <i className="bi bi-trash"></i>
                     </button>
-                  </div>
+                 </div>
                 </div>
               ))}
             </div>
