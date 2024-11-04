@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react';
 import { FaWhatsapp, FaFacebook, FaInstagram } from 'react-icons/fa';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -12,6 +12,8 @@ import AtividadeHome from '../MostrarAtividadeHome/AtividadeHome.jsx';
 import Footer from '../../components/Footer.jsx';
 import Menu from '../../components/Menu.jsx'
 import { NavLink } from "react-router-dom";
+import { AuthContext } from '../../../context/AuthContext';
+
 
 const socialNetworks = [
     { name: "whatsapp", icon: <FaWhatsapp /> },
@@ -20,6 +22,8 @@ const socialNetworks = [
 ]
 
 const Home = () => {
+    const { signed } = useContext(AuthContext);
+
     const settings = {
         dots: false,
         infinite: true,
@@ -52,8 +56,15 @@ const Home = () => {
                     <p>O restaurante mais proximo dos seus desejos, venha e prove !</p>
 
 
-                    <NavLink to="/Front-office/carrinho" className="peca-aqui"><span>Peça aqui!</span>
-                    </NavLink>
+                    {signed ? (
+                        <NavLink to="/Front-office/carrinho" className="peca-aqui">
+                            <span>Peça aqui!</span>
+                        </NavLink>
+                    ) : (
+                        <NavLink to="/Front-office/components/LoginRegisterForm" className="peca-aqui">
+                            <span>Peça aqui!</span>
+                        </NavLink>
+                    )}
 
                     <div className="social-media-btn">
                         { }
