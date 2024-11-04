@@ -25,10 +25,6 @@ const Cardapio = () => {
         navigate('/Front-office/pages/FilterCardapioItems');
     };
 
-    const handleButtonClick = () => {
-        navigate('/Front-office/carrinho');
-    };
-
     const formatPrice = (price) => {
         return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     };
@@ -66,11 +62,7 @@ const Cardapio = () => {
 
                             <div className="dish-price-cardapio-comida">
                                 <h4>{formatPrice(item.price)},00 kz</h4>
-                                <button className="btn-default-cardapio-comida">
-                                    <i className="fa-solid bi bi-bookmark-plus"
-                                       onClick={handleButtonClick}
-                                    ></i>
-                                </button>
+                                <button className="btn-default-cardapio-comida"></button>
                             </div>
                         </div>
                     ))}
