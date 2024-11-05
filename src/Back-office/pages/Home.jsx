@@ -47,7 +47,6 @@ function Home() {
     }, []);
 
     const calcularValorTotalIntervalo = () => {
-
         const fim = new Date(dataFim);
         fim.setDate(fim.getDate() + 1);
     
@@ -68,8 +67,13 @@ function Home() {
         return acc;
     }, {});
 
-    const valorTotalPorMesa = pedidos.reduce((acc, pedido) => {
-        acc[pedido.numeroMesa] = (acc[pedido.numeroMesa] || 0) + parseFloat(pedido.valorTotal);
+    const valorTotalPorTipoConsumo = pedidos.reduce((acc, pedido) => {
+        acc[pedido.tipoConsumo] = (acc[pedido.tipoConsumo] || 0) + parseFloat(pedido.valorTotal);
+        return acc;
+    }, {});
+
+    const valorTotalPorMetodoPagamento = pedidos.reduce((acc, pedido) => {
+        acc[pedido.metodoPagamento] = (acc[pedido.metodoPagamento] || 0) + parseFloat(pedido.valorTotal);
         return acc;
     }, {});
 
@@ -87,18 +91,31 @@ function Home() {
                 backgroundColor: ['#4caf50', '#2196f3', '#ff5722'],
                 borderColor: ['#388e3c', '#1976d2', '#d84315'],
                 borderWidth: 1,
+ },
+        ],
+    };
+
+    const barDataTipoConsumo = {
+        labels: Object.keys(valorTotalPorTipoConsumo),
+        datasets: [
+            {
+                label: 'Valor Total por Tipo de Consumo',
+                data: Object.values(valorTotalPorTipoConsumo),
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
             },
         ],
     };
 
-    const barData = {
-        labels: Object.keys(valorTotalPorMesa),
-        datasets : [
+    const barDataMetodoPagamento = {
+        labels: Object.keys(valorTotalPorMetodoPagamento),
+        datasets: [
             {
-                label: 'Valor Total dos Pedidos por Mesa',
-                data: Object.values(valorTotalPorMesa),
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75,  192, 192, 1)',
+                label: 'Valor Total por Método de Pagamento',
+                data: Object.values(valorTotalPorMetodoPagamento),
+                backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                borderColor: 'rgba(153, 102, 255, 1)',
                 borderWidth: 1,
             },
         ],
@@ -186,8 +203,15 @@ function Home() {
 
                     <div className='col-12 col-lg-6 p-3'>
                         <div className='border border-secondary rounded shadow p-3'>
-                            <h3 className='text-center'>Gráfico de Barras - Valor Total por Mesa</h3>
-                            <Bar data={barData} />
+                            <h3 className=' text-center'>Gráfico de Barras - Valor Total por Tipo de Consumo</h3>
+                            <Bar data={barDataTipoConsumo} />
+                        </div>
+                    </div>
+
+                    <div className='col-12 col-lg-6 p-3'>
+                        <div className='border border-secondary rounded shadow p-3'>
+                            <h3 className='text-center'>Gráfico de Barras - Valor Total por Método de Pagamento</h3>
+                            <Bar data={barDataMetodoPagamento} />
                         </div>
                     </div>
 
@@ -199,7 +223,7 @@ function Home() {
                     </div>
 
                     <div className='col-12 col-lg-6 p-3'>
-                        <div className ='border border-secondary rounded shadow p-3'>
+                        <div className='border border-secondary rounded shadow p-3'>
                             <h3 className='text-center'>Gráfico de Radar - Métodos de Pagamento</h3>
                             <Radar data={radarData} />
                         </div>
