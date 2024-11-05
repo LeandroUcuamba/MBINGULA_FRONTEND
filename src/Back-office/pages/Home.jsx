@@ -13,94 +13,103 @@ function Home() {
     const [pedidosDoDia, setPedidosDoDia] = useState(0);
     const [itemsCardapio, setItemsCardapio] = useState(0);
     const [users, setUsers] = useState(0);
+    const [pedidos, setPedidos] = useState([]);
+    const [dataInicio, setDataInicio] = useState('');
+    const [dataFim, setDataFim] = useState('');
+    const [valorTotalIntervalo, setValorTotalIntervalo] = useState(0);
 
     useEffect(() => {
-        const fetchMesas = async () => {
+        const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/getAllMesas');
-                const data = response.data;
-                setMesas(data.length);
-            } catch (error) {
-                console.error('Erro ao buscar as mesas:', error);
-            }
-        };
+                const responseMesas = await axios.get('http://localhost:3000/getAllMesas');
+                setMesas(responseMesas.data.length);
 
-        const fetchPedidosDoDia = async () => {
-            try {
-                const response = await axios.get('http://localhost:3000/getAllPedidoLocal');
-                const pedidos = response.data;
+                const responsePedidos = await axios.get('http://localhost:3000/getAllPedidoLocal');
+                const pedidos = responsePedidos.data;
+                setPedidos(pedidos);
 
                 const hoje = new Date();
                 const dataAtual = hoje.toISOString().split('T')[0];
-
-                const pedidosFiltrados = pedidos.filter(pedido => 
-                    pedido.created_at.split('T')[0] === dataAtual
-                );
-
+                const pedidosFiltrados = pedidos.filter(pedido => pedido.created_at.split('T')[0] === dataAtual);
                 setPedidosDoDia(pedidosFiltrados.length);
+
+                const responseItems = await axios.get('http://localhost:3000/getItemsCardapio');
+                setItemsCardapio(responseItems.data.length);
+
+                const responseUsers = await axios.get('http://localhost:3000/getAllUsers');
+                setUsers(responseUsers.data.length);
             } catch (error) {
-                console.error('Erro ao buscar os pedidos do dia:', error);
+                console.error('Erro ao buscar os dados:', error);
             }
         };
 
-        const fetchItemsCardapio = async () => {
-            try {
-                const response = await axios.get('http://localhost:3000/getItemsCardapio');
-                const items = response.data;
-                setItemsCardapio(items.length);
-            } catch (error) {
-                console.error('Erro ao buscar os itens do cardápio:', error);
-            }
-        };
-
-        const fetchAllUsers = async () => {
-            try {
-                const response = await axios.get('http://localhost:3000/getAllUsers');
-                const users = response.data;
-                setUsers(users.length);
-            } catch (error) {
-                console.error('Erro ao buscar os utilizadores:', error);
-            }
-        };
-
-        fetchMesas();
-        fetchPedidosDoDia();
-        fetchItemsCardapio();
-        fetchAllUsers();
+        fetchData();
     }, []);
 
+    const calcularValorTotalIntervalo = () => {
+
+        const fim = new Date(dataFim);
+        fim.setDate(fim.getDate() + 1);
+    
+        const total = pedidos.reduce((acc, pedido) => {
+            const dataPedido = new Date(pedido.created_at);
+            const inicio = new Date(dataInicio);
+    
+            if (dataPedido >= inicio && dataPedido < fim) {
+                return acc + parseFloat(pedido.valorTotal);
+            }
+            return acc;
+        }, 0);
+        setValorTotalIntervalo(total);
+    };
+
+    const tipoConsumoCounts = pedidos.reduce((acc, pedido) => {
+        acc[pedido.tipoConsumo] = (acc[pedido.tipoConsumo] || 0) + 1;
+        return acc;
+    }, {});
+
+    const valorTotalPorMesa = pedidos.reduce((acc, pedido) => {
+        acc[pedido.numeroMesa] = (acc[pedido.numeroMesa] || 0) + parseFloat(pedido.valorTotal);
+        return acc;
+    }, {});
+
+    const metodoPagamentoCounts = pedidos.reduce((acc, pedido) => {
+        acc[pedido.metodoPagamento] = (acc[pedido.metodoPagamento] || 0) + 1;
+        return acc;
+    }, {});
+
     const pieData = {
-        labels: ['Mesas', 'Pedidos do Dia', 'Items Cardápio', 'Utilizadores'],
+        labels: Object.keys(tipoConsumoCounts),
         datasets: [
             {
-                label: 'Dados do Restaurante',
-                data: [mesas, pedidosDoDia, itemsCardapio, users],
-                backgroundColor: ['#4caf50', '#2196f3', '#ff5722', '#ffc107'],
-                borderColor: ['#388e3c', '#1976d2', '#d84315', '#ffa000'],
+                label: 'Tipo de Consumo',
+                data: Object.values(tipoConsumoCounts),
+                backgroundColor: ['#4caf50', '#2196f3', '#ff5722'],
+                borderColor: ['#388e3c', '#1976d2', '#d84315'],
                 borderWidth: 1,
             },
         ],
     };
 
     const barData = {
-        labels: ['Mesas', 'Pedidos do Dia', 'Items Cardápio', 'Utilizadores'],
-        datasets: [
+        labels: Object.keys(valorTotalPorMesa),
+        datasets : [
             {
-                label: 'Dados do Restaurante',
-                data: [mesas, pedidosDoDia, itemsCardapio, users],
+                label: 'Valor Total dos Pedidos por Mesa',
+                data: Object.values(valorTotalPorMesa),
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                borderColor: 'rgba(75,  192, 192, 1)',
                 borderWidth: 1,
             },
         ],
     };
 
     const lineData = {
-        labels: ['Mesas', 'Pedidos do Dia', 'Items Cardápio', 'Utilizadores'],
+        labels: pedidos.map(pedido => new Date(pedido.created_at).toLocaleDateString()),
         datasets: [
             {
-                label: 'Tendência dos Dados',
-                data: [mesas, pedidosDoDia, itemsCardapio, users],
+                label: 'Tendência de Pedidos ao Longo do Tempo',
+                data: pedidos.map(pedido => parseFloat(pedido.valorTotal)),
                 fill: false,
                 borderColor: 'rgba(255, 99, 132, 1)',
                 tension: 0.1,
@@ -109,11 +118,11 @@ function Home() {
     };
 
     const radarData = {
-        labels: ['Mesas', 'Pedidos do Dia', 'Items Cardápio', 'Utilizadores'],
+        labels: Object.keys(metodoPagamentoCounts),
         datasets: [
             {
-                label: 'Distribuição dos Dados',
-                data: [mesas, pedidosDoDia, itemsCardapio, users],
+                label: 'Métodos de Pagamento',
+                data: Object.values(metodoPagamentoCounts),
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
                 pointBackgroundColor: 'rgba(54, 162, 235, 1)',
@@ -147,7 +156,7 @@ function Home() {
                     </div>
 
                     <div className='col-12 col-sm-6 col-md-4 col-lg-3 p-3'>
-                        <div className=' d-flex justify-content-between p-3 align-items-center bg-white border border-secondary rounded shadow'>
+                        <div className='d-flex justify-content-between p-3 align-items-center bg-white border border-secondary rounded shadow'>
                             <i className='bi bi-book fs-3 text-danger'></i>
                             <div>
                                 <span>Items cardápio</span>
@@ -170,29 +179,58 @@ function Home() {
                 <div className='row mt-5'>
                     <div className='col-12 col-lg-6 p-3'>
                         <div className='border border-secondary rounded shadow p-3'>
-                            <h3 className='text-center'>Gráfico de Pizza</h3>
+                            <h3 className='text-center'>Gráfico de Pizza - Tipo de Consumo</h3>
                             <Pie data={pieData} />
                         </div>
                     </div>
 
                     <div className='col-12 col-lg-6 p-3'>
                         <div className='border border-secondary rounded shadow p-3'>
-                            <h3 className='text-center'>Gráfico de Barras</h3>
+                            <h3 className='text-center'>Gráfico de Barras - Valor Total por Mesa</h3>
                             <Bar data={barData} />
                         </div>
                     </div>
 
                     <div className='col-12 col-lg-6 p-3'>
                         <div className='border border-secondary rounded shadow p-3'>
-                            <h3 className='text-center'>Gráfico de Linha</h3>
+                            <h3 className='text-center'>Gráfico de Linha - Tendência de Pedidos</h3>
                             <Line data={lineData} />
                         </div>
                     </div>
 
                     <div className='col-12 col-lg-6 p-3'>
-                        <div className='border border-secondary rounded shadow p-3'>
-                            <h3 className='text-center'>Gráfico de Radar</h3>
+                        <div className ='border border-secondary rounded shadow p-3'>
+                            <h3 className='text-center'>Gráfico de Radar - Métodos de Pagamento</h3>
                             <Radar data={radarData} />
+                        </div>
+                    </div>
+                </div>
+
+                <div className='row mt-5'>
+                    <div className='col-12 p-3'>
+                        <div className='border border-secondary rounded shadow p-3'>
+                            <h3 className='text-center'>Calcular Valor Total por Intervalo de Datas</h3>
+                            <div className='d-flex justify-content-center'>
+                                <input 
+                                    type='date' 
+                                    className='form-control me-2' 
+                                    value={dataInicio} 
+                                    onChange={(e) => setDataInicio(e.target.value)} 
+                                />
+                                <input 
+                                    type='date' 
+                                    className='form-control me-2' 
+                                    value={dataFim} 
+                                    onChange={(e) => setDataFim(e.target.value)} 
+                                />
+                                <button 
+                                    className='btn btn-primary' 
+                                    onClick={calcularValorTotalIntervalo}
+                                >
+                                    Calcular
+                                </button>
+                            </div>
+                            <h4 className='text-center mt-3'>Valor Total: R$ {valorTotalIntervalo.toFixed(2)}</h4>
                         </div>
                     </div>
                 </div>
