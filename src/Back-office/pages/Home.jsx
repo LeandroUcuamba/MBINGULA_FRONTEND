@@ -17,6 +17,7 @@ function Home() {
     const [dataInicio, setDataInicio] = useState('');
     const [dataFim, setDataFim] = useState('');
     const [valorTotalIntervalo, setValorTotalIntervalo] = useState(0);
+    const [itemMaisSolicitado, setItemMaisSolicitado] = useState({});
 
     useEffect(() => {
         const fetchData = async () => {
@@ -38,6 +39,19 @@ function Home() {
 
                 const responseUsers = await axios.get('http://localhost:3000/getAllUsers');
                 setUsers(responseUsers.data.length);
+
+                const itemCounts = pedidos.reduce((acc, pedido) => {
+                    const items = pedido.itemsPedido.split(',');
+                    items.forEach(item => {
+                        const [quantity, name] = item.trim().split(' x ');
+                        const itemName = name.trim();
+
+                        acc[itemName] = (acc[itemName] || 0) + parseInt(quantity);
+                    });
+                    return acc;
+                }, {});
+
+                setItemMaisSolicitado(itemCounts);
             } catch (error) {
                 console.error('Erro ao buscar os dados:', error);
             }
@@ -72,7 +86,7 @@ function Home() {
         return acc;
     }, {});
 
-    const valorTotalPorMetodoPagamento = pedidos.reduce((acc, pedido) => {
+    const valorTotalPorMetodoPagamento = pedidos.reduce ((acc, pedido) => {
         acc[pedido.metodoPagamento] = (acc[pedido.metodoPagamento] || 0) + parseFloat(pedido.valorTotal);
         return acc;
     }, {});
@@ -91,7 +105,7 @@ function Home() {
                 backgroundColor: ['#4caf50', '#2196f3', '#ff5722'],
                 borderColor: ['#388e3c', '#1976d2', '#d84315'],
                 borderWidth: 1,
- },
+            },
         ],
     };
 
@@ -148,6 +162,22 @@ function Home() {
         ],
     };
 
+    const itemCountsKeys = Object.keys(itemMaisSolicitado);
+    const itemCountsValues = Object.values(itemMaisSolicitado);
+
+    const barDataItemsSolicitados = {
+        labels: itemCountsKeys,
+        datasets: [
+            {
+                label: 'Itens Mais Solicitados',
+                data: itemCountsValues,
+                backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                borderColor: 'rgba(255, 159, 64, 1)',
+                borderWidth: 1,
+            },
+        ],
+    };
+
     return (
         <div className='p-5 bg-white'>
             <div className='container-fluid'>
@@ -184,7 +214,7 @@ function Home() {
 
                     <div className='col-12 col-sm-6 col-md-4 col-lg-3 p-3'>
                         <div className='d-flex justify-content-between p-3 align-items-center bg-white border border-secondary rounded shadow'>
-                            <i className='bi bi-person fs-1 text-warning '></i>
+                            <i className='bi bi-person fs-1 text-warning'></i>
                             <div>
                                 <span>Utilizadores</span>
                                 <h2>{users}</h2>
@@ -203,7 +233,7 @@ function Home() {
 
                     <div className='col-12 col-lg-6 p-3'>
                         <div className='border border-secondary rounded shadow p-3'>
-                            <h3 className=' text-center'>Gráfico de Barras - Valor Total por Tipo de Consumo</h3>
+                            <h3 className='text-center'>Gráfico de Barras - Valor Total por Tipo de Consumo</h3>
                             <Bar data={barDataTipoConsumo} />
                         </div>
                     </div>
@@ -226,6 +256,13 @@ function Home() {
                         <div className='border border-secondary rounded shadow p-3'>
                             <h3 className='text-center'>Gráfico de Radar - Métodos de Pagamento</h3>
                             <Radar data={radarData} />
+                        </div>
+                    </div>
+
+                    <div className='col-12 p-3'>
+                        <div className='border border-secondary rounded shadow p-3'>
+                            <h3 className='text-center'>Gráfico de Barras - Itens Mais Solicitados</h3>
+                            <Bar data={barDataItemsSolicitados} />
                         </div>
                     </div>
                 </div>
