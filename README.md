@@ -1,28 +1,28 @@
 # MBINGULA_FRONTEND - ReactJS
- My final university project - Restaurante Mbingula
+ My final university project - Mbingula Restaurant
 
-# Frontend do software do restaurante - MBINGULA
+# Frontend of the software for the restaurant - MBINGULA
 
- Este é um projeto que dei inicio a sensivelmente no dia "17/03/2024", cujo me foi proposto um desafio para dar solução há problemas que o restaurante Mbingula (Luanda, Angola) enfreta até o momento "15/09/24".
+This is a project I started around "03/17/2024", where I was given a challenge to provide solutions to the problems faced by Restaurante Mbingula (Luanda, Angola) up until "09/15/2024".
  
 
-## 🛠️ Construído com
+## 🛠️ Built with:
 
 * [ReactJS](https://react.dev/).
 * [JavaScript](https://devdocs.io/javascript/).
 
-## ⚙️ Seu backend
+## ⚙️ Backend app:
 
 * https://github.com/LeandroUcuamba/MBINGULA_BACKEND_API
 
 
-## ✒️ Autores
+## ✒️ Developers/Contributors:
 
-* **Desenvolvedor do projeto** - *Backend* - [Leandro Ucuamba](https://ao.linkedin.com/in/leandrosantosucuamba)
-* **Desenvolvedor do projeto** - *Frontend (React.js) * - [Celso Coutinho](https://ao.linkedin.com/in/celso-coutinho-22075a230) e [Leandro Ucuamba](https://ao.linkedin.com/in/leandrosantosucuamba).
+* **Project Developer** - *Backend* - [Leandro Ucuamba](https://ao.linkedin.com/in/leandrosantosucuamba)
+* **Project Developer** - *Frontend (React.js) * - [Celso Coutinho](https://ao.linkedin.com/in/celso-coutinho-22075a230) e [Leandro Ucuamba](https://ao.linkedin.com/in/leandrosantosucuamba).
 
 
-## 📷 screenshot
+## 📷 screenshot:
 
 ![Frontend-1](https://github.com/user-attachments/assets/e340d0b5-dc00-4559-a2a4-13c1c72f38dd)
 ![Frontend-2](https://github.com/user-attachments/assets/f8b4b0c5-c5bb-4b61-bb16-04e5c785a3ae)
